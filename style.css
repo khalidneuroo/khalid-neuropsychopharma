@@ -65,3 +65,29 @@ footer {
     font-weight: bold;
     font-size: 16px;
 }
+.links-hub {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.links-hub h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.hub-button {
+    display: block;
+    margin: 12px auto;
+    padding: 12px 20px;
+    width: 250px;
+    background: #1a1a1a;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.hub-button:hover {
+    background: #333;
+}
