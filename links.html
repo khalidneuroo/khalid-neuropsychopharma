@@ -108,9 +108,11 @@
     <a class="hub-button" href="https://www.instagram.com/vvokhalid" target="_blank">Instagram</a>
     <a class="hub-button" href="https://wa.me/971553714800" target="_blank">WhatsApp</a>
     <a class="hub-button" href="mailto:khalidneuroo@gmail.com">Email</a>
+    <!-- ⭐ New About Me button -->
+     <a class="hub-button" href="about.html">About Me</a>
 </section>
 
-<!-- Loading Script -->
+<!-- Loading Script (Navigation Only) -->
 <script>
 document.querySelectorAll("nav a").forEach(link => {
     link.addEventListener("click", function(e) {
@@ -135,7 +137,15 @@ document.querySelectorAll("nav a").forEach(link => {
     });
 });
 </script>
-<script> document.addEventListener("DOMContentLoaded", () => { document.body.style.opacity = "1"; }); </script>
+
+<!-- ⭐ Fallback fade-in (prevents blank screen if global.js fails) -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    document.body.style.opacity = "1";
+});
+</script>
+
+<!-- Global fade-in/fade-out transitions -->
 <script src="global.js"></script>
 
 </body>
