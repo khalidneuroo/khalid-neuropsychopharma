@@ -1,123 +1,43 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <title>التحديثات | خالد المنصوري</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        body {
-            direction: rtl;
-            text-align: right;
-            background-color: #000;
-            color: #fff;
-            font-family: sans-serif;
-        }
-        h1, h2, h3, p, a {
-            color: #fff;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .news-article {
-            background: #111;
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 10px;
-            display: flex;
-            gap: 15px;
-            align-items: flex-start;
-            box-shadow: 0 0 10px #444;
-        }
-        .news-article img {
-            width: 120px;
-            height: auto;
-            border-radius: 6px;
-            object-fit: cover;
-        }
-        .news-content {
-            flex: 1;
-        }
-    </style>
-</head>
-
-<body>
-
-<!-- WhatsApp Button -->
-<a class="floating-whatsapp" href="https://wa.me/971553741880" target="_blank">
-    WhatsApp
-</a>
-
-<!-- Loading Overlay -->
-<div id="loading-overlay">
-    <div id="loading-box">
-        <div id="loading-text">0%</div>
-    </div>
-</div>
-
-<header>
-    <h1>التحديثات البحثية</h1>
-    <nav>
-        <a href="index-ar.html">الرئيسية</a>
-        <a href="research-ar.html">الأبحاث</a>
-        <a href="projects-ar.html">المشاريع</a>
-        <a href="updates-ar.html">التحديثات</a>
-        <a href="contact-ar.html">تواصل</a>
-        <a href="updates.html" style="float:left;">EN</a>
-    </nav>
-</header>
-
-<section>
-    <h2>آخر أخبار علم الأعصاب</h2>
-    <div id="neuro-news" style="margin-top:20px;"></div>
-</section>
-
-<footer>
-    <p>© 2026 خالد المنصوري — أبحاث علم الأدوية النفسية العصبية</p>
-</footer>
-
-<!-- Loading Script -->
-<script>
-document.querySelectorAll("nav a").forEach(link => {
-    link.addEventListener("click", function(e) {
-        e.preventDefault();
-        const targetURL = this.href;
-        const overlay = document.getElementById("loading-overlay");
-        const text = document.getElementById("loading-text");
-        overlay.style.display = "flex";
-        let percent = 0;
-        const interval = setInterval(() => {
-            percent += 2;
-            text.textContent = percent + "%";
-            if (percent >= 100) {
-                clearInterval(interval);
-                window.location.href = targetURL;
-            }
-        }, 30);
-    });
-});
-</script>
-
 <!-- Auto News Script -->
 <script>
-fetch("https://api.rss2json.com/v1/api.json?rss_url=https://neurosciencenews.com/feed/")
+fetch("https://api.allorigins.win/get?url=" + encodeURIComponent("https://neurosciencenews.com/feed/"))
   .then(response => response.json())
   .then(data => {
+    const parser = new DOMParser();
+    const xml = parser.parseFromString(data.contents, "text/xml");
+    const items = xml.querySelectorAll("item");
+
     let html = "";
-    data.items.slice(0, 5).forEach(item => {
-      const imageMatch = item.description.match(/<img[^>]+src="([^">]+)"/);
-      const imageUrl = imageMatch ? imageMatch[1] : "";
+    let count = 0;
+
+    items.forEach(item => {
+      if (count >= 5) return;
+
+      const title = item.querySelector("title").textContent;
+      const link = item.querySelector("link").textContent;
+      const description = item.querySelector("description").textContent;
+
+      // Extract image
+      const imgMatch = description.match(/<img[^>]+src="([^">]+)"/);
+      const imageUrl = imgMatch ? imgMatch[1] : "";
+
+      // Clean text
+      const cleanText = description.replace(/<[^>]+>/g, "").substring(0, 200);
 
       html += `
         <div class="news-article">
           ${imageUrl ? `<img src="${imageUrl}" alt="صورة الخبر">` : ""}
           <div class="news-content">
-            <h3>${item.title}</h3>
-            <p>${item.description.replace(/<[^>]+>/g, "").substring(0, 200)}...</p>
-            <a href="${item.link}" target="_blank">قراءة المقال الكامل →</a>
+            <h3>${title}</h3>
+            <p>${cleanText}...</p>
+            <a href="${link}" target="_blank">قراءة المقال الكامل →</a>
           </div>
         </div>
       `;
+
+      count++;
     });
+
     document.getElementById("neuro-news").innerHTML = html;
   })
   .catch(err => {
@@ -125,6 +45,3 @@ fetch("https://api.rss2json.com/v1/api.json?rss_url=https://neurosciencenews.com
       "<p>تعذر تحميل الأخبار حالياً.</p>";
   });
 </script>
-
-</body>
-</html>
