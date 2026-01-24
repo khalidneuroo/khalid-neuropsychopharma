@@ -4,6 +4,38 @@
     <meta charset="UTF-8">
     <title>Updates | Khalid</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: sans-serif;
+        }
+        h1, h2, h3, p, a {
+            color: #fff;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .news-article {
+            background: #111;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 10px;
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+            box-shadow: 0 0 10px #444;
+        }
+        .news-article img {
+            width: 120px;
+            height: auto;
+            border-radius: 6px;
+            object-fit: cover;
+        }
+        .news-content {
+            flex: 1;
+        }
+    </style>
 </head>
 
 <body>
@@ -32,7 +64,6 @@
     </nav>
 </header>
 
-<!-- AUTO-UPDATING NEWS SECTION ONLY -->
 <section>
     <h2>Latest Neuroscience News</h2>
     <div id="neuro-news" style="margin-top:20px;"></div>
@@ -47,18 +78,14 @@
 document.querySelectorAll("nav a").forEach(link => {
     link.addEventListener("click", function(e) {
         e.preventDefault();
-
         const targetURL = this.href;
         const overlay = document.getElementById("loading-overlay");
         const text = document.getElementById("loading-text");
-
         overlay.style.display = "flex";
         let percent = 0;
-
         const interval = setInterval(() => {
             percent += 2;
             text.textContent = percent + "%";
-
             if (percent >= 100) {
                 clearInterval(interval);
                 window.location.href = targetURL;
@@ -68,34 +95,32 @@ document.querySelectorAll("nav a").forEach(link => {
 });
 </script>
 
-<!-- AUTO NEWS SCRIPT -->
+<!-- Auto News Script -->
 <script>
 fetch("https://api.rss2json.com/v1/api.json?rss_url=https://neurosciencenews.com/feed/")
   .then(response => response.json())
   .then(data => {
     let html = "";
     data.items.slice(0, 5).forEach(item => {
+      const imageMatch = item.description.match(/<img[^>]+src="([^">]+)"/);
+      const imageUrl = imageMatch ? imageMatch[1] : "";
+
       html += `
-        <article style="
-            background:#111;
-            padding:15px;
-            margin:15px 0;
-            border-radius:10px;
-            box-shadow:0 0 10px #00ff88;
-        ">
-          <h3 style="color:#00ff88;">${item.title}</h3>
-          <p style="color:#c8ffc8;">${item.description.substring(0, 200)}...</p>
-          <a href="${item.link}" target="_blank" style="color:#00ff88; font-weight:bold;">
-            Read Full Article →
-          </a>
-        </article>
+        <div class="news-article">
+          ${imageUrl ? `<img src="${imageUrl}" alt="News Image">` : ""}
+          <div class="news-content">
+            <h3>${item.title}</h3>
+            <p>${item.description.replace(/<[^>]+>/g, "").substring(0, 200)}...</p>
+            <a href="${item.link}" target="_blank">Read Full Article →</a>
+          </div>
+        </div>
       `;
     });
     document.getElementById("neuro-news").innerHTML = html;
   })
   .catch(err => {
     document.getElementById("neuro-news").innerHTML =
-      "<p style='color:#c8ffc8;'>Unable to load news at the moment.</p>";
+      "<p>Unable to load news at the moment.</p>";
   });
 </script>
 
