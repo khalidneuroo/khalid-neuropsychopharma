@@ -112,11 +112,15 @@ document.querySelectorAll("nav a").forEach(link => {
 <!-- DrugBank Search Redirect -->
 <script>
 function searchDrugBank() {
-    const query = document.getElementById("drugbank-search").value.trim();
-    if (query.length > 0) {
-        const url = "https://go.drugbank.com/unearth/q?search=" + encodeURIComponent(query);
-        window.open(url, "_blank");
-    }
+    const input = document.getElementById("drugbank-search");
+    const query = input.value.trim();
+
+    if (query.length === 0) return;
+
+    // DrugBank official search endpoint
+    const url = "https://go.drugbank.com/unearth/q?search=" + encodeURIComponent(query);
+
+    window.open(url, "_blank");
 }
 
 document.getElementById("search-btn").addEventListener("click", searchDrugBank);
@@ -130,3 +134,4 @@ document.getElementById("drugbank-search").addEventListener("keypress", function
 
 </body>
 </html>
+
