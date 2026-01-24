@@ -53,6 +53,12 @@
     </article>
 </section>
 
+<!-- NEW AUTO-UPDATING NEWS SECTION -->
+<section>
+    <h2>Latest Neuroscience News</h2>
+    <div id="neuro-news" style="margin-top:20px;"></div>
+</section>
+
 <footer>
     <p>© 2026 Khalid — Neuropsychopharmacology Research & Analysis</p>
 </footer>
@@ -81,6 +87,37 @@ document.querySelectorAll("nav a").forEach(link => {
         }, 30);
     });
 });
+</script>
+
+<!-- AUTO NEWS SCRIPT -->
+<script>
+fetch("https://api.rss2json.com/v1/api.json?rss_url=https://neurosciencenews.com/feed/")
+  .then(response => response.json())
+  .then(data => {
+    let html = "";
+    data.items.slice(0, 5).forEach(item => {
+      html += `
+        <article style="
+            background:#111;
+            padding:15px;
+            margin:15px 0;
+            border-radius:10px;
+            box-shadow:0 0 10px #00ff88;
+        ">
+          <h3 style="color:#00ff88;">${item.title}</h3>
+          <p style="color:#c8ffc8;">${item.description.substring(0, 200)}...</p>
+          <a href="${item.link}" target="_blank" style="color:#00ff88; font-weight:bold;">
+            Read Full Article →
+          </a>
+        </article>
+      `;
+    });
+    document.getElementById("neuro-news").innerHTML = html;
+  })
+  .catch(err => {
+    document.getElementById("neuro-news").innerHTML =
+      "<p style='color:#c8ffc8;'>Unable to load news at the moment.</p>";
+  });
 </script>
 
 </body>
