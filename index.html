@@ -6,7 +6,19 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* Loading Overlay (Centered) */
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: sans-serif;
+        }
+        h1, h2, h3, p, a {
+            color: #fff;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Loading Overlay */
         #loading-overlay {
             position: fixed;
             top: 0; left: 0;
@@ -17,12 +29,28 @@
             align-items: center;
             z-index: 9999;
         }
-
         #loading-text {
             color: #00ff88;
             font-size: 40px;
             font-weight: bold;
             text-shadow: 0 0 10px #00ff88;
+        }
+
+        /* Search Button */
+        .search-engine-button {
+            display: inline-block;
+            margin: 25px auto;
+            padding: 12px 24px;
+            background: #fff;
+            color: #000;
+            border-radius: 6px;
+            font-size: 1rem;
+            text-decoration: none;
+            border: none;
+            box-shadow: 0 0 10px #444;
+        }
+        .search-engine-button:hover {
+            background: #ccc;
         }
     </style>
 </head>
@@ -80,6 +108,13 @@
     </ul>
 </section>
 
+<!-- ⭐ NEW BUTTON TO SEARCH ENGINE ⭐ -->
+<section style="text-align:center;">
+    <a href="searchpubmed.html" class="search-engine-button">
+        🔍 Open NeuroMolecules Search Engine
+    </a>
+</section>
+
 <footer>
     <p>© 2026 Khalid — Neuropsychopharmacology Research & Analysis</p>
 </footer>
@@ -88,24 +123,20 @@
 <script>
 document.querySelectorAll("nav a").forEach(link => {
     link.addEventListener("click", function(e) {
-        e.preventDefault(); // Stop instant navigation
-
+        e.preventDefault();
         const targetURL = this.href;
         const overlay = document.getElementById("loading-overlay");
         const text = document.getElementById("loading-text");
-
         overlay.style.display = "flex";
         let percent = 0;
-
         const interval = setInterval(() => {
             percent += 2;
             text.textContent = percent + "%";
-
             if (percent >= 100) {
                 clearInterval(interval);
                 window.location.href = targetURL;
             }
-        }, 30); // Speed of loading animation
+        }, 30);
     });
 });
 </script>
