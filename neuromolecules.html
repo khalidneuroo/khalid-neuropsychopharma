@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>NeuroMolecules List | Khalid</title>
+    <title>NeuroMolecules Search | Khalid</title>
     <link rel="stylesheet" href="style.css">
     <style>
         body {
@@ -10,7 +10,7 @@
             color: #fff;
             font-family: sans-serif;
         }
-        h1, h2, h3, p, a {
+        h1, h2, p, a {
             color: #fff;
         }
         a:hover {
@@ -19,23 +19,28 @@
         .search-box {
             width: 100%;
             max-width: 500px;
-            padding: 10px;
+            padding: 12px;
             margin: 20px auto;
             display: block;
             background: #111;
             border: 1px solid #444;
             color: #fff;
             border-radius: 6px;
+            font-size: 1rem;
         }
-        .molecule-card {
-            background: #111;
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 10px;
-            box-shadow: 0 0 10px #444;
+        .search-button {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            background: #fff;
+            color: #000;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
         }
-        .molecule-card p {
-            margin: 6px 0;
+        .search-button:hover {
+            background: #ccc;
         }
     </style>
 </head>
@@ -53,7 +58,7 @@
 </div>
 
 <header>
-    <h1>NeuroMolecules List</h1>
+    <h1>NeuroMolecules Search</h1>
     <nav>
         <a href="index.html">Home</a>
         <a href="research.html">Research</a>
@@ -66,9 +71,16 @@
 </header>
 
 <section>
-    <h2>Search Neuroactive Molecules</h2>
-    <input type="text" id="nm-search" class="search-box" placeholder="Search by name, class, or mechanism">
-    <div id="nm-results"></div>
+    <h2>Search DrugBank</h2>
+
+    <input 
+        type="text" 
+        id="drugbank-search" 
+        class="search-box" 
+        placeholder="Type a molecule name..."
+    >
+
+    <button id="search-btn" class="search-button">Search</button>
 </section>
 
 <footer>
@@ -97,45 +109,22 @@ document.querySelectorAll("nav a").forEach(link => {
 });
 </script>
 
-<!-- NeuroMolecules Loader -->
+<!-- DrugBank Search Redirect -->
 <script>
-let molecules = [];
-
-fetch("neuromolecules.json")
-  .then(res => res.json())
-  .then(data => {
-    molecules = data;
-    renderMolecules(molecules);
-  });
-
-function renderMolecules(list) {
-    const container = document.getElementById("nm-results");
-    container.innerHTML = "";
-    list.forEach(m => {
-        container.innerHTML += `
-            <div class="molecule-card">
-                <h3>${m.name}</h3>
-                <p><strong>Full chemical name:</strong> ${m.iupac}</p>
-                <p><strong>Class:</strong> ${m.class}</p>
-                <p><strong>Mechanism:</strong> ${m.mechanism}</p>
-                <p><strong>Indications:</strong> ${m.indications.join(", ")}</p>
-                <p><strong>Legal status:</strong> UAE: ${m.legal_status.UAE}, Japan: ${m.legal_status.Japan}, US: ${m.legal_status.US}</p>
-                <p><strong>Origin:</strong> ${m.origin}</p>
-                <p><strong>Pharmacology:</strong> ${m.pharmacology}</p>
-                <p><strong>Research notes:</strong> ${m.research_notes}</p>
-            </div>
-        `;
-    });
+function searchDrugBank() {
+    const query = document.getElementById("drugbank-search").value.trim();
+    if (query.length > 0) {
+        const url = "https://go.drugbank.com/unearth/q?search=" + encodeURIComponent(query);
+        window.open(url, "_blank");
+    }
 }
 
-document.getElementById("nm-search").addEventListener("input", function() {
-    const q = this.value.toLowerCase();
-    const filtered = molecules.filter(m =>
-        m.name.toLowerCase().includes(q) ||
-        m.class.toLowerCase().includes(q) ||
-        m.mechanism.toLowerCase().includes(q)
-    );
-    renderMolecules(filtered);
+document.getElementById("search-btn").addEventListener("click", searchDrugBank);
+
+document.getElementById("drugbank-search").addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+        searchDrugBank();
+    }
 });
 </script>
 
