@@ -2,8 +2,99 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
+
+    <!-- ⭐ CRITICAL FOR MOBILE RESPONSIVENESS ⭐ -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>نبذة عني | خالد المنصوري</title>
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            direction: rtl;
+            text-align: right;
+        }
+
+        h1, h2, h3, p, a {
+            color: #fff;
+        }
+
+        /* Responsive text sizes */
+        h2 { font-size: clamp(20px, 5vw, 30px); }
+        h3 { font-size: clamp(16px, 4vw, 24px); }
+        p, li { font-size: clamp(14px, 4vw, 18px); line-height: 1.7; }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            font-size: clamp(14px, 4vw, 18px);
+            text-decoration: none;
+        }
+
+        /* WhatsApp Floating Button */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: #25D366;
+            padding: 12px 18px;
+            border-radius: 50px;
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 0 10px #25D366;
+            z-index: 999;
+            font-size: clamp(14px, 4vw, 18px);
+        }
+
+        /* Section spacing */
+        section {
+            padding: 15px;
+        }
+
+        ul {
+            padding-right: 20px;
+        }
+
+        /* Image responsiveness */
+        .profile-img {
+            width: 180px;
+            max-width: 70%;
+            border-radius: 10px;
+            display: block;
+            margin: auto;
+            box-shadow: 0 0 12px #00ff88;
+        }
+
+        /* Highlight box */
+        .highlight-box {
+            margin: 25px auto;
+            width: 90%;
+            background-color: #111;
+            border-radius: 12px;
+            box-shadow: 0 0 15px #00ff88;
+            padding: 15px;
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: clamp(12px, 3vw, 16px);
+        }
+    </style>
 </head>
 
 <body>
@@ -15,12 +106,12 @@
     </div>
 </div>
 
-<header>
+<header style="text-align:center; padding-top:20px;">
     <h2>نبذة عني</h2>
     <h3>باحث في علم الأدوية النفسية العصبية</h3>
 </header>
 
-<nav style="text-align: center; margin-top: 10px;">
+<nav>
     <a href="index-ar.html">الرئيسية</a>
     <a href="links.html">الروابط</a>
     <a href="about.html">English</a>
@@ -30,47 +121,36 @@
 
     <h2>السيرة الذاتية</h2>
 
-    <img src="unnamedme1.jpg" alt="Khalid Almansoori"
-         style="width:180px; border-radius:10px; display:block; margin:auto; box-shadow:0 0 12px #00ff88;">
+    <img src="unnamedme1.jpg" alt="Khalid Almansoori" class="profile-img">
 
-   <p style="margin-top:20px;">
-    <strong>خالد المنصوري</strong> (من مواليد دولة الإمارات العربية المتحدة، العمر: 
-    <strong>٢٢</strong>) هو باحث إماراتي في علم الأدوية النفسية العصبية. 
-    ويُعد <strong>أول إماراتي متخصص في هذا المجال</strong>، مساهماً في تطوير 
-    مجال علم الأدوية السلوكية والنمائية داخل دولة الإمارات.
-</p>
+    <p style="margin-top:20px;">
+        <strong>خالد المنصوري</strong> (من مواليد دولة الإمارات العربية المتحدة، العمر:
+        <strong>٢٢</strong>) هو باحث إماراتي في علم الأدوية النفسية العصبية.
+        ويُعد <strong>أول إماراتي متخصص في هذا المجال</strong>، مساهماً في تطوير
+        مجال علم الأدوية السلوكية والنمائية داخل دولة الإمارات.
+    </p>
 
-    <div style="
-        margin: 25px auto;
-        width: 85%;
-        background-color: #111;
-        border-radius: 12px;
-        box-shadow: 0 0 15px #00ff88;
-        padding: 15px;
-        text-align: center;
-    ">
-        <h2 style="color: #00ff88; margin-bottom: 10px;">
-            أول إماراتي متخصص في علم الأدوية النفسية العصبية
-        </h2>
-        <p style="color: #c8ffc8; font-size: 16px;">
-            يُعد خالد المنصوري أول إماراتي يتخصص في علم الأدوية النفسية العصبية، 
+    <div class="highlight-box">
+        <h2 style="color:#00ff88;">أول إماراتي متخصص في علم الأدوية النفسية العصبية</h2>
+        <p style="color:#c8ffc8;">
+            يُعد خالد المنصوري أول إماراتي يتخصص في علم الأدوية النفسية العصبية،
             مساهماً في تطوير هذا المجال العلمي الناشئ داخل دولة الإمارات العربية المتحدة.
         </p>
     </div>
 
     <p>
-        يركز العمل الأكاديمي لخالد على أنظمة النواقل العصبية مثل الدوبامين، السيروتونين، 
-        مستقبلات NMDA، ودورها في الإدراك وتنظيم المزاج والتطور العصبي. وهو يواصل حالياً 
-        دراساته المتقدمة في هذا التخصص، مع اهتمام بحثي يشمل آليات الأدوية النفسية، 
+        يركز العمل الأكاديمي لخالد على أنظمة النواقل العصبية مثل الدوبامين، السيروتونين،
+        مستقبلات NMDA، ودورها في الإدراك وتنظيم المزاج والتطور العصبي. وهو يواصل حالياً
+        دراساته المتقدمة في هذا التخصص، مع اهتمام بحثي يشمل آليات الأدوية النفسية،
         الاضطرابات النمائية العصبية، والعلوم العصبية الانتقالية.
     </p>
 
     <h2>النشأة والخلفية</h2>
     <p>
-        وُلد خالد ونشأ في دولة الإمارات العربية المتحدة. وفي سن 
-        <strong>الرابعة عشرة</strong>، بدأ اهتمامه العميق بعلم الأعصاب 
-        وعلم الأدوية النفسية العصبية، مدفوعاً بفضول حول كيفية ارتباط النواقل العصبية 
-        بالسلوك والصحة النفسية. هذا الشغف المبكر شكّل مساره الأكاديمي وقاده للتخصص 
+        وُلد خالد ونشأ في دولة الإمارات العربية المتحدة. وفي سن
+        <strong>الرابعة عشرة</strong>، بدأ اهتمامه العميق بعلم الأعصاب
+        وعلم الأدوية النفسية العصبية، مدفوعاً بفضول حول كيفية ارتباط النواقل العصبية
+        بالسلوك والصحة النفسية. هذا الشغف المبكر شكّل مساره الأكاديمي وقاده للتخصص
         في هذا المجال العلمي المتقدم.
     </p>
 
@@ -78,22 +158,21 @@
     <ul>
         <li>أساليب البحث داخل الجسم (In vivo)</li>
         <li>البحوث السريرية وتقييم الأدوية النفسية</li>
-        <li>تحليل أنظمة النواقل العصبية (الدوبامين، السيروتونين، GABA، الغلوتامات)</li>
+        <li>تحليل أنظمة النواقل العصبية</li>
         <li>علم الأعصاب السلوكي والنمائي</li>
     </ul>
 
     <h2>الاهتمامات البحثية المستقبلية</h2>
     <p>
-        يهدف خالد إلى توسيع عمله نحو البحوث السريرية المتقدمة، مع تركيز خاص على 
-        الدراسات المخطط إجراؤها في اليابان. تشمل أهدافه المستقبلية استكشاف آليات 
-        الأدوية النفسية، الاضطرابات النمائية العصبية، والتطبيقات الانتقالية لعلم 
-        الأدوية النفسية العصبية في البيئات السريرية. كما يهتم بربط البحث داخل الجسم 
-        بالممارسة السريرية للمساهمة في التقدم العالمي في الصحة النفسية والعلاجات العصبية.
+        يهدف خالد إلى توسيع عمله نحو البحوث السريرية المتقدمة، مع تركيز خاص على
+        الدراسات المخطط إجراؤها في اليابان. تشمل أهدافه المستقبلية استكشاف آليات
+        الأدوية النفسية، الاضطرابات النمائية العصبية، والتطبيقات الانتقالية لعلم
+        الأدوية النفسية العصبية في البيئات السريرية.
     </p>
 
     <h2>الاهتمامات البحثية</h2>
     <ul>
-        <li>أنظمة النواقل العصبية (الدوبامين، السيروتونين، GABA، الغلوتامات)</li>
+        <li>أنظمة النواقل العصبية</li>
         <li>آليات عمل الأدوية النفسية</li>
         <li>علم الأدوية النفسية النمائي</li>
         <li>علم الأعصاب السلوكي</li>
@@ -102,8 +181,8 @@
 
     <h2>الهوية المهنية</h2>
     <p>
-        يلتزم خالد بتطوير البحث العلمي في دولة الإمارات، ويسعى للمساهمة في 
-        تعزيز الفهم العلمي، نشر الوعي بالصحة النفسية، وتطوير الابتكارات 
+        يلتزم خالد بتطوير البحث العلمي في دولة الإمارات، ويسعى للمساهمة في
+        تعزيز الفهم العلمي، نشر الوعي بالصحة النفسية، وتطوير الابتكارات
         المستقبلية في مجال الأدوية العصبية.
     </p>
 

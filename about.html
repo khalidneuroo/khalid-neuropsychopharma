@@ -2,8 +2,97 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
+    <!-- ⭐ CRITICAL FOR MOBILE RESPONSIVENESS ⭐ -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>About | Khalid Almansoori</title>
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2, h3, p, a {
+            color: #fff;
+        }
+
+        /* Responsive text sizes */
+        h2 { font-size: clamp(20px, 5vw, 30px); }
+        h3 { font-size: clamp(16px, 4vw, 24px); }
+        p, li { font-size: clamp(14px, 4vw, 18px); line-height: 1.7; }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            font-size: clamp(14px, 4vw, 18px);
+            text-decoration: none;
+        }
+
+        /* WhatsApp Floating Button */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            padding: 12px 18px;
+            border-radius: 50px;
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 0 10px #25D366;
+            z-index: 999;
+            font-size: clamp(14px, 4vw, 18px);
+        }
+
+        /* Section spacing */
+        section {
+            padding: 15px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        /* Image responsiveness */
+        .profile-img {
+            width: 180px;
+            max-width: 70%;
+            border-radius: 10px;
+            display: block;
+            margin: auto;
+            box-shadow: 0 0 12px #00ff88;
+        }
+
+        /* Highlight box */
+        .highlight-box {
+            margin: 25px auto;
+            width: 90%;
+            background-color: #111;
+            border-radius: 12px;
+            box-shadow: 0 0 15px #00ff88;
+            padding: 15px;
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: clamp(12px, 3vw, 16px);
+        }
+    </style>
 </head>
 
 <body>
@@ -15,12 +104,12 @@
     </div>
 </div>
 
-<header>
+<header style="text-align:center; padding-top:20px;">
     <h2>About Me</h2>
     <h3>Neuropsychopharmacology Researcher</h3>
 </header>
 
-<nav style="text-align: center; margin-top: 10px;">
+<nav>
     <a href="index.html">Home</a>
     <a href="links.html">Links</a>
     <a href="about-ar.html">العربية</a>
@@ -30,49 +119,38 @@
 
     <h2>Biography</h2>
 
-    <img src="unnamedme1.jpg" alt="Khalid Almansoori" 
-         style="width:180px; border-radius:10px; display:block; margin:auto; box-shadow:0 0 12px #00ff88;">
+    <img src="unnamedme1.jpg" alt="Khalid Almansoori" class="profile-img">
 
     <p style="margin-top:20px;">
-        <strong>Khalid Almansoori</strong> (born in the United Arab Emirates, age: 
-        <strong>22</strong>) is an Emirati neuropsychopharmacology researcher. 
-        He is recognized as the <strong>first Emirati neuropsychopharmacologist</strong>, 
+        <strong>Khalid Almansoori</strong> (born in the United Arab Emirates, age:
+        <strong>22</strong>) is an Emirati neuropsychopharmacology researcher.
+        He is recognized as the <strong>first Emirati neuropsychopharmacologist</strong>,
         contributing to the emerging field of developmental and behavioral psychopharmacology in the UAE.
     </p>
 
-    <div style="
-        margin: 25px auto;
-        width: 85%;
-        background-color: #111;
-        border-radius: 12px;
-        box-shadow: 0 0 15px #00ff88;
-        padding: 15px;
-        text-align: center;
-    ">
-        <h2 style="color: #00ff88; margin-bottom: 10px;">
-            First Emirati Neuropsychopharmacologist
-        </h2>
-        <p style="color: #c8ffc8; font-size: 16px;">
-            Khalid Almansoori is recognized as the first Emirati to specialize in 
-            neuropsychopharmacology, contributing to the development of this emerging 
+    <div class="highlight-box">
+        <h2 style="color:#00ff88;">First Emirati Neuropsychopharmacologist</h2>
+        <p style="color:#c8ffc8;">
+            Khalid Almansoori is recognized as the first Emirati to specialize in
+            neuropsychopharmacology, contributing to the development of this emerging
             scientific field within the United Arab Emirates.
         </p>
     </div>
 
     <p>
-        Khalid’s academic work focuses on neurotransmitter systems, including dopamine, serotonin, 
-        NMDA receptor pathways, and their roles in cognition, mood regulation, and neurodevelopment. 
-        He is currently pursuing advanced studies in neuropsychopharmacology, with research interests 
+        Khalid’s academic work focuses on neurotransmitter systems, including dopamine, serotonin,
+        NMDA receptor pathways, and their roles in cognition, mood regulation, and neurodevelopment.
+        He is currently pursuing advanced studies in neuropsychopharmacology, with research interests
         spanning psychotropic mechanisms, neurodevelopmental disorders, and translational neuroscience.
     </p>
 
     <h2>Early Life & Background</h2>
     <p>
-        Khalid was born and raised in the United Arab Emirates. At the age of 
-        <strong>14</strong>, he developed a deep interest in neuroscience and 
-        neuropsychopharmacology, driven by a fascination with how neurotransmitters, 
-        behavior, and mental health are interconnected. This early curiosity shaped 
-        his academic direction and ultimately led him toward specializing in the 
+        Khalid was born and raised in the United Arab Emirates. At the age of
+        <strong>14</strong>, he developed a deep interest in neuroscience and
+        neuropsychopharmacology, driven by a fascination with how neurotransmitters,
+        behavior, and mental health are interconnected. This early curiosity shaped
+        his academic direction and ultimately led him toward specializing in the
         emerging field of neuropsychopharmacology.
     </p>
 
@@ -86,13 +164,11 @@
 
     <h2>Future Research Interests</h2>
     <p>
-        Khalid aims to expand his work into advanced clinical research, with a 
-        particular focus on studies planned to be conducted in Japan. His future 
-        research goals include exploring psychotropic mechanisms, neurodevelopmental 
-        disorders, and translational applications of neuropsychopharmacology within 
-        clinical settings. He is especially interested in bridging in vivo research 
-        with clinical practice to contribute to global advancements in mental health 
-        and neuropharmacological treatment.
+        Khalid aims to expand his work into advanced clinical research, with a
+        particular focus on studies planned to be conducted in Japan. His future
+        research goals include exploring psychotropic mechanisms, neurodevelopmental
+        disorders, and translational applications of neuropsychopharmacology within
+        clinical settings.
     </p>
 
     <h2>Research Interests</h2>
@@ -106,8 +182,8 @@
 
     <h2>Professional Identity</h2>
     <p>
-        Khalid is committed to advancing neuroscience research in the UAE and aims to contribute 
-        to scientific understanding, mental health awareness, and the development of future 
+        Khalid is committed to advancing neuroscience research in the UAE and aims to contribute
+        to scientific understanding, mental health awareness, and the development of future
         neuropharmacological innovations.
     </p>
 

@@ -2,6 +2,10 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
+
+    <!-- ⭐ CRITICAL FOR MOBILE RESPONSIVENESS ⭐ -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>دعم أبحاثي | خالد</title>
     <link rel="stylesheet" href="style.css">
 
@@ -12,16 +16,49 @@
             font-family: sans-serif;
             direction: rtl;
             text-align: right;
-        }
-        h1, h2, h3, p, a {
-            color: #fff;
-        }
-        a:hover {
-            text-decoration: underline;
+            margin: 0;
+            padding: 0;
         }
 
+        /* Responsive text sizes */
+        h1 { font-size: clamp(26px, 6vw, 40px); text-align:center; }
+        h2 { font-size: clamp(20px, 5vw, 30px); }
+        h3 { font-size: clamp(16px, 4vw, 24px); }
+        p, a, li { font-size: clamp(14px, 4vw, 18px); line-height: 1.8; }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            padding: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        /* WhatsApp Floating Button */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: #25D366;
+            padding: 12px 18px;
+            border-radius: 50px;
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 0 10px #25D366;
+            z-index: 999;
+            font-size: clamp(14px, 4vw, 18px);
+        }
+
+        /* Support Container */
         .support-container {
             max-width: 800px;
+            width: 90%;
             margin: 40px auto;
             padding: 20px;
             background: #111;
@@ -40,12 +77,12 @@
         .support-button {
             display: inline-block;
             margin: 10px 10px 0 0;
-            padding: 10px 20px;
+            padding: 12px 20px;
             background: #fff;
             color: #000;
             border-radius: 6px;
             text-decoration: none;
-            font-size: 1rem;
+            font-size: clamp(14px, 4vw, 18px);
             box-shadow: 0 0 10px #444;
         }
 
@@ -57,6 +94,7 @@
             display: block;
             margin: 30px auto 0 auto;
             max-width: 200px;
+            width: 70%;
             border-radius: 10px;
             box-shadow: 0 0 25px #00f0ff, 0 0 40px #00f0ff;
             transition: box-shadow 0.3s ease-in-out;
@@ -66,6 +104,12 @@
             .qr-code:hover {
                 box-shadow: 0 0 35px #00f0ff, 0 0 60px #00f0ff;
             }
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: clamp(12px, 3vw, 16px);
         }
     </style>
 </head>
@@ -77,7 +121,7 @@
     WhatsApp
 </a>
 
-<header>
+<header style="padding-top:20px;">
     <h1>دعم أبحاثي</h1>
     <nav>
         <a href="index-ar.html">الرئيسية</a>
@@ -87,7 +131,7 @@
         <a href="contact-ar.html">تواصل</a>
         <a href="about-ar.html">من أنا</a>
         <a href="support-ar.html">الدعم</a>
-        <a href="support.html" style="float:left;">EN</a>
+        <a href="support.html">EN</a>
     </nav>
 </header>
 

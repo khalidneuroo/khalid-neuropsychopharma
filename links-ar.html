@@ -2,8 +2,82 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
+
+    <!-- ⭐ CRITICAL FOR MOBILE RESPONSIVENESS ⭐ -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>روابط | خالد المنصوري</title>
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            direction: rtl;
+            text-align: right;
+            background-color: #000;
+            color: #fff;
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Responsive text sizes */
+        h2 { font-size: clamp(22px, 6vw, 34px); text-align:center; }
+        h3 { font-size: clamp(18px, 5vw, 26px); text-align:center; }
+        p, a { font-size: clamp(14px, 4vw, 18px); }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            padding: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        /* WhatsApp Floating Button */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: #25D366;
+            padding: 12px 18px;
+            border-radius: 50px;
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 0 10px #25D366;
+            z-index: 999;
+            font-size: clamp(14px, 4vw, 18px);
+        }
+
+        /* Links Hub */
+        .links-hub {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hub-button {
+            display: block;
+            width: 90%;
+            max-width: 350px;
+            margin: 15px auto;
+            padding: 14px;
+            background: #111;
+            color: #fff;
+            border-radius: 8px;
+            text-decoration: none;
+            box-shadow: 0 0 10px #00f0ff;
+            transition: background 0.3s ease;
+            font-size: clamp(14px, 4vw, 18px);
+        }
+
+        .hub-button:hover {
+            background: #222;
+        }
+    </style>
 </head>
 
 <body>
@@ -20,13 +94,13 @@
     </div>
 </div>
 
-<header>
+<header style="text-align:center; padding-top:20px;">
     <h2>خالد المنصوري</h2>
     <h3>باحث في علم الأدوية النفسية العصبية</h3>
 </header>
 
-<nav style="text-align: center; margin-top: 10px;">
-    <a href="links.html" style="font-weight: bold; text-decoration: none;">English</a>
+<nav>
+    <a href="links.html" style="font-weight:bold;">English</a>
 </nav>
 
 <section class="links-hub">

@@ -2,38 +2,105 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
+    <!-- Mobile Responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Updates | Khalid</title>
     <link rel="stylesheet" href="style.css">
+
     <style>
         body {
             background-color: #000;
             color: #fff;
             font-family: sans-serif;
+            margin: 0;
+            padding: 0;
         }
-        h1, h2, h3, p, a {
+
+        /* Responsive text */
+        h1 { font-size: clamp(26px, 6vw, 40px); text-align:center; }
+        h2 { font-size: clamp(20px, 5vw, 30px); text-align:center; }
+        h3 { font-size: clamp(16px, 4vw, 24px); }
+        p, a { font-size: clamp(14px, 4vw, 18px); line-height: 1.8; }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            padding: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
             color: #fff;
         }
-        a:hover {
+
+        /* WhatsApp Floating Button */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            padding: 12px 18px;
+            border-radius: 50px;
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 0 10px #25D366;
+            z-index: 999;
+            font-size: clamp(14px, 4vw, 18px);
+        }
+
+        /* News Container */
+        #neuro-news {
+            width: 90%;
+            max-width: 900px;
+            margin: 30px auto;
+        }
+
+        .news-article {
+            display: flex;
+            flex-direction: column;
+            background: #111;
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #00ff88;
+            opacity: 0;
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        .news-article img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .news-content h3 {
+            color: #00ff88;
+            margin-bottom: 10px;
+        }
+
+        .news-content p {
+            color: #c8ffc8;
+        }
+
+        .news-content a {
+            color: #00ff88;
+            font-weight: bold;
             text-decoration: underline;
         }
-        .news-article {
-            background: #111;
-            padding: 15px;
-            margin: 15px 0;
-            border-radius: 10px;
-            display: flex;
-            gap: 15px;
-            align-items: flex-start;
-            box-shadow: 0 0 10px #444;
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
         }
-        .news-article img {
-            width: 120px;
-            height: auto;
-            border-radius: 6px;
-            object-fit: cover;
-        }
-        .news-content {
-            flex: 1;
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: clamp(12px, 3vw, 16px);
         }
     </style>
 </head>
@@ -52,7 +119,7 @@
     </div>
 </div>
 
-<header>
+<header style="padding-top:20px;">
     <h1>Research Updates</h1>
     <nav>
         <a href="index.html">Home</a>
@@ -60,13 +127,15 @@
         <a href="projects.html">Projects</a>
         <a href="updates.html">Updates</a>
         <a href="contact.html">Contact</a>
-        <a href="updates-ar.html" style="float:right;">العربية</a>
+        <a href="updates-ar.html">العربية</a>
     </nav>
 </header>
 
 <section>
     <h2>Latest Neuroscience News</h2>
-    <div id="neuro-news" style="margin-top:20px;"></div>
+    <div id="neuro-news">
+        <p style="text-align:center; color:#aaa;">Loading latest articles...</p>
+    </div>
 </section>
 
 <footer>
@@ -120,7 +189,7 @@ fetch("https://api.rss2json.com/v1/api.json?rss_url=https://neurosciencenews.com
   })
   .catch(err => {
     document.getElementById("neuro-news").innerHTML =
-      "<p>Unable to load news at the moment.</p>";
+      "<p style='color:#f88;'>Unable to load news at the moment.</p>";
   });
 </script>
 

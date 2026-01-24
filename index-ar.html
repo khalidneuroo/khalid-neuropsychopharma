@@ -2,11 +2,60 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
+
+    <!-- ⭐ CRITICAL FOR MOBILE RESPONSIVENESS ⭐ -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>خالد | أبحاث علم الأدوية النفسية العصبية</title>
     <link rel="stylesheet" href="style.css">
+
     <style>
-        body { direction: rtl; text-align: right; }
-        nav a { margin: 0 10px; }
+        body {
+            direction: rtl;
+            text-align: right;
+            background-color: #000;
+            color: #fff;
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Responsive text sizes */
+        h1 { font-size: clamp(26px, 6vw, 40px); }
+        h2 { font-size: clamp(18px, 5vw, 28px); }
+        h3 { font-size: clamp(16px, 4vw, 24px); }
+        p, li { font-size: clamp(14px, 4vw, 18px); line-height: 1.7; }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            font-size: clamp(14px, 4vw, 18px);
+            color: #fff;
+        }
+
+        /* WhatsApp Floating Button */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: #25D366;
+            padding: 12px 18px;
+            border-radius: 50px;
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 0 10px #25D366;
+            z-index: 999;
+            font-size: clamp(14px, 4vw, 18px);
+        }
 
         /* Support Button */
         .support-button {
@@ -16,7 +65,7 @@
             background: #fff;
             color: #000;
             border-radius: 6px;
-            font-size: 1rem;
+            font-size: clamp(14px, 4vw, 18px);
             text-decoration: none;
             border: none;
             box-shadow: 0 0 10px #00f0ff;
@@ -24,6 +73,20 @@
         }
         .support-button:hover {
             background: #ccc;
+        }
+
+        section {
+            padding: 15px;
+        }
+
+        ul {
+            padding-right: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: clamp(12px, 3vw, 16px);
         }
     </style>
 </head>
@@ -42,7 +105,7 @@
     </div>
 </div>
 
-<header>
+<header style="text-align:center; padding-top:20px;">
     <h1>خالد</h1>
     <h2>باحث في علم الأدوية النفسية العصبية</h2>
 
@@ -52,7 +115,7 @@
         <a href="projects-ar.html">المشاريع</a>
         <a href="updates-ar.html">التحديثات</a>
         <a href="contact-ar.html">تواصل</a>
-        <a href="index.html" style="float:left;">EN</a>
+        <a href="index.html">EN</a>
     </nav>
 </header>
 

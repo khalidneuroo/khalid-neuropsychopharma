@@ -1,3 +1,147 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Mobile Responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>التحديثات | خالد المنصوري</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: sans-serif;
+            direction: rtl;
+            text-align: right;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Responsive text */
+        h1 { font-size: clamp(26px, 6vw, 40px); text-align:center; }
+        h2 { font-size: clamp(20px, 5vw, 30px); text-align:center; }
+        h3 { font-size: clamp(16px, 4vw, 24px); }
+        p, a { font-size: clamp(14px, 4vw, 18px); line-height: 1.8; }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            padding: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        /* WhatsApp Floating Button */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: #25D366;
+            padding: 12px 18px;
+            border-radius: 50px;
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 0 10px #25D366;
+            z-index: 999;
+            font-size: clamp(14px, 4vw, 18px);
+        }
+
+        /* News Container */
+        #neuro-news {
+            width: 90%;
+            max-width: 900px;
+            margin: 30px auto;
+        }
+
+        .news-article {
+            display: flex;
+            flex-direction: column;
+            background: #111;
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #00ff88;
+            opacity: 0;
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        .news-article img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .news-content h3 {
+            color: #00ff88;
+            margin-bottom: 10px;
+        }
+
+        .news-content p {
+            color: #c8ffc8;
+        }
+
+        .news-content a {
+            color: #00ff88;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: clamp(12px, 3vw, 16px);
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- WhatsApp Button -->
+<a class="floating-whatsapp" href="https://wa.me/971553741880" target="_blank">واتساب</a>
+
+<!-- Loading Overlay -->
+<div id="loading-overlay">
+    <div id="loading-box">
+        <div id="loading-text">0%</div>
+    </div>
+</div>
+
+<header style="padding-top:20px;">
+    <h1>آخر التحديثات العلمية</h1>
+    <nav>
+        <a href="index-ar.html">الرئيسية</a>
+        <a href="research-ar.html">الأبحاث</a>
+        <a href="projects-ar.html">المشاريع</a>
+        <a href="updates-ar.html">التحديثات</a>
+        <a href="contact-ar.html">تواصل</a>
+        <a href="updates.html">EN</a>
+    </nav>
+</header>
+
+<section>
+    <h2>آخر أخبار علم الأعصاب</h2>
+    <div id="neuro-news">
+        <p style="text-align:center; color:#aaa;">جاري تحميل الأخبار...</p>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 خالد المنصوري — أبحاث علم الأدوية النفسية العصبية</p>
+</footer>
+
 <!-- Auto News Script -->
 <script>
 fetch("https://api.allorigins.win/get?url=" + encodeURIComponent("https://neurosciencenews.com/feed/"))
@@ -13,9 +157,9 @@ fetch("https://api.allorigins.win/get?url=" + encodeURIComponent("https://neuros
     items.forEach(item => {
       if (count >= 5) return;
 
-      const title = item.querySelector("title").textContent;
-      const link = item.querySelector("link").textContent;
-      const description = item.querySelector("description").textContent;
+      const title = item.querySelector("title")?.textContent || "";
+      const link = item.querySelector("link")?.textContent || "";
+      const description = item.querySelector("description")?.textContent || "";
 
       // Extract image
       const imgMatch = description.match(/<img[^>]+src="([^">]+)"/);
@@ -26,7 +170,7 @@ fetch("https://api.allorigins.win/get?url=" + encodeURIComponent("https://neuros
 
       html += `
         <div class="news-article">
-          ${imageUrl ? `<img src="${imageUrl}" alt="صورة الخبر">` : ""}
+          ${imageUrl && imageUrl.startsWith("http") ? `<img src="${imageUrl}" alt="صورة الخبر">` : ""}
           <div class="news-content">
             <h3>${title}</h3>
             <p>${cleanText}...</p>
@@ -42,6 +186,9 @@ fetch("https://api.allorigins.win/get?url=" + encodeURIComponent("https://neuros
   })
   .catch(err => {
     document.getElementById("neuro-news").innerHTML =
-      "<p>تعذر تحميل الأخبار حالياً.</p>";
+      "<p style='color:#f88;'>تعذر تحميل الأخبار حالياً.</p>";
   });
 </script>
+
+</body>
+</html>

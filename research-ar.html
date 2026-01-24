@@ -2,11 +2,81 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
+
+    <!-- ⭐ CRITICAL FOR MOBILE RESPONSIVENESS ⭐ -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>الأبحاث | خالد المنصوري</title>
     <link rel="stylesheet" href="style.css">
+
     <style>
-        body { direction: rtl; text-align: right; }
-        nav a { margin: 0 10px; }
+        body {
+            direction: rtl;
+            text-align: right;
+            background-color: #000;
+            color: #fff;
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Responsive text sizes */
+        h1 { font-size: clamp(26px, 6vw, 40px); text-align:center; }
+        h2 { font-size: clamp(20px, 5vw, 30px); }
+        h3 { font-size: clamp(16px, 4vw, 24px); }
+        p, li { font-size: clamp(14px, 4vw, 18px); line-height: 1.7; }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-size: clamp(14px, 4vw, 18px);
+        }
+
+        /* WhatsApp Floating Button */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: #25D366;
+            padding: 12px 18px;
+            border-radius: 50px;
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 0 10px #25D366;
+            z-index: 999;
+            font-size: clamp(14px, 4vw, 18px);
+        }
+
+        /* Research Card */
+        .research-card {
+            margin: 25px auto;
+            width: 90%;
+            background-color: #111;
+            border-radius: 12px;
+            box-shadow: 0 0 15px #00ff88;
+            padding: 15px;
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: clamp(12px, 3vw, 16px);
+        }
+
+        section {
+            padding: 15px;
+        }
     </style>
 </head>
 
@@ -22,7 +92,7 @@
 <!-- WhatsApp Button -->
 <a class="floating-whatsapp" href="https://wa.me/971553741880" target="_blank">واتساب</a>
 
-<header>
+<header style="padding-top:20px;">
     <h1>الأبحاث</h1>
     <nav>
         <a href="index-ar.html">الرئيسية</a>
@@ -30,33 +100,25 @@
         <a href="projects-ar.html">المشاريع</a>
         <a href="updates-ar.html">التحديثات</a>
         <a href="contact-ar.html">تواصل</a>
-        <a href="research.html" style="float:left;">EN</a>
+        <a href="research.html">EN</a>
     </nav>
 </header>
 
 <section>
     <h2>الأبحاث الجارية</h2>
 
-    <div style="
-        margin: 25px auto;
-        width: 85%;
-        background-color: #111;
-        border-radius: 12px;
-        box-shadow: 0 0 15px #00ff88;
-        padding: 15px;
-        text-align: center;
-    ">
-        <h3 style="color: #00ff88; margin-bottom: 10px;">
+    <div class="research-card">
+        <h3 style="color:#00ff88; margin-bottom:10px;">
             البحث السريري: فعالية دواء سبرافاتو في علاج الاكتئاب المقاوم للعلاج (2026)
         </h3>
 
-        <p style="color: #c8ffc8; font-size: 16px;">
+        <p style="color:#c8ffc8;">
             دراسة سريرية تُجرى في دبي لتقييم فعالية دواء سبرافاتو (Esketamine)، 
             وهو مضاد لمستقبلات NMDA، لدى المرضى المصابين بالاكتئاب الشديد أو 
             الاكتئاب المقاوم للعلاج الذين لم يستجيبوا للعلاجات التقليدية.
         </p>
 
-        <p style="color: #c8ffc8; font-size: 14px;">
+        <p style="color:#c8ffc8;">
             <strong>الموقع:</strong> دبي، الإمارات العربية المتحدة<br>
             <strong>المدة:</strong> 1 يناير 2026 – مارس 2026<br>
             <strong>الحالة:</strong> بحث جارٍ

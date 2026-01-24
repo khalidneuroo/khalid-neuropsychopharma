@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
+    <!-- ⭐ CRITICAL FOR MOBILE RESPONSIVENESS ⭐ -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Khalid | Neuropsychopharmacology Research</title>
     <link rel="stylesheet" href="style.css">
 
@@ -10,13 +14,22 @@
             background-color: #000;
             color: #fff;
             font-family: sans-serif;
+            margin: 0;
+            padding: 0;
         }
+
         h1, h2, h3, p, a {
             color: #fff;
         }
+
         a:hover {
             text-decoration: underline;
         }
+
+        /* Make headings scale on mobile */
+        h1 { font-size: clamp(28px, 6vw, 42px); }
+        h2 { font-size: clamp(18px, 4vw, 28px); }
+        h3 { font-size: clamp(16px, 3.5vw, 22px); }
 
         /* Loading Overlay */
         #loading-overlay {
@@ -31,44 +44,82 @@
         }
         #loading-text {
             color: #00ff88;
-            font-size: 40px;
+            font-size: 32px;
             font-weight: bold;
             text-shadow: 0 0 10px #00ff88;
         }
 
+        /* NAVIGATION — MOBILE FIX */
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            font-size: clamp(14px, 3.5vw, 18px);
+        }
+
+        /* WhatsApp Button — prevent overlap */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            padding: 12px 18px;
+            border-radius: 50px;
+            color: #fff;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 0 0 10px #25D366;
+            z-index: 999;
+            font-size: clamp(14px, 4vw, 18px);
+        }
+
         /* Search Button */
-        .search-engine-button {
+        .search-engine-button,
+        .support-button {
             display: inline-block;
-            margin: 25px auto;
+            margin: 15px auto;
             padding: 12px 24px;
             background: #fff;
             color: #000;
             border-radius: 6px;
-            font-size: 1rem;
+            font-size: clamp(14px, 4vw, 18px);
             text-decoration: none;
             border: none;
             box-shadow: 0 0 10px #444;
+            width: auto;
+            max-width: 90%;
         }
-        .search-engine-button:hover {
+
+        .search-engine-button:hover,
+        .support-button:hover {
             background: #ccc;
         }
 
-        /* Support Button */
-        .support-button {
-            display: inline-block;
-            margin: 10px auto;
-            padding: 12px 24px;
-            background: #fff;
-            color: #000;
-            border-radius: 6px;
-            font-size: 1rem;
-            text-decoration: none;
-            border: none;
-            box-shadow: 0 0 10px #00f0ff;
-            transition: background 0.3s ease;
+        /* Sections */
+        section {
+            padding: 15px;
         }
-        .support-button:hover {
-            background: #ccc;
+
+        ul {
+            padding-left: 20px;
+            font-size: clamp(14px, 4vw, 18px);
+        }
+
+        p {
+            font-size: clamp(14px, 4vw, 18px);
+            line-height: 1.6;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: clamp(12px, 3vw, 16px);
         }
     </style>
 </head>
@@ -98,7 +149,7 @@
         <a href="updates.html">Updates</a>
         <a href="contact.html">Contact</a>
         <a href="about.html">About Me</a>
-        <a href="index-ar.html" style="float:right;">العربية</a>
+        <a href="index-ar.html">العربية</a>
     </nav>
 </header>
 
