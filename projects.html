@@ -59,5 +59,31 @@
     </div>
 </section>
 
+<!-- Loading Script -->
+<script>
+document.querySelectorAll("nav a").forEach(link => {
+    link.addEventListener("click", function(e) {
+        e.preventDefault();
+
+        const targetURL = this.href;
+        const overlay = document.getElementById("loading-overlay");
+        const text = document.getElementById("loading-text");
+
+        overlay.style.display = "flex";
+        let percent = 0;
+
+        const interval = setInterval(() => {
+            percent += 2;
+            text.textContent = percent + "%";
+
+            if (percent >= 100) {
+                clearInterval(interval);
+                window.location.href = targetURL;
+            }
+        }, 30);
+    });
+});
+</script>
+
 </body>
 </html>

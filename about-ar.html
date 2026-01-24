@@ -7,6 +7,8 @@
 </head>
 
 <body>
+
+<!-- Loading Overlay -->
 <div id="loading-overlay">
     <div id="loading-box">
         <div id="loading-text">0%</div>
@@ -38,8 +40,6 @@
     مجال علم الأدوية السلوكية والنمائية داخل دولة الإمارات.
 </p>
 
-
-    <!-- Highlight Box -->
     <div style="
         margin: 25px auto;
         width: 85%;
@@ -110,6 +110,32 @@
 </section>
 
 <a class="floating-whatsapp" href="https://wa.me/971553714800" target="_blank">واتساب</a>
+
+<!-- Loading Script -->
+<script>
+document.querySelectorAll("nav a").forEach(link => {
+    link.addEventListener("click", function(e) {
+        e.preventDefault();
+
+        const targetURL = this.href;
+        const overlay = document.getElementById("loading-overlay");
+        const text = document.getElementById("loading-text");
+
+        overlay.style.display = "flex";
+        let percent = 0;
+
+        const interval = setInterval(() => {
+            percent += 2;
+            text.textContent = percent + "%";
+
+            if (percent >= 100) {
+                clearInterval(interval);
+                window.location.href = targetURL;
+            }
+        }, 30);
+    });
+});
+</script>
 
 </body>
 </html>
