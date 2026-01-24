@@ -71,13 +71,13 @@
 </header>
 
 <section>
-    <h2>Search DrugBank</h2>
+    <h2>Search PubMed</h2>
 
     <input 
         type="text" 
-        id="drugbank-search" 
+        id="pubmed-search" 
         class="search-box" 
-        placeholder="Type a molecule name..."
+        placeholder="Type a molecule, receptor, or condition..."
     >
 
     <button id="search-btn" class="search-button">Search</button>
@@ -109,25 +109,25 @@ document.querySelectorAll("nav a").forEach(link => {
 });
 </script>
 
-<!-- DrugBank Search Redirect -->
+<!-- PubMed Search Redirect -->
 <script>
-function searchDrugBank() {
-    const input = document.getElementById("drugbank-search");
+function searchPubMed() {
+    const input = document.getElementById("pubmed-search");
     const query = input.value.trim();
 
     if (query.length === 0) return;
 
-    // DrugBank official search endpoint
-    const url = "https://go.drugbank.com/unearth/q?search=" + encodeURIComponent(query);
+    // PubMed official search endpoint
+    const url = "https://pubmed.ncbi.nlm.nih.gov/?term=" + encodeURIComponent(query);
 
     window.open(url, "_blank");
 }
 
-document.getElementById("search-btn").addEventListener("click", searchDrugBank);
+document.getElementById("search-btn").addEventListener("click", searchPubMed);
 
-document.getElementById("drugbank-search").addEventListener("keypress", function(e) {
+document.getElementById("pubmed-search").addEventListener("keypress", function(e) {
     if (e.key === "Enter") {
-        searchDrugBank();
+        searchPubMed();
     }
 });
 </script>
