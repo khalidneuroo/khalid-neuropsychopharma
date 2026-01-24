@@ -4,6 +4,41 @@
     <meta charset="UTF-8">
     <title>Contact | Khalid Almansoori</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: sans-serif;
+        }
+        h1, h2, p, label, input, textarea, button {
+            color: #fff;
+        }
+        .form-wrapper {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            background-color: #111;
+            border: 1px solid #444;
+            color: #fff;
+            border-radius: 6px;
+        }
+        form button {
+            background-color: #444;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        form button:hover {
+            background-color: #666;
+        }
+    </style>
 </head>
 
 <body>
@@ -34,22 +69,24 @@
 
 <section>
     <h2>Get in Touch</h2>
-    <p>
-        For research inquiries, collaboration proposals, or academic communication, please use the form below.
-    </p>
+    <div class="form-wrapper">
+        <p>
+            For research inquiries, collaboration proposals, or academic communication, please use the form below.
+        </p>
 
-    <form action="https://formspree.io/f/meeaqdpo" method="POST">
-        <label>Your Name</label><br>
-        <input type="text" name="name" required><br><br>
+        <form action="https://formspree.io/f/meeaqdpo" method="POST">
+            <label>Your Name</label><br>
+            <input type="text" name="name" required><br><br>
 
-        <label>Your Email</label><br>
-        <input type="email" name="email" required><br><br>
+            <label>Your Email</label><br>
+            <input type="email" name="email" required><br><br>
 
-        <label>Message</label><br>
-        <textarea name="message" rows="6" required></textarea><br><br>
+            <label>Message</label><br>
+            <textarea name="message" rows="6" required></textarea><br><br>
 
-        <button type="submit">Send Message</button>
-    </form>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
 </section>
 
 <footer>
@@ -61,18 +98,14 @@
 document.querySelectorAll("nav a").forEach(link => {
     link.addEventListener("click", function(e) {
         e.preventDefault();
-
         const targetURL = this.href;
         const overlay = document.getElementById("loading-overlay");
         const text = document.getElementById("loading-text");
-
         overlay.style.display = "flex";
         let percent = 0;
-
         const interval = setInterval(() => {
             percent += 2;
             text.textContent = percent + "%";
-
             if (percent >= 100) {
                 clearInterval(interval);
                 window.location.href = targetURL;
