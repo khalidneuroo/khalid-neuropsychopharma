@@ -71,24 +71,6 @@ footer {
     border-top: 1px solid #333;
 }
 
-/* ===========================
-   FLOATING WHATSAPP BUTTON
-   =========================== */
-.floating-whatsapp {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    background: #00ff88;
-    color: #000;
-    padding: 14px 18px;
-    border-radius: 50px;
-    font-size: 18px;
-    font-weight: bold;
-    text-decoration: none;
-    box-shadow: 0 0 12px #00ff88;
-    z-index: 999;
-    transition: 0.3s ease;
-}
 
 .floating-whatsapp:hover {
     background: #00cc66;
