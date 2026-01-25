@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeuroPharma Merch</title>
+
+  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.css" />
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .lang-switch {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      background-color: #0ff;
+      color: #000;
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      font-weight: bold;
+      text-decoration: none;
+      z-index: 1000;
+    }
+
+    .cart-button {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background-color: #0ff;
+      color: #000;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 4px;
+      font-weight: bold;
+      z-index: 1000;
+    }
+
+    .shop-header {
+      text-align: center;
+      padding: 2rem;
+      font-size: 2rem;
+      color: #0ff;
+    }
+
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .product-card {
+      background-color: #111;
+      border: 1px solid #0ff;
+      border-radius: 8px;
+      padding: 1rem;
+      width: 280px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: scale(1.05);
+    }
+
+    .product-card h3 {
+      color: #0ff;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 1rem;
+      border-radius: 4px;
+    }
+
+    .snipcart-add-item {
+      background-color: #0ff;
+      color: #000;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #888;
+      border-top: 1px solid #222;
+      margin-top: 4rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <a href="merch-ar.html" class="lang-switch">العربية</a>
+  <button class="snipcart-checkout cart-button">🛒 Cart</button>
+
+  <div class="shop-header">NeuroPharma Merch</div>
+
+  <div class="product-grid">
+
+    <!-- T-Shirt -->
+    <div class="product-card">
+      <img src="https://via.placeholder.com/280x280" alt="NeuroPharma T-Shirt">
+      <h3>NeuroPharma T-Shirt</h3>
+      <p>Black cotton tee with neon dopamine design</p>
+      <p>$29.99</p>
+      <button 
+        class="snipcart-add-item"
+        data-item-id="shirt-neuropharma"
+        data-item-name="NeuroPharma T-Shirt"
+        data-item-price="29.99"
+        data-item-url="/khalid-neuropsychopharma/merch.html"
+        data-item-description="Black cotton tee with neon dopamine design"
+      >
+        Add to Cart
+      </button>
+    </div>
+
+    <!-- Mug -->
+    <div class="product-card">
+      <img src="https://via.placeholder.com/280x280" alt="NeuroPharma Mug">
+      <h3>NeuroPharma Mug</h3>
+      <p>White ceramic mug with serotonin molecule</p>
+      <p>$14.99</p>
+      <button 
+        class="snipcart-add-item"
+        data-item-id="mug-neuropharma"
+        data-item-name="NeuroPharma Mug"
+        data-item-price="14.99"
+        data-item-url="/khalid-neuropsychopharma/merch.html"
+        data-item-description="White ceramic mug with serotonin molecule"
+      >
+        Add to Cart
+      </button>
+    </div>
+
+    <!-- Sticker Pack -->
+    <div class="product-card">
+      <img src="https://via.placeholder.com/280x280" alt="NeuroPharma Sticker Pack">
+      <h3>Sticker Pack</h3>
+      <p>Set of 5 vinyl stickers with neural themes</p>
+      <p>$9.99</p>
+      <button 
+        class="snipcart-add-item"
+        data-item-id="stickers-neuropharma"
+        data-item-name="NeuroPharma Sticker Pack"
+        data-item-price="9.99"
+        data-item-url="/khalid-neuropsychopharma/merch.html"
+        data-item-description="Set of 5 vinyl stickers with neural themes"
+      >
+        Add to Cart
+      </button>
+    </div>
+
+  </div>
+
+  <footer>
+    &copy; 2026 NeuroPharma Supply — Built by Khalid Almansoori | Scientific branding meets e-commerce
+  </footer>
+
+  <script>
+    window.SnipcartSettings = {
+      publicApiKey: 'ZmlxZmQ4MTQtOTI3ZC00YzAwLThjZjAtMjViZmI1YjM4ZDMyNjJ5MDQ5MjMwNDEzNDQ3Mzg3',
+      loadStrategy: 'on-user-interaction',
+    };
+
+    (function(){
+      var c,d;
+      (c=window.SnipcartSettings).version||(c.version="3.0");
+      var s,S;
+      s=(S=window.SnipcartSettings).timeoutDuration||1e4;
+      setTimeout(function(){
+        var e=document.createElement("script");
+        e.src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js";
+        e.async=!0;
+        document.head.appendChild(e)
+      },s);
+    })();
+  </script>
+
+  <div hidden id="snipcart"></div>
+
+</body>
+</html>
