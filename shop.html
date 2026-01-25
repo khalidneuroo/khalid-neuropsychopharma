@@ -1,29 +1,170 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>NeuroPharma Supply</title> <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.css" /> <link rel="stylesheet" href="../style.css"> <style> body { background-color: #000; color: #fff; font-family: 'Segoe UI', sans-serif; animation: fadeIn 1.5s ease-in; } @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } } .shop-header { text-align: center; padding: 2rem; font-size: 2rem; color: #0ff; } .product-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; padding: 2rem; } .product-card { background-color: #111; border: 1px solid #0ff; border-radius: 8px; padding: 1rem; width: 280px; text-align: center; transition: transform 0.3s ease; } .product-card:hover { transform: scale(1.05); } .product-card h3 { color: #0ff; } .product-card p { margin: 0.5rem 0; } .snipcart-add-item { background-color: #0ff; color: #000; border: none; padding: 0.5rem 1rem; cursor: pointer; border-radius: 4px; font-weight: bold; } .cart-button { position: fixed; top: 1rem; right: 1rem; background-color: #0ff; color: #000; border: none; padding: 0.5rem 1rem; cursor: pointer; border-radius: 4px; font-weight: bold; z-index: 1000; } </style> </head> <body> <button class="snipcart-checkout cart-button">🛒 Cart</button>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NeuroPharma Supply</title>
 
-<div class="shop-header">Welcome to NeuroPharma Supply</div>
+  <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.0/default/snipcart.css" />
+  <link rel="stylesheet" href="../style.css">
 
-<div class="product-grid"> <div class="product-card"> <h3>NAC 600mg</h3> <p>60 capsules</p> <p>$19.99</p> <button class="snipcart-add-item" data-item-id="nac-600" data-item-name="NAC 600mg" data-item-price="19.99" data-item-url="/khalid-neuropsychopharma/shop.html" data-item-description="N-Acetyl Cysteine supplement 600mg capsules" >Add to Cart</button> </div>
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      animation: fadeIn 1.5s ease-in;
+    }
 
-<div class="product-card">
-  <h3>Agmatine Sulfate</h3>
-  <p>500mg capsules</p>
-  <p>$24.99</p>
-  <button 
-    class="snipcart-add-item"
-    data-item-id="agmatine-500"
-    data-item-name="Agmatine Sulfate 500mg"
-    data-item-price="24.99"
-    data-item-url="/khalid-neuropsychopharma/shop.html"
-    data-item-description="Agmatine Sulfate supplement 500mg capsules"
-  >Add to Cart</button>
-</div>
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
 
-</div>
+    .lang-switch {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      background-color: #0ff;
+      color: #000;
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      font-weight: bold;
+      text-decoration: none;
+      z-index: 1000;
+    }
 
-<script> window.SnipcartSettings = { publicApiKey: 'ZmlxZmQ4MTQtOTI3ZC00YzAwLThjZjAtMjViZmI1YjM4ZDMyNjJ5MDQ5MjMwNDEzNDQ3Mzg3', loadStrategy: 'on-user-interaction', };
+    .cart-button {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background-color: #0ff;
+      color: #000;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 4px;
+      font-weight: bold;
+      z-index: 1000;
+    }
 
-(function(){var c,d;(c=window.SnipcartSettings).version||(c.version="3.0");var s,S;s=(S=window.SnipcartSettings).timeoutDuration||1e4;setTimeout(function(){var e=document.createElement("script");e.src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js";e.async=!0;document.head.appendChild(e)},s);})();
+    .shop-header {
+      text-align: center;
+      padding: 2rem;
+      font-size: 2rem;
+      color: #0ff;
+    }
 
-</script>
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem;
+    }
 
-<div hidden id="snipcart"></div> </body> </html>
+    .product-card {
+      background-color: #111;
+      border: 1px solid #0ff;
+      border-radius: 8px;
+      padding: 1rem;
+      width: 280px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .product-card:hover {
+      transform: scale(1.05);
+    }
+
+    .product-card h3 {
+      color: #0ff;
+    }
+
+    .snipcart-add-item {
+      background-color: #0ff;
+      color: #000;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Language Switch -->
+  <a href="shop-ar.html" class="lang-switch">العربية</a>
+
+  <!-- Cart Button -->
+  <button class="snipcart-checkout cart-button">🛒 Cart</button>
+
+  <div class="shop-header">Welcome to NeuroPharma Supply</div>
+
+  <div class="product-grid">
+
+    <!-- NAC -->
+    <div class="product-card">
+      <h3>NAC 600mg</h3>
+      <p>60 capsules</p>
+      <p>$19.99</p>
+
+      <button
+        class="snipcart-add-item"
+        data-item-id="nac-600"
+        data-item-name="NAC 600mg"
+        data-item-price="19.99"
+        data-item-url="/khalid-neuropsychopharma/shop.html"
+        data-item-description="N-Acetyl Cysteine supplement 600mg capsules"
+      >
+        Add to Cart
+      </button>
+    </div>
+
+    <!-- Agmatine -->
+    <div class="product-card">
+      <h3>Agmatine Sulfate</h3>
+      <p>500mg capsules</p>
+      <p>$24.99</p>
+
+      <button
+        class="snipcart-add-item"
+        data-item-id="agmatine-500"
+        data-item-name="Agmatine Sulfate 500mg"
+        data-item-price="24.99"
+        data-item-url="/khalid-neuropsychopharma/shop.html"
+        data-item-description="Agmatine Sulfate supplement 500mg capsules"
+      >
+        Add to Cart
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Snipcart Script -->
+  <script>
+    window.SnipcartSettings = {
+      publicApiKey: 'ZmlxZmQ4MTQtOTI3ZC00YzAwLThjZjAtMjViZmI1YjM4ZDMyNjJ5MDQ5MjMwNDEzNDQ3Mzg3',
+      loadStrategy: 'on-user-interaction',
+    };
+
+    (function(){
+      var c,d;
+      (c=window.SnipcartSettings).version||(c.version="3.0");
+      var s,S;
+      s=(S=window.SnipcartSettings).timeoutDuration||1e4;
+      setTimeout(function(){
+        var e=document.createElement("script");
+        e.src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js";
+        e.async=!0;
+        document.head.appendChild(e)
+      },s);
+    })();
+  </script>
+
+  <div hidden id="snipcart"></div>
+
+</body>
+</html>

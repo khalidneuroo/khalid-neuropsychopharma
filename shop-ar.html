@@ -23,6 +23,33 @@
       to { opacity: 1; }
     }
 
+    .lang-switch {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background-color: #0ff;
+      color: #000;
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      font-weight: bold;
+      text-decoration: none;
+      z-index: 1000;
+    }
+
+    .cart-button {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      background-color: #0ff;
+      color: #000;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 4px;
+      font-weight: bold;
+      z-index: 1000;
+    }
+
     .shop-header {
       text-align: center;
       padding: 2rem;
@@ -65,25 +92,15 @@
       border-radius: 4px;
       font-weight: bold;
     }
-
-    .cart-button {
-      position: fixed;
-      top: 1rem;
-      left: 1rem;
-      background-color: #0ff;
-      color: #000;
-      border: none;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-      border-radius: 4px;
-      font-weight: bold;
-      z-index: 1000;
-    }
   </style>
 </head>
 
 <body>
 
+  <!-- Language Switch -->
+  <a href="shop.html" class="lang-switch">English</a>
+
+  <!-- Cart Button -->
   <button class="snipcart-checkout cart-button">🛒 السلة</button>
 
   <div class="shop-header">مرحباً بك في متجر NeuroPharma Supply</div>
@@ -91,3 +108,65 @@
   <div class="product-grid">
 
     <!-- NAC -->
+    <div class="product-card">
+      <h3>NAC 600mg</h3>
+      <p>٦٠ كبسولة</p>
+      <p>$19.99</p>
+
+      <button
+        class="snipcart-add-item"
+        data-item-id="nac-600-ar"
+        data-item-name="NAC 600mg"
+        data-item-price="19.99"
+        data-item-url="/khalid-neuropsychopharma/shop-ar.html"
+        data-item-description="مكمل إن-أسيتيل سيستئين 600mg"
+      >
+        أضف إلى السلة
+      </button>
+    </div>
+
+    <!-- Agmatine -->
+    <div class="product-card">
+      <h3>Agmatine Sulfate</h3>
+      <p>٥٠٠mg كبسولات</p>
+      <p>$24.99</p>
+
+      <button
+        class="snipcart-add-item"
+        data-item-id="agmatine-500-ar"
+        data-item-name="Agmatine Sulfate 500mg"
+        data-item-price="24.99"
+        data-item-url="/khalid-neuropsychopharma/shop-ar.html"
+        data-item-description="مكمل أجْماتين سلفات 500mg"
+      >
+        أضف إلى السلة
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Snipcart Script -->
+  <script>
+    window.SnipcartSettings = {
+      publicApiKey: 'ZmlxZmQ4MTQtOTI3ZC00YzAwLThjZjAtMjViZmI1YjM4ZDMyNjJ5MDQ5MjMwNDEzNDQ3Mzg3',
+      loadStrategy: 'on-user-interaction',
+    };
+
+    (function(){
+      var c,d;
+      (c=window.SnipcartSettings).version||(c.version="3.0");
+      var s,S;
+      s=(S=window.SnipcartSettings).timeoutDuration||1e4;
+      setTimeout(function(){
+        var e=document.createElement("script");
+        e.src="https://cdn.snipcart.com/themes/v3.0.31/default/snipcart.js";
+        e.async=!0;
+        document.head.appendChild(e)
+      },s);
+    })();
+  </script>
+
+  <div hidden id="snipcart"></div>
+
+</body>
+</html>
