@@ -26,6 +26,12 @@
             text-decoration: underline;
         }
 
+        /* Accessibility: visible focus for keyboard users */
+        a:focus-visible {
+            outline: 2px solid #00ff88;
+            outline-offset: 4px;
+        }
+
         /* Make headings scale on mobile */
         h1 { font-size: clamp(28px, 6vw, 42px); }
         h2 { font-size: clamp(18px, 4vw, 28px); }
@@ -42,11 +48,23 @@
             align-items: center;
             z-index: 9999;
         }
+
+        /* Added styles for the loading box (you had the element, not the styles) */
+        #loading-box {
+            padding: 28px 40px;
+            border: 2px solid #00ff88;
+            border-radius: 12px;
+            box-shadow: 0 0 28px rgba(0, 255, 136, 0.25);
+            background: rgba(0, 0, 0, 0.6);
+        }
+
         #loading-text {
             color: #00ff88;
             font-size: 32px;
             font-weight: bold;
             text-shadow: 0 0 10px #00ff88;
+            text-align: center;
+            min-width: 90px;
         }
 
         /* NAVIGATION — MOBILE FIX */
@@ -62,9 +80,8 @@
         nav a {
             font-size: clamp(14px, 3.5vw, 18px);
         }
-        
 
-        /* Search Button */
+        /* Buttons */
         .search-engine-button,
         .support-button {
             display: inline-block;
@@ -110,91 +127,100 @@
 </head>
 
 <body>
-
-</a>
-
-<!-- Loading Overlay -->
-<div id="loading-overlay">
-    <div id="loading-box">
-        <div id="loading-text">0%</div>
+    <!-- Loading Overlay -->
+    <div id="loading-overlay">
+        <div id="loading-box">
+            <div id="loading-text">0%</div>
+        </div>
     </div>
-</div>
 
-<header>
-    <h1>Khalid</h1>
-    <h2>Neuropsychopharmacology Researcher</h2>
+    <header>
+        <h1>Khalid</h1>
+        <h2>Neuropsychopharmacology Researcher</h2>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="research.html">Research</a>
-        <a href="projects.html">Projects</a>
-        <a href="updates.html">Updates</a>
-        <a href="contact.html">Contact</a>
-        <a href="about.html">About Me</a>
-        <a href="index-ar.html">العربية</a>
-    </nav>
-</header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="research.html">Research</a>
+            <a href="projects.html">Projects</a>
+            <a href="updates.html">Updates</a>
+            <a href="contact.html">Contact</a>
+            <a href="about.html">About Me</a>
+            <a href="index-ar.html">العربية</a>
+        </nav>
+    </header>
 
-<section class="contact-banner">
-    <p>Get in contact with <strong>Khalid Almansoori</strong></p>
-</section>
+    <!-- ✅ Removed: contact banner section -->
 
-<section class="intro">
-    <h3>About Me</h3>
-    <p>
-        I study neuropsychopharmacology with a focus on CNS mechanisms, receptor pharmacodynamics,
-        behavioral modulation, and therapeutic pathways. My work blends scientific rigor with
-        real‑world application, aiming to translate complex mechanisms into accessible, actionable insights.
-    </p>
-</section>
+    <section class="intro">
+        <h3>About Me</h3>
+        <p>
+            I study neuropsychopharmacology with a focus on CNS mechanisms, receptor pharmacodynamics,
+            behavioral modulation, and therapeutic pathways. My work blends scientific rigor with
+            real‑world application, aiming to translate complex mechanisms into accessible, actionable insights.
+        </p>
+    </section>
 
-<section class="highlights">
-    <h3>Current Focus Areas</h3>
-    <ul>
-        <li>Neurotransmitter systems & receptor signaling</li>
-        <li>Pharmacokinetics & pharmacodynamics of CNS agents</li>
-        <li>Behavioral pharmacology & cognitive modulation</li>
-        <li>Mechanistic mapping of therapeutic compounds</li>
-    </ul>
-</section>
+    <section class="highlights">
+        <h3>Current Focus Areas</h3>
+        <ul>
+            <li>Neurotransmitter systems &amp; receptor signaling</li>
+            <li>Pharmacokinetics &amp; pharmacodynamics of CNS agents</li>
+            <li>Behavioral pharmacology &amp; cognitive modulation</li>
+            <li>Mechanistic mapping of therapeutic compounds</li>
+        </ul>
+    </section>
 
-<!-- ⭐ BUTTONS SECTION ⭐ -->
-<section style="text-align:center;">
-    <a href="searchpubmed.html" class="search-engine-button">
-        🔍 Open NeuroMolecules Search Engine
-    </a>
+    <!-- ⭐ BUTTONS SECTION ⭐ -->
+    <section style="text-align:center;">
+        <a href="searchpubmed.html" class="search-engine-button">
+            🔍 Open NeuroMolecules Search Engine
+        </a>
 
-    <a href="support.html" class="support-button">
-        💠 Support My Work
-    </a>
-</section>
+        <a href="support.html" class="support-button">
+            💠 Support My Work
+        </a>
+    </section>
 
-<footer>
-    <p>© 2026 Khalid — Neuropsychopharmacology Research & Analysis</p>
-</footer>
+    <footer>
+        <p>© 2026 Khalid — Neuropsychopharmacology Research &amp; Analysis</p>
+    </footer>
 
-<!-- Loading Script -->
-<script>
-document.querySelectorAll("nav a").forEach(link => {
-    link.addEventListener("click", function(e) {
-        e.preventDefault();
-        const targetURL = this.href;
-        const overlay = document.getElementById("loading-overlay");
-        const text = document.getElementById("loading-text");
-        overlay.style.display = "flex";
-        let percent = 0;
-        const interval = setInterval(() => {
-            percent += 2;
-            text.textContent = percent + "%";
-            if (percent >= 100) {
-                clearInterval(interval);
-                window.location.href = targetURL;
-            }
-        }, 30);
-    });
-});
-</script>
-<script src="global.js"></script>
+    <!-- Loading Script (improved) -->
+    <script>
+        let isLoading = false;
 
+        function startLoadingTo(url) {
+            const overlay = document.getElementById("loading-overlay");
+            const text = document.getElementById("loading-text");
+
+            overlay.style.display = "flex";
+            text.textContent = "0%";
+
+            let percent = 0;
+
+            const interval = setInterval(() => {
+                percent = Math.min(percent + 2, 100);
+                text.textContent = percent + "%";
+
+                if (percent >= 100) {
+                    clearInterval(interval);
+                    window.location.href = url;
+                }
+            }, 30);
+        }
+
+        // Apply loading overlay to nav links AND the two main buttons
+        document.querySelectorAll("nav a, .search-engine-button, .support-button").forEach(link => {
+            link.addEventListener("click", function (e) {
+                if (isLoading) return;     // prevent double-click stacking
+                isLoading = true;
+
+                e.preventDefault();
+                startLoadingTo(this.href);
+            });
+        });
+    </script>
+
+    <script src="global.js"></script>
 </body>
 </html>
