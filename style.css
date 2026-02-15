@@ -177,3 +177,14 @@ footer {
     margin: 25px 0;
     box-shadow: 0 0 15px #00ff88;
 }
+/* Mobile table fix */
+@media (max-width: 900px) {
+    .table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    table {
+        min-width: 900px;
+    }
+}
