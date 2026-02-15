@@ -231,3 +231,14 @@ table {
         line-height: 1.7;
     }
 }
+/* Hide top Back to Home on desktop */
+nav {
+    display: none;
+}
+
+/* Show top Back to Home only on mobile */
+@media (max-width: 768px) {
+    nav {
+        display: block;
+    }
+}
