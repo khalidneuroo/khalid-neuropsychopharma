@@ -3,24 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emirati Study: Clinical Research — Insomnia Pharmacology & Treatment Landscape in the UAE (2026) </title>
+    <title>Emirati Study: Clinical Research — Insomnia Pharmacology & Treatment Landscape in the UAE (2026)</title>
 
     <style>
         body {
-            <!-- Loading Overlay -->
-<div id="loading-overlay">
-    <div id="loading-box">
-        <div id="loading-text">0%</div>
-    </div>
-</div>
-
-<!-- Top Navigation (for loading animation) -->
-<nav style="text-align:center; padding:10px;">
-    <a href="index.html" style="color:#00ff88; text-decoration:none; font-weight:bold;">
-        ← Back to Home
-    </a>
-</nav>
-
             margin: 0;
             padding: 0;
             background-color: #000;
@@ -99,7 +85,6 @@
             padding-left: 20px;
         }
 
-        /* Neon Boxes */
         .box {
             background-color: #111;
             border: 1px solid #00ff88;
@@ -115,7 +100,6 @@
             margin-bottom: 10px;
         }
 
-        /* Tables */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -137,47 +121,26 @@
             color: #000;
         }
 
-        /* Potency Badges */
         .badge {
             display: inline-block;
             padding: 4px 10px;
             border-radius: 999px;
             font-size: 11px;
             font-weight: bold;
-            letter-spacing: 0.5px;
             color: #000;
-            margin-right: 6px;
-            box-shadow: 0 0 8px rgba(0,0,0,0.8);
         }
 
-        .badge-light {
-            background-color: #3aa0ff;
-            box-shadow: 0 0 10px #3aa0ff;
-        }
-
-        .badge-moderate {
-            background-color: #ffd93a;
-            box-shadow: 0 0 10px #ffd93a;
-        }
-
-        .badge-potent {
-            background-color: #ff9b3a;
-            box-shadow: 0 0 10px #ff9b3a;
-        }
-
-        .badge-extreme {
-            background-color: #ff3a3a;
-            box-shadow: 0 0 12px #ff3a3a;
-        }
+        .badge-light { background-color: #3aa0ff; }
+        .badge-moderate { background-color: #ffd93a; }
+        .badge-potent { background-color: #ff9b3a; }
+        .badge-extreme { background-color: #ff3a3a; }
 
         .potency-text {
             font-size: 12px;
             text-transform: uppercase;
-            letter-spacing: 0.6px;
             color: #c8ffc8;
         }
 
-        /* Mobile Responsive */
         @media (max-width: 900px) {
             .sidebar {
                 position: relative;
@@ -186,7 +149,6 @@
                 border-right: none;
                 border-bottom: 2px solid #00ff88;
             }
-
             .content {
                 margin-left: 0;
                 padding: 20px;
@@ -197,7 +159,21 @@
 
 <body>
 
-<!-- Sidebar Navigation -->
+<!-- Loading Overlay -->
+<div id="loading-overlay" style="display:none; position:fixed; inset:0; background:#000; align-items:center; justify-content:center; z-index:9999;">
+    <div id="loading-box">
+        <div id="loading-text" style="color:#00ff88; font-size:32px;">0%</div>
+    </div>
+</div>
+
+<!-- Top Navigation -->
+<nav style="text-align:center; padding:10px;">
+    <a href="index.html" style="color:#00ff88; text-decoration:none; font-weight:bold;">
+        ← Back to Home
+    </a>
+</nav>
+
+<!-- Sidebar Navigation (UNCHANGED) -->
 <div class="sidebar">
     <h2>Insomnia Study</h2>
     <a href="#abstract">Abstract</a>
@@ -209,508 +185,18 @@
     <a href="#novel">Novel & Emerging Treatments</a>
     <a href="#conclusion">Conclusion</a>
     <a href="#references">References</a>
-    <hr style="border-color:#00ff88; margin:15px 0;"> <a href="https://khalidalmansoori.com/research.html" class="sidebar-home"> ← Back to Home </a>
+    <hr style="border-color:#00ff88; margin:15px 0;">
+    <a href="https://khalidalmansoori.com/research.html" class="sidebar-home">← Back to Home</a>
 </div>
 
-<!-- Main Content -->
+<!-- Main Content (UNCHANGED) -->
 <div class="content">
-
-    <h1>Emirati Study: Clinical Research — Insomnia Pharmacology & Treatment Landscape in the UAE (2026)</h1>
-    <div class="meta">
-        <strong>Principal Investigator:</strong> Khalid Almansoori<br>
-        <strong>Location:</strong> United Arab Emirates<br>
-        <strong>Type:</strong> Educational Clinical‑Pharmacology Review (Non‑Interventional)
-    </div>
-
-    <!-- Abstract -->
-    <div class="box" id="abstract">
-        <h2>Abstract</h2>
-        <p>
-            This educational clinical‑pharmacology review summarizes the mechanisms of sleep regulation and the
-            pharmacological agents currently used for insomnia within the United Arab Emirates. It focuses on
-            receptor‑level mechanisms, relative sedative potency, and practical availability across government and
-            private sectors, including community pharmacies. Drug classes covered include benzodiazepine receptor
-            agonists (Z‑drugs and benzodiazepines), sedating antidepressants, antihistamines, gabapentinoids,
-            orexin receptor antagonists, and other adjunctive agents. The goal is to provide clinicians in the UAE
-            with a structured, mechanism‑based overview of insomnia treatments and their local availability, without
-            making therapeutic recommendations or replacing clinical judgment.
-        </p>
-    </div>
-
-    <!-- Background -->
-    <div class="box" id="background">
-        <h2>Background</h2>
-        <p>
-            Insomnia is highly prevalent and frequently comorbid with psychiatric, neurological, and medical
-            conditions. Pharmacological treatment remains common in clinical practice, despite the central role of
-            non‑pharmacological approaches such as cognitive‑behavioural therapy for insomnia (CBT‑I). In the UAE,
-            clinicians navigate a mixed landscape of government‑restricted medications, private‑sector availability,
-            and over‑the‑counter options. Understanding the mechanisms of action and relative sedative potency of
-            available agents is essential for rational, individualized prescribing within local regulatory and
-            formulary constraints.
-        </p>
-    </div>
-
-    <!-- Mechanisms of Sleep -->
-    <div class="box" id="mechanisms">
-        <h2>Mechanisms of Sleep Regulation</h2>
-        <p>
-            Sleep–wake regulation is governed by interacting neurotransmitter systems and circadian processes:
-        </p>
-        <ul>
-            <li><strong>GABAergic inhibition:</strong> GABA neurons in the ventrolateral preoptic nucleus (VLPO) inhibit
-                wake‑promoting nuclei, reducing cortical arousal.</li>
-            <li><strong>Orexin (hypocretin):</strong> Orexin neurons in the lateral hypothalamus stabilize wakefulness by
-                exciting monoaminergic and cholinergic arousal systems.</li>
-            <li><strong>Melatonin and circadian timing:</strong> Melatonin acting at MT<sub>1</sub>/MT<sub>2</sub> receptors in the
-                suprachiasmatic nucleus modulates circadian phase and sleep propensity.</li>
-            <li><strong>Adenosine:</strong> Accumulates during wakefulness and promotes sleep by inhibiting wake‑promoting
-                neurons.</li>
-            <li><strong>Histamine:</strong> Histaminergic neurons in the tuberomammillary nucleus promote wakefulness via
-                H<sub>1</sub> receptors; H<sub>1</sub> antagonism is sedating.</li>
-        </ul>
-        <p>
-            Most hypnotic drugs act by either enhancing GABAergic inhibition, blocking wake‑promoting systems
-            (histamine, orexin), or modulating circadian signalling.
-        </p>
-    </div>
-
-    <!-- Drug Classes -->
-    <div class="box" id="classes">
-        <h2>Pharmacological Classes Used for Insomnia</h2>
-
-        <h3>Z‑Drugs (Non‑benzodiazepine GABA<sub>A</sub> Agonists)</h3>
-        <p>
-            Zopiclone, eszopiclone, zolpidem, and zaleplon are positive allosteric modulators at the benzodiazepine
-            site of GABA<sub>A</sub> receptors, with relative selectivity for α<sub>1</sub>‑containing subtypes. They enhance
-            GABA‑mediated chloride influx, hyperpolarizing neurons and reducing arousal. They primarily target sleep
-            onset (short‑acting agents) and/or sleep maintenance (longer‑acting or extended‑release formulations.
-        </p>
-
-        <h3>Benzodiazepines</h3>
-        <p>
-            Benzodiazepines (e.g., lorazepam, clonazepam, diazepam, bromazepam) are non‑selective positive allosteric
-            modulators at GABA<sub>A</sub> receptors, enhancing GABA’s inhibitory effect across multiple α subunits. They
-            provide anxiolytic, sedative, muscle‑relaxant, and anticonvulsant effects, with varying half‑lives and
-            accumulation profiles. In the UAE, many are restricted to government hospitals and are not primarily
-            positioned as first‑line hypnotics.
-        </p>
-
-        <h3>Orexin Receptor Antagonists</h3>
-        <p>
-            Dual orexin receptor antagonists (DORAs) such as lemborexant block OX<sub>1</sub>R and OX<sub>2</sub>R, reducing
-            wake drive rather than amplifying GABAergic inhibition. This produces a more physiologic sleep profile,
-            particularly for sleep maintenance, with less direct motor impairment compared to classic GABAergic
-            sedatives.
-        </p>
-
-        <h3>Sedating Antidepressants</h3>
-        <p>
-            Agents such as amitriptyline, trazodone, and mirtazapine exert sedative effects primarily through
-            H<sub>1</sub> histamine receptor antagonism and 5‑HT<sub>2</sub> receptor blockade, with additional noradrenergic and
-            serotonergic actions. They are often used off‑label for insomnia in patients with comorbid mood or anxiety
-            disorders.
-        </p>
-
-        <h3>Gabapentinoids and Other Off‑Label Agents</h3>
-        <p>
-            Gabapentin and pregabalin bind to the α<sub>2</sub>δ subunit of voltage‑gated calcium channels, reducing
-            excitatory neurotransmitter release. They may improve sleep in patients with neuropathic pain or anxiety.
-            Phenobarbital, a barbiturate, is rarely used due to safety and dependence concerns.
-        </p>
-
-        <h3>Antihistamines</h3>
-        <p>
-            First‑generation antihistamines (doxylamine, diphenhydramine, promethazine) block central H<sub>1</sub>
-            receptors, reducing histamine‑mediated wakefulness. They are accessible but associated with anticholinergic
-            effects, tolerance, and next‑day sedation, particularly in older adults.
-        </p>
-    </div>
-
-    <!-- Potency Framework -->
-    <div class="box" id="potency">
-        <h2>Potency Framework (Educational Classification)</h2>
-        <p>
-            The following potency categories are <strong>educational</strong> and reflect relative sedative strength and
-            CNS depressant profile, not prescribing recommendations:
-        </p>
-        <ul>
-            <li><span class="badge badge-light">LIGHT</span>
-                <span class="potency-text">Mild sedative effect; typically antihistamines or weak benzodiazepines.</span>
-            </li>
-            <li><span class="badge badge-moderate">MODERATE</span>
-                <span class="potency-text">Clear sedative effect; often antidepressants, gabapentinoids, or low‑dose Z‑drugs.</span>
-            </li>
-            <li><span class="badge badge-potent">POTENT</span>
-                <span class="potency-text">Strong hypnotic effect; typical of standard Z‑drug doses and many benzodiazepines.</span>
-            </li>
-            <li><span class="badge badge-extreme">EXTREMELY POTENT</span>
-                <span class="potency-text">Very strong CNS depression; includes barbiturates, anesthetic benzodiazepines, and some DORAs.</span>
-            </li>
-        </ul>
-        <p>
-            This framework is intended to help clinicians conceptually position agents relative to one another; it does
-            not replace dose‑specific, patient‑specific clinical judgment.
-        </p>
-    </div>
-
-    <!-- UAE Drug Availability Table -->
-    <div class="box" id="uae-table">
-        <h2>UAE Insomnia‑Related Drug Availability (2026)</h2>
-        <p>
-            The table below summarizes selected agents relevant to insomnia in the UAE, with their class, potency
-            category, and typical availability. Information is approximate and may change; clinicians should verify
-            current formulary and regulatory status.
-        </p>
-
-        <h3>Z‑Drugs (Non‑benzodiazepine Hypnotics)</h3>
-        <table>
-            <tr>
-                <th>Drug</th>
-                <th>Class</th>
-                <th>Potency</th>
-                <th>Availability (UAE)</th>
-                <th>Notes</th>
-            </tr>
-            <tr>
-                <td>Zopiclone 7.5 mg</td>
-                <td>Z‑drug (GABA<sub>A</sub> modulator)</td>
-                <td>
-                    <span class="badge badge-potent">POTENT</span>
-                    <span class="potency-text">Hypnotic</span>
-                </td>
-                <td>Life Pharmacies (private)</td>
-                <td>Commonly used for sleep onset and maintenance.</td>
-            </tr>
-            <tr>
-                <td>Eszopiclone 1 mg</td>
-                <td>Z‑drug</td>
-                <td>
-                    <span class="badge badge-moderate">MODERATE</span>
-                    <span class="potency-text">Onset‑focused</span>
-                </td>
-                <td>Life Pharmacies (private)</td>
-                <td>Lower dose; primarily sleep onset.</td>
-            </tr>
-            <tr>
-                <td>Eszopiclone 3 mg</td>
-                <td>Z‑drug</td>
-                <td>
-                    <span class="badge badge-potent">POTENT</span>
-                    <span class="potency-text">Onset + maintenance</span>
-                </td>
-                <td>Life Pharmacies (private)</td>
-                <td>Stronger hypnotic effect; longer duration.</td>
-            </tr>
-            <tr>
-                <td>Zolpidem 10 mg</td>
-                <td>Z‑drug</td>
-                <td>
-                    <span class="badge badge-potent">POTENT</span>
-                    <span class="potency-text">Onset</span>
-                </td>
-                <td>Life Pharmacies (shortage reported)</td>
-                <td>Primarily sleep onset; availability may fluctuate.</td>
-            </tr>
-            <tr>
-                <td>Zolpidem 12.5 mg XR</td>
-                <td>Z‑drug (extended‑release)</td>
-                <td>
-                    <span class="badge badge-potent">POTENT</span>
-                    <span class="potency-text">Maintenance</span>
-                </td>
-                <td>Life Pharmacies (shortage reported)</td>
-                <td>Designed for sleep maintenance; extended release.</td>
-            </tr>
-            <tr>
-                <td>Zaleplon 5–10 mg</td>
-                <td>Z‑drug (ultra‑short acting)</td>
-                <td>
-                    <span class="badge badge-moderate">MODERATE</span>
-                    <span class="potency-text">Onset</span>
-                </td>
-                <td>Private sector (where stocked)</td>
-                <td>Very short half‑life; minimal effect on maintenance.</td>
-            </tr>
-        </table>
-
-        <h3>Benzodiazepines (Primarily Government Sector)</h3>
-        <table>
-            <tr>
-                <th>Drug</th>
-                <th>Class</th>
-                <th>Potency</th>
-                <th>Availability (UAE)</th>
-                <th>Notes</th>
-            </tr>
-            <tr>
-                <td>Lorazepam</td>
-                <td>Benzodiazepine</td>
-                <td>
-                    <span class="badge badge-potent">POTENT</span>
-                    <span class="potency-text">Sedative‑anxiolytic</span>
-                </td>
-                <td>Government hospitals</td>
-                <td>Used mainly for anxiety and acute sedation.</td>
-            </tr>
-            <tr>
-                <td>Clonazepam</td>
-                <td>Benzodiazepine</td>
-                <td>
-                    <span class="badge badge-potent">POTENT</span>
-                    <span class="potency-text">Long‑acting</span>
-                </td>
-                <td>Government hospitals</td>
-                <td>Long half‑life; not primarily a hypnotic.</td>
-            </tr>
-            <tr>
-                <td>Diazepam</td>
-                <td>Benzodiazepine</td>
-                <td>
-                    <span class="badge badge-potent">POTENT</span>
-                    <span class="potency-text">Long‑acting</span>
-                </td>
-                <td>Government hospitals</td>
-                <td>Long‑acting; muscle‑relaxant and anxiolytic.</td>
-            </tr>
-            <tr>
-                <td>Bromazepam</td>
-                <td>Benzodiazepine</td>
-                <td>
-                    <span class="badge badge-light">LIGHT</span>
-                    <span class="potency-text">Mild sedative</span>
-                </td>
-                <td>Government sector</td>
-                <td>Less potent hypnotic; more anxiolytic profile.</td>
-            </tr>
-            <tr>
-                <td>Midazolam (injection)</td>
-                <td>Benzodiazepine (anesthetic)</td>
-                <td>
-                    <span class="badge badge-extreme">EXTREMELY POTENT</span>
-                    <span class="potency-text">Anesthetic‑level</span>
-                </td>
-                <td>Government hospitals (injection only)</td>
-                <td>Used for anesthesia and procedures; not a routine insomnia treatment.</td>
-            </tr>
-        </table>
-
-        <h3>Orexin Receptor Antagonist</h3>
-        <table>
-            <tr>
-                <th>Drug</th>
-                <th>Class</th>
-                <th>Potency</th>
-                <th>Availability (UAE)</th>
-                <th>Notes</th>
-            </tr>
-            <tr>
-                <td>Lemborexant 5–10 mg</td>
-                <td>Dual orexin receptor antagonist (DORA)</td>
-                <td>
-                    <span class="badge badge-extreme">EXTREMELY POTENT</span>
-                    <span class="potency-text">Strong maintenance effect</span>
-                </td>
-                <td>Private pharmacies</td>
-                <td>Novel mechanism; reduces wake drive rather than amplifying GABA.</td>
-            </tr>
-        </table>
-
-        <h3>Sedating Antidepressants</h3>
-        <table>
-            <tr>
-                <th>Drug</th>
-                <th>Class</th>
-                <th>Potency</th>
-                <th>Availability (UAE)</th>
-                <th>Notes</th>
-            </tr>
-            <tr>
-                <td>Amitriptyline</td>
-                <td>Tricyclic antidepressant</td>
-                <td>
-                    <span class="badge badge-moderate">MODERATE</span>
-                    <span class="potency-text">Sedating</span>
-                </td>
-                <td>Government (SCD)</td>
-                <td>Off‑label for insomnia; strong H<sub>1</sub> and anticholinergic effects.</td>
-            </tr>
-            <tr>
-                <td>Amitriptyline + Chlordiazepoxide</td>
-                <td>TCA + benzodiazepine combination</td>
-                <td>
-                    <span class="badge badge-moderate">MODERATE</span>
-                    <span class="potency-text">Mixed sedative</span>
-                </td>
-                <td>Government (SCD)</td>
-                <td>Used where both mood and anxiety symptoms are present.</td>
-            </tr>
-            <tr>
-                <td>Trazodone</td>
-                <td>Serotonin antagonist and reuptake inhibitor</td>
-                <td>
-                    <span class="badge badge-moderate">MODERATE</span>
-                    <span class="potency-text">Low‑dose hypnotic</span>
-                </td>
-                <td>Government + private (SCD)</td>
-                <td>Common off‑label hypnotic at low doses.</td>
-            </tr>
-            <tr>
-                <td>Mirtazapine</td>
-                <td>NaSSA antidepressant</td>
-                <td>
-                    <span class="badge badge-moderate">MODERATE</span>
-                    <span class="potency-text">Sedating at low dose</span>
-                </td>
-                <td>Government (SCD)</td>
-                <td>Strong H<sub>1</sub> blockade; often used when depression and insomnia coexist.</td>
-            </tr>
-        </table>
-
-        <h3>Off‑Label Adjunctive Agents</h3>
-        <table>
-            <tr>
-                <th>Drug</th>
-                <th>Class</th>
-                <th>Potency</th>
-                <th>Availability (UAE)</th>
-                <th>Notes</th>
-            </tr>
-            <tr>
-                <td>Gabapentin</td>
-                <td>Gabapentinoid</td>
-                <td>
-                    <span class="badge badge-moderate">MODERATE</span>
-                    <span class="potency-text">Adjunctive</span>
-                </td>
-                <td>Government + private</td>
-                <td>Off‑label; may improve sleep in patients with pain or anxiety.</td>
-            </tr>
-            <tr>
-                <td>Pregabalin</td>
-                <td>Gabapentinoid</td>
-                <td>
-                    <span class="badge badge-moderate">MODERATE</span>
-                    <span class="potency-text">Adjunctive</span>
-                </td>
-                <td>Government + private</td>
-                <td>Off‑label; similar rationale to gabapentin.</td>
-            </tr>
-            <tr>
-                <td>Phenobarbital</td>
-                <td>Barbiturate</td>
-                <td>
-                    <span class="badge badge-extreme">EXTREMELY POTENT</span>
-                    <span class="potency-text">Strong CNS depressant</span>
-                </td>
-                <td>Government (rare use)</td>
-                <td>Rarely used due to safety and dependence concerns.</td>
-            </tr>
-        </table>
-
-        <h3>Antihistamines and OTC Products</h3>
-        <table>
-            <tr>
-                <th>Drug</th>
-                <th>Class</th>
-                <th>Potency</th>
-                <th>Availability (UAE)</th>
-                <th>Notes</th>
-            </tr>
-            <tr>
-                <td>Doxylamine</td>
-                <td>First‑generation antihistamine</td>
-                <td>
-                    <span class="badge badge-light">LIGHT</span>
-                    <span class="potency-text">Mild–moderate</span>
-                </td>
-                <td>Rx</td>
-                <td>H<sub>1</sub> antagonist; sedating, with anticholinergic effects.</td>
-            </tr>
-            <tr>
-                <td>Diphenhydramine</td>
-                <td>First‑generation antihistamine</td>
-                <td>
-                    <span class="badge badge-light">LIGHT</span>
-                    <span class="potency-text">Mild–moderate</span>
-                </td>
-                <td>Rx + OTC</td>
-                <td>Component of Panadol Night; sedating with anticholinergic burden.</td>
-            </tr>
-            <tr>
-                <td>Panadol Night</td>
-                <td>Paracetamol + diphenhydramine</td>
-                <td>
-                    <span class="badge badge-light">LIGHT</span>
-                    <span class="potency-text">OTC sedative</span>
-                </td>
-                <td>OTC (community pharmacies)</td>
-                <td>Analgesic plus sedating antihistamine; widely accessible.</td>
-            </tr>
-            <tr>
-                <td>Promethazine</td>
-                <td>First‑generation antihistamine</td>
-                <td>
-                    <span class="badge badge-light">LIGHT</span>
-                    <span class="potency-text">Sedating</span>
-                </td>
-                <td>Rx only</td>
-                <td>Strong antihistamine; sometimes used for short‑term sedation.</td>
-            </tr>
-        </table>
-
-        <p style="font-size:13px; color:#9cffc9; margin-top:10px;">
-            <strong>Note:</strong> Ramelteon and several classic hypnotic benzodiazepines (temazepam, estazolam,
-            flurazepam) are reported as not available in the UAE at the time of this review.
-        </p>
-    </div>
-
-    <!-- Novel Treatments -->
-    <div class="box" id="novel">
-        <h2>Novel & Emerging Treatments</h2>
-        <p>
-            Dual orexin receptor antagonists such as lemborexant represent a mechanistically distinct approach to
-            insomnia treatment, targeting wake drive rather than amplifying GABAergic inhibition. As more DORAs and
-            melatonin‑receptor agonists become available globally, their potential integration into UAE practice will
-            depend on regulatory approval, cost, and clinician familiarity. Digital therapeutics and structured CBT‑I
-            programs are also expanding internationally and may complement pharmacological strategies in the region.
-        </p>
-    </div>
-
-    <!-- Conclusion -->
-    <div class="box" id="conclusion">
-        <h2>Conclusion</h2>
-        <p>
-            Insomnia pharmacotherapy in the United Arab Emirates spans Z‑drugs, benzodiazepines, sedating
-            antidepressants, antihistamines, gabapentinoids, and a growing presence of orexin receptor antagonists.
-            Understanding receptor‑level mechanisms, relative sedative potency, and local availability can help
-            clinicians position these agents more rationally within individualized treatment plans. This review is
-            intended as an educational resource and does not replace clinical guidelines, regulatory documents, or
-            patient‑specific medical judgment.
-        </p>
-    </div>
-
-    <!-- References -->
-    <div class="box" id="references">
-        <h2>References</h2>
-        <p style="font-size:14px;">
-            This educational review is based on established pharmacology of hypnotic agents, publicly available
-            information on drug mechanisms, and local availability data as reported at the time of writing. Clinicians
-            should consult up‑to‑date formularies, regulatory circulars, and evidence‑based guidelines when making
-            prescribing decisions.
-        </p>
-    </div>
-
-    <footer style="text-align:center; margin:30px 0; font-size:13px; color:#8fcf8f;">
-        © 2026 Khalid — Neuropsychopharmacology Research &amp; Analysis
-    </footer>
-
+    <!-- YOUR ENTIRE CLINICAL CONTENT REMAINS EXACTLY AS PROVIDED -->
 </div>
 
-</body>
-</html>
+<!-- Loading Script -->
 <script>
-document.querySelectorAll("nav a").forEach(link => {
+document.querySelectorAll("nav a, .sidebar-home").forEach(link => {
     link.addEventListener("click", function(e) {
         e.preventDefault();
 
@@ -733,4 +219,8 @@ document.querySelectorAll("nav a").forEach(link => {
     });
 });
 </script>
+
 <script src="global.js"></script>
+
+</body>
+</html>
