@@ -1,86 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
-<link rel="canonical" href="https://khalidalmansoori.com/about.html" />
+<head>
+    <link rel="canonical" href="https://khalidalmansoori.com/about.html" />
     <meta charset="UTF-8">
 
-    <meta charset="UTF-8">
-
-    <!-- ⭐ CRITICAL FOR MOBILE RESPONSIVENESS ⭐ -->
+    <!-- Mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>About | Khalid Almansoori</title>
     <link rel="stylesheet" href="style.css">
-
-    <style>
-        body {
-            background-color: #000;
-            color: #fff;
-            font-family: sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        h1, h2, h3, p, a {
-            color: #fff;
-        }
-
-        /* Responsive text sizes */
-        h2 { font-size: clamp(20px, 5vw, 30px); }
-        h3 { font-size: clamp(16px, 4vw, 24px); }
-        p, li { font-size: clamp(14px, 4vw, 18px); line-height: 1.7; }
-
-        nav {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 12px;
-            padding: 10px;
-            text-align: center;
-        }
-
-        nav a {
-            font-size: clamp(14px, 4vw, 18px);
-            text-decoration: none;
-        }
-
-
-        /* Section spacing */
-        section {
-            padding: 15px;
-        }
-
-        ul {
-            padding-left: 20px;
-        }
-
-        /* Image responsiveness */
-        .profile-img {
-            width: 180px;
-            max-width: 70%;
-            border-radius: 10px;
-            display: block;
-            margin: auto;
-            box-shadow: 0 0 12px #00ff88;
-        }
-
-        /* Highlight box */
-        .highlight-box {
-            margin: 25px auto;
-            width: 90%;
-            background-color: #111;
-            border-radius: 12px;
-            box-shadow: 0 0 15px #00ff88;
-            padding: 15px;
-            text-align: center;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            font-size: clamp(12px, 3vw, 16px);
-        }
-    </style>
 </head>
 
 <body>
@@ -92,17 +20,18 @@
     </div>
 </div>
 
-<header style="text-align:center; padding-top:20px;">
-    <h2>About Me</h2>
-    <h3>Neuropsychopharmacology Researcher</h3>
+<header role="banner" style="text-align:center; padding-top:20px;">
+    <h1>About Me</h1>
+    <h2>Neuropsychopharmacology Researcher</h2>
 </header>
 
-<nav>
+<nav role="navigation">
     <a href="index.html">Home</a>
     <a href="links.html">Links</a>
     <a href="about-ar.html">العربية</a>
 </nav>
 
+<main role="main">
 <section>
 
     <h2>Biography</h2>
@@ -123,6 +52,15 @@
             neuropsychopharmacology, contributing to the development of this emerging
             scientific field within the United Arab Emirates.
         </p>
+    </div>
+
+    <!-- ⭐ NEW AWARDS LINK (FLASHY GOLD STYLE B) ⭐ -->
+    <div class="awards-link">
+        <a href="awards.html">
+            <span class="trophy">🏆</span>
+            Awards & Certificates
+            <span class="trophy">🏆</span>
+        </a>
     </div>
 
     <p>
@@ -176,6 +114,11 @@
     </p>
 
 </section>
+</main>
+
+<footer role="contentinfo">
+    <p>&copy; 2026 Khalid Almansoori</p>
+</footer>
 
 <!-- Loading Script -->
 <script>
