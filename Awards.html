@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="canonical" href="https://khalidalmansoori.com/awards.html" />
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Awards & Certificates | Khalid Almansoori</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- Loading Overlay -->
+<div id="loading-overlay">
+    <div id="loading-box">
+        <div id="loading-text">0%</div>
+    </div>
+</div>
+
+<header role="banner" style="text-align:center; padding-top:20px;">
+    <h1>Awards & Certificates</h1>
+    <h2>Recognitions, Achievements, and Milestones</h2>
+</header>
+
+<nav role="navigation">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="links.html">Links</a>
+    <a href="about-ar.html">العربية</a>
+</nav>
+
+<main role="main">
+<section>
+
+    <h2>My Achievements</h2>
+    <p style="margin-bottom: 30px;">
+        This page showcases my certificates, awards, recognitions, and scientific milestones.
+        Each item represents a step in my journey as a neuropsychopharmacology researcher.
+    </p>
+
+    <!-- ⭐ Certificate Gallery Container ⭐ -->
+    <div class="cert-gallery">
+
+        <!-- ⭐ Example Certificate Card (empty placeholder) ⭐ -->
+        <!-- You will tell me what to add here -->
+        <!-- I will generate the card code for each certificate you want -->
+
+    </div>
+
+</section>
+</main>
+
+<footer role="contentinfo">
+    <p>&copy; 2026 Khalid Almansoori</p>
+</footer>
+
+<!-- Loading Script -->
+<script>
+document.querySelectorAll("nav a").forEach(link => {
+    link.addEventListener("click", function(e) {
+        e.preventDefault();
+
+        const targetURL = this.href;
+        const overlay = document.getElementById("loading-overlay");
+        const text = document.getElementById("loading-text");
+
+        overlay.style.display = "flex";
+        let percent = 0;
+
+        const interval = setInterval(() => {
+            percent += 2;
+            text.textContent = percent + "%";
+
+            if (percent >= 100) {
+                clearInterval(interval);
+                window.location.href = targetURL;
+            }
+        }, 30);
+    });
+});
+</script>
+
+</body>
+</html>
