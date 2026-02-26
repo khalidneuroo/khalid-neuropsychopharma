@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="canonical" href="https://khalidalmansoori.com/index.html/" />
+    <link rel="canonical" href="https://khalidalmansoori.com/" />
     <meta charset="UTF-8">
 
-    <!-- ⭐ CRITICAL FOR MOBILE RESPONSIVENESS ⭐ -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Khalid | Neuropsychopharmacology Research</title>
@@ -27,18 +26,15 @@
             text-decoration: underline;
         }
 
-        /* Accessibility: visible focus for keyboard users */
         a:focus-visible {
             outline: 2px solid #00ff88;
             outline-offset: 4px;
         }
 
-        /* Make headings scale on mobile */
         h1 { font-size: clamp(28px, 6vw, 42px); }
         h2 { font-size: clamp(18px, 4vw, 28px); }
         h3 { font-size: clamp(16px, 3.5vw, 22px); }
 
-        /* Loading Overlay */
         #loading-overlay {
             position: fixed;
             top: 0; left: 0;
@@ -50,7 +46,6 @@
             z-index: 9999;
         }
 
-        /* Added styles for the loading box (you had the element, not the styles) */
         #loading-box {
             padding: 28px 40px;
             border: 2px solid #00ff88;
@@ -68,7 +63,6 @@
             min-width: 90px;
         }
 
-        /* NAVIGATION — MOBILE FIX */
         nav {
             display: flex;
             flex-wrap: wrap;
@@ -82,7 +76,6 @@
             font-size: clamp(14px, 3.5vw, 18px);
         }
 
-        /* Buttons */
         .search-engine-button,
         .support-button {
             display: inline-block;
@@ -104,7 +97,6 @@
             background: #ccc;
         }
 
-        /* Sections */
         section {
             padding: 15px;
         }
@@ -128,7 +120,6 @@
 </head>
 
 <body>
-    <!-- Loading Overlay -->
     <div id="loading-overlay">
         <div id="loading-box">
             <div id="loading-text">0%</div>
@@ -150,8 +141,6 @@
         </nav>
     </header>
 
-    <!-- ✅ Removed: contact banner section -->
-
     <section class="intro">
         <h3>About Me</h3>
         <p>
@@ -171,7 +160,6 @@
         </ul>
     </section>
 
-    <!-- ⭐ BUTTONS SECTION ⭐ -->
     <section style="text-align:center;">
         <a href="searchpubmed.html" class="search-engine-button">
             🔍 Open NeuroMolecules Search Engine
@@ -186,7 +174,6 @@
         <p>© 2026 Khalid — Neuropsychopharmacology Research &amp; Analysis</p>
     </footer>
 
-    <!-- Loading Script (improved) -->
     <script>
         let isLoading = false;
 
@@ -210,10 +197,9 @@
             }, 30);
         }
 
-        // Apply loading overlay to nav links AND the two main buttons
         document.querySelectorAll("nav a, .search-engine-button, .support-button").forEach(link => {
             link.addEventListener("click", function (e) {
-                if (isLoading) return;     // prevent double-click stacking
+                if (isLoading) return;
                 isLoading = true;
 
                 e.preventDefault();
