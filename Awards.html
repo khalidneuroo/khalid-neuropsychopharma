@@ -1,133 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="canonical" href="https://khalidalmansoori.com/Awards.html" />
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Awards – Khalid</title>
 
-    <title>Awards & Certifications – Khalid</title>
+<style>
+    /* Page background — now pure black like your other pages */
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: "Inter", sans-serif;
+        background: #000;
+        color: white;
+        overflow-x: hidden;
+        animation: fadePage 2.8s ease-out forwards;
+        opacity: 0;
+    }
 
-    <link rel="stylesheet" href="style.css">
+    /* Top-to-bottom fade-in */
+    @keyframes fadePage {
+        0% { opacity: 0; transform: translateY(-20px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
 
-    <style>
-        body {
-            background: #000;
-            color: #fff;
-            margin: 0;
-            padding: 0;
-            font-family: "Courier New", monospace;
-        }
+    /* Page container */
+    .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 60px 20px;
+        text-align: center;
+    }
 
-        header {
-            text-align: center;
-            padding: 30px 10px;
-        }
+    /* Page title */
+    h1 {
+        font-size: 42px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        margin-bottom: 40px;
+        text-shadow: 0 0 12px rgba(0,255,220,0.6);
+    }
 
-        h1 {
-            font-size: clamp(28px, 6vw, 42px);
-            margin-bottom: 10px;
-        }
+    /* Certificate card (same design, but text-only) */
+    .certificate-card {
+        width: 100%;
+        margin: 40px auto;
+        padding: 25px;
+        border-radius: 14px;
+        background: #0a0a0a;
+        border: 1px solid rgba(0,255,220,0.25);
+        box-shadow: 0 0 25px rgba(0,255,220,0.35);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+        text-align: left;
+    }
 
-        h2 {
-            font-size: clamp(20px, 5vw, 30px);
-            color: #00ffcc;
-            text-shadow: 0 0 12px #00ffcc;
-            margin-top: 40px;
-            text-align: center;
-        }
+    .certificate-card:hover {
+        transform: scale(1.015);
+        box-shadow: 0 0 40px rgba(0,255,220,0.55);
+    }
 
-        nav {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            padding: 10px;
-        }
+    /* Certificate title */
+    .cert-title {
+        font-size: 24px;
+        font-weight: 600;
+        color: #00ffdd;
+        margin-bottom: 10px;
+        text-shadow: 0 0 10px #00ffdd;
+    }
 
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            font-size: clamp(14px, 4vw, 18px);
-            font-weight: bold;
-        }
+    /* Certificate metadata */
+    .cert-meta {
+        font-size: 16px;
+        color: #ccc;
+        margin: 4px 0;
+    }
 
-        nav a:hover {
-            color: #00ffcc;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 20px;
-        }
-
-        .award-box {
-            background: #0a0a0a;
-            border: 1px solid #222;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 25px;
-            box-shadow: 0 0 12px #00ffcc33;
-        }
-
-        .award-title {
-            font-size: 22px;
-            color: #00ffcc;
-            margin-bottom: 8px;
-            text-shadow: 0 0 10px #00ffcc;
-        }
-
-        .award-meta {
-            color: #ccc;
-            font-size: 15px;
-            margin-bottom: 5px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 25px;
-            margin-top: 40px;
-            border-top: 1px solid #222;
-            font-size: clamp(12px, 3vw, 16px);
-        }
-    </style>
+    /* Footer spacing */
+    .footer-space {
+        height: 80px;
+    }
+</style>
 </head>
 
 <body>
 
-<header>
-    <h1>Awards & Certifications</h1>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="links.html">Links</a>
-    </nav>
-</header>
-
 <div class="container">
+    <h1>Khalid — Awards & Certifications</h1>
 
-    <h2>Earned Certifications</h2>
-
-    <!-- Award 1 -->
-    <div class="award-box">
-        <div class="award-title">Guide to the Agri-Tech Sector</div>
-        <div class="award-meta">Issued by: ADGM Academy</div>
-        <div class="award-meta">Date: April 18, 2023</div>
-        <div class="award-meta">Credential ID: AT09-58327</div>
+    <!-- Certificate 1 -->
+    <div class="certificate-card">
+        <div class="cert-title">Guide to the Agri-Tech Sector</div>
+        <div class="cert-meta">Issued by: ADGM Academy</div>
+        <div class="cert-meta">Date: April 18, 2023</div>
+        <div class="cert-meta">Credential ID: AT09-58327</div>
     </div>
 
-    <!-- Award 2 -->
-    <div class="award-box">
-        <div class="award-title">Human Research Protection — Foundational Training</div>
-        <div class="award-meta">Issued by: Office for Human Research Protections (OHRP)</div>
-        <div class="award-meta">Date: April 23, 2024</div>
-        <div class="award-meta">Credential ID: 8461719F</div>
+    <!-- Certificate 2 -->
+    <div class="certificate-card">
+        <div class="cert-title">Human Research Protection — Foundational Training</div>
+        <div class="cert-meta">Issued by: OHRP (Office for Human Research Protections)</div>
+        <div class="cert-meta">Date: April 23, 2024</div>
+        <div class="cert-meta">Credential ID: 8461719F</div>
     </div>
 
+    <div class="footer-space"></div>
 </div>
-
-<footer>
-    © 2026 Khalid — Neuropsychopharmacology Research
-</footer>
 
 </body>
 </html>
