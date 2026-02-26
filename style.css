@@ -62,7 +62,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #00aaff;
+    color: #00ff88;
 }
 
 /* ===========================
@@ -273,7 +273,7 @@ table {
 }
 
 /* ===========================
-   AWARDS LINK — FLASHY GOLD STYLE B
+   AWARDS LINK — GOLD STYLE
    =========================== */
 .awards-link {
     text-align: center;
@@ -311,43 +311,42 @@ table {
 }
 
 /* ===========================
-   CERTIFICATE GALLERY
+   CERTIFICATE CARDS (Awards Page)
    =========================== */
-.cert-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 25px;
-    margin-top: 30px;
-}
-
-.cert-card {
+.certificate-card {
     background: #0a0a0a;
-    border: 1px solid gold;
+    border: 1px solid #222;
     border-radius: 12px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 0 15px gold;
+    padding: 25px;
+    margin: 35px 0;
+    box-shadow: 0 0 15px #00ff88;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.cert-card:hover {
+.certificate-card:hover {
     transform: scale(1.03);
-    box-shadow: 0 0 25px gold;
+    box-shadow: 0 0 25px #00ff88;
 }
 
-.cert-card img {
+.cert-title {
+    font-size: 22px;
+    font-weight: bold;
+    color: #00ff88;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px #00ff88;
+}
+
+.cert-meta {
+    font-size: 15px;
+    color: #ccc;
+    margin: 4px 0;
+}
+
+/* Certificate image */
+.cert-img {
     width: 100%;
     border-radius: 8px;
     margin-bottom: 15px;
-    box-shadow: 0 0 10px #333;
-}
-
-.cert-card h3 {
-    color: gold;
-    margin-bottom: 10px;
-}
-
-.cert-card p {
-    color: #ccc;
-    font-size: 14px;
+    box-shadow: 0 0 10px #00ff88;
+    border: 1px solid #222;
 }
