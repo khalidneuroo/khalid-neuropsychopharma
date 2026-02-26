@@ -1,88 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Awards – Khalid</title>
+    <link rel="canonical" href="https://khalidalmansoori.com/Awards.html" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-    /* Global black theme (matches your other pages) */
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: "Courier New", monospace;
-        background: #000;
-        color: #fff;
-        overflow-x: hidden;
-        opacity: 0;
-        animation: fadePage 2.8s ease-out forwards;
-    }
+    <title>Awards – Khalid</title>
 
-    @keyframes fadePage {
-        0% { opacity: 0; transform: translateY(-20px); }
-        100% { opacity: 1; transform: translateY(0); }
-    }
+    <link rel="stylesheet" href="style.css">
 
-    .container {
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 60px 20px;
-        text-align: center;
-    }
+    <style>
+        /* Match your global theme */
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000;
+            color: #fff;
+            font-family: "Courier New", monospace;
+            overflow-x: hidden;
+            opacity: 0;
+            animation: fadePage 2.8s ease-out forwards;
+        }
 
-    /* Title — same glow as highlight boxes */
-    h1 {
-        font-size: 42px;
-        font-weight: 700;
-        letter-spacing: 1px;
-        margin-bottom: 40px;
-        color: #00ff88;
-        text-shadow: 0 0 12px #00ff88;
-    }
+        @keyframes fadePage {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
 
-    /* Certificate card — identical to your research cards */
-    .certificate-card {
-        width: 100%;
-        margin: 40px auto;
-        padding: 25px;
-        border-radius: 12px;
-        background: #0a0a0a;
-        border: 1px solid #222;
-        box-shadow: 0 0 15px #00ff88;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        text-align: left;
-    }
+        /* Page container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
 
-    .certificate-card:hover {
-        transform: scale(1.03);
-        box-shadow: 0 0 25px #00ff88;
-    }
+        /* Page title */
+        h1 {
+            font-size: clamp(28px, 6vw, 42px);
+            text-align: center;
+            margin-bottom: 10px;
+            color: #00ff88;
+            text-shadow: 0 0 12px #00ff88;
+        }
 
-    .cert-title {
-        font-size: 24px;
-        font-weight: bold;
-        color: #00ff88;
-        margin-bottom: 10px;
-        text-shadow: 0 0 10px #00ff88;
-    }
+        /* Coming Soon placeholder */
+        .coming-soon {
+            text-align: center;
+            margin-top: 10px;
+            font-size: clamp(14px, 4vw, 18px);
+            color: #888;
+            letter-spacing: 1px;
+        }
 
-    .cert-meta {
-        font-size: 16px;
-        color: #ccc;
-        margin: 4px 0;
-    }
+        /* Certificate card — matches your research cards */
+        .certificate-card {
+            background: #0a0a0a;
+            border: 1px solid #222;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 35px 0;
+            box-shadow: 0 0 15px #00ff88;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-    .footer-space {
-        height: 80px;
-    }
-</style>
+        .certificate-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 25px #00ff88;
+        }
+
+        .cert-title {
+            font-size: 22px;
+            font-weight: bold;
+            color: #00ff88;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px #00ff88;
+        }
+
+        .cert-meta {
+            font-size: 15px;
+            color: #ccc;
+            margin: 4px 0;
+        }
+
+        footer {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid #333;
+            margin-top: 40px;
+            font-size: clamp(12px, 3vw, 16px);
+        }
+    </style>
 </head>
 
 <body>
 
-<div class="container">
-    <h1>Khalid — Awards & Certifications</h1>
+<header>
+    <h1>Awards & Certifications</h1>
+    <p class="coming-soon">Image previews coming soon</p>
 
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="projects.html">Projects</a>
+        <a href="updates.html">NeuroNews</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About Me</a>
+        <a href="index-ar.html">العربية</a>
+    </nav>
+</header>
+
+<div class="container">
+
+    <!-- Certificate 1 -->
     <div class="certificate-card">
         <div class="cert-title">Guide to the Agri-Tech Sector</div>
         <div class="cert-meta">Issued by: ADGM Academy</div>
@@ -90,6 +121,7 @@
         <div class="cert-meta">Credential ID: AT09-58327</div>
     </div>
 
+    <!-- Certificate 2 -->
     <div class="certificate-card">
         <div class="cert-title">Human Research Protection — Foundational Training</div>
         <div class="cert-meta">Issued by: OHRP</div>
@@ -97,8 +129,11 @@
         <div class="cert-meta">Credential ID: 8461719F</div>
     </div>
 
-    <div class="footer-space"></div>
 </div>
+
+<footer>
+    © 2026 Khalid — Neuropsychopharmacology Research & Analysis
+</footer>
 
 </body>
 </html>
