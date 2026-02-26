@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* Match your global theme */
         body {
             margin: 0;
             padding: 0;
@@ -27,14 +26,12 @@
             100% { opacity: 1; transform: translateY(0); }
         }
 
-        /* Page container */
         .container {
             max-width: 900px;
             margin: 0 auto;
             padding: 40px 20px;
         }
 
-        /* Page title */
         h1 {
             font-size: clamp(28px, 6vw, 42px);
             text-align: center;
@@ -43,7 +40,6 @@
             text-shadow: 0 0 12px #00ff88;
         }
 
-        /* Coming Soon placeholder */
         .coming-soon {
             text-align: center;
             margin-top: 10px;
@@ -52,7 +48,6 @@
             letter-spacing: 1px;
         }
 
-        /* Certificate card — matches your research cards */
         .certificate-card {
             background: #0a0a0a;
             border: 1px solid #222;
@@ -91,6 +86,15 @@
             margin-top: 40px;
             font-size: clamp(12px, 3vw, 16px);
         }
+
+        /* Image styling */
+        .cert-img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 0 10px #00ff88;
+            border: 1px solid #222;
+        }
     </style>
 </head>
 
@@ -115,6 +119,8 @@
 
     <!-- Certificate 1 -->
     <div class="certificate-card">
+        <img src="Copilot_20260226_050349.png" alt="Certificate Image" class="cert-img">
+
         <div class="cert-title">Guide to the Agri-Tech Sector</div>
         <div class="cert-meta">Issued by: ADGM Academy</div>
         <div class="cert-meta">Date: April 18, 2023</div>
@@ -123,6 +129,8 @@
 
     <!-- Certificate 2 -->
     <div class="certificate-card">
+        <img src="Copilot_20260226_050349.png" alt="Certificate Image" class="cert-img">
+
         <div class="cert-title">Human Research Protection — Foundational Training</div>
         <div class="cert-meta">Issued by: OHRP</div>
         <div class="cert-meta">Date: April 23, 2024</div>
