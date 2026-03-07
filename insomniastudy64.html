@@ -8,7 +8,7 @@
   <!-- Mobile -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Emirati Study: Clinical Research — Insomnia Pharmacology & Treatment Landscape in the UAE (2026)</title>
+  <title>Emirati Study: Clinical Research — Insomnia Pharmacology &amp; Treatment Landscape in the UAE (2026)</title>
   <meta name="description" content="Educational clinical‑pharmacology review of insomnia treatments in the UAE, covering mechanisms, drug classes, relative sedative potency, and local availability." />
 
   <!-- Site styles -->
@@ -18,6 +18,8 @@
 
   <style>
     /* Page-specific styles (kept local) */
+    html { scroll-behavior: smooth; } /* smooth scroll for sidebar anchors */
+
     body {
       margin: 0;
       padding: 0;
@@ -208,22 +210,22 @@
       <a href="updates.html">NeuroNews</a>
       <a href="contact.html">Contact</a>
       <a href="about.html">About</a>
-      <a href="index-ar.html">العربية</a>
+      <a href="insomniastudy64-ar.html">العربية</a>
     </nav>
   </header>
 
   <!-- Sidebar Navigation -->
   <div class="sidebar" aria-label="Study sections">
     <h2>Insomnia Study</h2>
-    <a href="#abstract">Abstract</a>
-    <a href="#background">Background</a>
-    <a href="#mechanisms">Mechanisms of Sleep</a>
-    <a href="#classes">Drug Classes</a>
-    <a href="#potency">Potency Framework</a>
-    <a href="#uae-table">UAE Drug Availability</a>
-    <a href="#novel">Novel &amp; Emerging Treatments</a>
-    <a href="#conclusion">Conclusion</a>
-    <a href="#references">References</a>
+    <a class="toc-link" href="#abstract">Abstract</a>
+    <a class="toc-link" href="#background">Background</a>
+    <a class="toc-link" href="#mechanisms">Mechanisms of Sleep</a>
+    <a class="toc-link" href="#classes">Drug Classes</a>
+    <a class="toc-link" href="#potency">Potency Framework</a>
+    <a class="toc-link" href="#uae-table">UAE Drug Availability</a>
+    <a class="toc-link" href="#novel">Novel &amp; Emerging Treatments</a>
+    <a class="toc-link" href="#conclusion">Conclusion</a>
+    <a class="toc-link" href="#references">References</a>
     <hr style="border-color:#00ff88; margin:15px 0;" />
     <a href="research.html" class="sidebar-home">← Back to Research</a>
   </div>
@@ -608,7 +610,7 @@
     </footer>
   </div>
 
-  <!-- Loading Script (applies to site header nav + sidebar "Back to Research", not in‑page #anchors) -->
+  <!-- Loading Script (external nav + sidebar "Back to Research" only; NOT in‑page # anchors) -->
   <script>
     let isLoading = false;
 
@@ -629,14 +631,24 @@
       }, 30);
     }
 
-    // Only external page navigations (header nav + sidebar-home), not in-page #anchors
+    // Attach loader only to external links (header nav + .sidebar-home)
     document.querySelectorAll('header nav a, .sidebar-home').forEach(link => {
       link.addEventListener('click', function (e) {
-        // Ignore same-page hash links (none in this selector) and prevent double-trigger
+        const href = this.getAttribute('href') || '';
+        // Ignore in-page anchors (just in case)
+        if (href.startsWith('#')) return;
+
         if (isLoading) return;
         e.preventDefault();
         isLoading = true;
         startLoadingTo(this.href);
+      });
+    });
+
+    // Ensure sidebar in-page anchors just navigate/scroll (no overlay)
+    document.querySelectorAll('.sidebar .toc-link[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        // default smooth scroll via CSS; no JS preventDefault needed
       });
     });
   </script>
