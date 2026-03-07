@@ -1,185 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="canonical" href="https://khalidalmansoori.com/contact.html" />
-    <meta charset="UTF-8">
-    <meta charset="UTF-8">
+  <link rel="canonical" href="https://khalidalmansoori.com/contact.html" />
+  <meta charset="UTF-8" />
 
-    <!-- ⭐ CRITICAL FOR MOBILE RESPONSIVENESS ⭐ -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Contact | Khalid Almansoori</title>
-    <link rel="stylesheet" href="style.css">
+  <title>Contact | Khalid Almansoori</title>
+  <meta name="description" content="Contact Khalid Almansoori for research inquiries, collaborations, or academic communication in neuropsychopharmacology." />
 
-    <style>
-        body {
-            background-color: #000;
-            color: #fff;
-            font-family: sans-serif;
-            margin: 0;
-            padding: 0;
-        }
+  <!-- Main Styles -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Global Fade‑in Animation -->
+  <link rel="stylesheet" href="fade.css" />
 
-        h1, h2, p, label, input, textarea, button {
-            color: #fff;
-        }
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+    }
 
-        /* Responsive text sizes */
-        h1 { font-size: clamp(24px, 6vw, 36px); }
-        h2 { font-size: clamp(18px, 5vw, 28px); }
-        p, label, input, textarea, button {
-            font-size: clamp(14px, 4vw, 18px);
-        }
+    h1, h2, p, label, input, textarea, button, a {
+      color: #fff;
+    }
 
-        nav {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 12px;
-            padding: 10px;
-            text-align: center;
-        }
+    /* Accessible focus for keyboard users */
+    a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+      outline: 2px solid #00ff88;
+      outline-offset: 4px;
+    }
 
-        nav a {
-            text-decoration: none;
-            font-size: clamp(14px, 4vw, 18px);
-        }
+    /* Responsive text sizes */
+    h1 { font-size: clamp(28px, 6vw, 42px); }
+    h2 { font-size: clamp(18px, 5vw, 28px); }
+    p, label, input, textarea, button { font-size: clamp(14px, 4vw, 18px); }
 
-        /* WhatsApp Floating Button */
-        .floating-whatsapp {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #25D366;
-            padding: 12px 18px;
-            border-radius: 50px;
-            color: #fff;
-            font-weight: bold;
-            text-decoration: none;
-            box-shadow: 0 0 10px #25D366;
-            z-index: 999;
-            font-size: clamp(14px, 4vw, 18px);
-        }
+    /* Navigation */
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      text-decoration: none;
+      font-size: clamp(14px, 4vw, 18px);
+    }
+    nav a:hover { text-decoration: underline; }
 
-        /* Form Wrapper */
-        .form-wrapper {
-            max-width: 500px;
-            width: 90%;
-            margin: 0 auto;
-            padding: 20px;
-        }
+    /* Form Wrapper */
+    .form-wrapper {
+      max-width: 560px;
+      width: 90%;
+      margin: 0 auto;
+      padding: 20px;
+    }
 
-        form input, form textarea {
-            width: 100%;
-            padding: 12px;
-            margin-top: 5px;
-            background-color: #111;
-            border: 1px solid #444;
-            color: #fff;
-            border-radius: 6px;
-            font-size: clamp(14px, 4vw, 18px);
-        }
+    form input, form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 6px;
+      background-color: #111;
+      border: 1px solid #444;
+      color: #fff;
+      border-radius: 6px;
+    }
 
-        form button {
-            background-color: #444;
-            color: #fff;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            width: 100%;
-            margin-top: 10px;
-            font-size: clamp(14px, 4vw, 18px);
-        }
+    form button {
+      background-color: #444;
+      color: #fff;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 12px;
+    }
+    form button:hover { background-color: #666; }
 
-        form button:hover {
-            background-color: #666;
-        }
+    section { padding: 15px; }
 
-        section {
-            padding: 15px;
-        }
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: clamp(12px, 3vw, 16px);
+    }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            font-size: clamp(12px, 3vw, 16px);
-        }
-    </style>
+    /* Loading overlay */
+    #loading-overlay {
+      position: fixed;
+      inset: 0;
+      background-color: #000;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    #loading-box {
+      padding: 28px 40px;
+      border: 2px solid #00ff88;
+      border-radius: 12px;
+      box-shadow: 0 0 28px rgba(0, 255, 136, 0.25);
+      background: rgba(0, 0, 0, 0.6);
+    }
+    #loading-text {
+      color: #00ff88;
+      font-size: 32px;
+      font-weight: bold;
+      text-shadow: 0 0 10px #00ff88;
+      min-width: 90px;
+      text-align: center;
+    }
+  </style>
 </head>
 
 <body>
-
-</a>
-
-<!-- Loading Overlay -->
-<div id="loading-overlay">
+  <!-- Loading Overlay -->
+  <div id="loading-overlay">
     <div id="loading-box">
-        <div id="loading-text">0%</div>
+      <div id="loading-text">0%</div>
     </div>
-</div>
+  </div>
 
-<header style="text-align:center; padding-top:20px;">
-    <h1>Contact</h1>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="research.html">Research</a>
-        <a href="projects.html">Projects</a>
-        <a href="updates.html">Updates</a>
-        <a href="contact.html">Contact</a>
-        <a href="contact-ar.html">العربية</a>
+  <!-- Site Header (consistent across pages) -->
+  <header style="text-align:center; padding-top:20px;">
+    <h1>Khalid</h1>
+    <h2>Neuropsychopharmacology Researcher</h2>
+
+    <nav aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="research.html">Research</a>
+      <a href="projects.html">Projects</a>
+      <a href="updates.html">NeuroNews</a>
+      <a href="contact.html" aria-current="page">Contact</a>
+      <a href="about.html">About</a>
+      <a href="contact-ar.html">العربية</a>
     </nav>
-</header>
+  </header>
 
-<section>
-    <h2>Get in Touch</h2>
+  <main role="main">
+    <section>
+      <h2>Get in Touch</h2>
 
-    <div class="form-wrapper">
-        <p>
-            For research inquiries, collaboration proposals, or academic communication, please use the form below.
-        </p>
+      <div class="form-wrapper">
+        <p>For research inquiries, collaboration proposals, or academic communication, please use the form below.</p>
 
         <form action="https://formspree.io/f/meeaqdpo" method="POST">
-            <label>Your Name</label>
-            <input type="text" name="name" required>
+          <label for="name">Your Name</label>
+          <input id="name" type="text" name="name" autocomplete="name" required />
 
-            <label>Your Email</label>
-            <input type="email" name="email" required>
+          <label for="email">Your Email</label>
+          <input id="email" type="email" name="email" autocomplete="email" required />
 
-            <label>Message</label>
-            <textarea name="message" rows="6" required></textarea>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="6" required></textarea>
 
-            <button type="submit">Send Message</button>
+          <button type="submit">Send Message</button>
         </form>
-    </div>
-</section>
+      </div>
+    </section>
+  </main>
 
-<footer>
-    <p>© 2026 Khalid Almansoori — Neuropsychopharmacology Research</p>
-</footer>
+  <footer>
+    <p>&copy; 2026 Khalid Almansoori — Neuropsychopharmacology Research</p>
+  </footer>
 
-<!-- Loading Script -->
-<script>
-document.querySelectorAll("nav a").forEach(link => {
-    link.addEventListener("click", function(e) {
+  <!-- Loading Script (prevents double-trigger) -->
+  <script>
+    let isLoading = false;
+
+    function startLoadingTo(url) {
+      const overlay = document.getElementById("loading-overlay");
+      const text = document.getElementById("loading-text");
+
+      overlay.style.display = "flex";
+      text.textContent = "0%";
+
+      let percent = 0;
+      const interval = setInterval(() => {
+        percent = Math.min(percent + 2, 100);
+        text.textContent = percent + "%";
+        if (percent >= 100) {
+          clearInterval(interval);
+          window.location.href = url;
+        }
+      }, 30);
+    }
+
+    document.querySelectorAll("nav a").forEach(link => {
+      link.addEventListener("click", function (e) {
+        if (isLoading) return;
+        isLoading = true;
         e.preventDefault();
-        const targetURL = this.href;
-        const overlay = document.getElementById("loading-overlay");
-        const text = document.getElementById("loading-text");
-        overlay.style.display = "flex";
-        let percent = 0;
-        const interval = setInterval(() => {
-            percent += 2;
-            text.textContent = percent + "%";
-            if (percent >= 100) {
-                clearInterval(interval);
-                window.location.href = targetURL;
-            }
-        }, 30);
+        startLoadingTo(this.href);
+      });
     });
-});
-</script>
-<script src="global.js"></script>
+  </script>
 
+  <!-- Global scripts -->
+  <script src="global.js" defer></script>
+  <script src="fade.js" defer></script>
 </body>
 </html>

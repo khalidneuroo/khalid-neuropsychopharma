@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="canonical" href="https://khalidalmansoori.com/" />
+    <link rel="canonical" href="https://khalidalmansoori.com/">
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Khalid | Neuropsychopharmacology Research</title>
+
+    <!-- Main Styles -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Global Fade-in Animation -->
+    <link rel="stylesheet" href="fade.css">
 
     <style>
         body {
@@ -35,6 +39,7 @@
         h2 { font-size: clamp(18px, 4vw, 28px); }
         h3 { font-size: clamp(16px, 3.5vw, 22px); }
 
+        /* Loading Overlay */
         #loading-overlay {
             position: fixed;
             top: 0; left: 0;
@@ -120,12 +125,15 @@
 </head>
 
 <body>
+
+    <!-- Loading Screen -->
     <div id="loading-overlay">
         <div id="loading-box">
             <div id="loading-text">0%</div>
         </div>
     </div>
 
+    <!-- Header -->
     <header>
         <h1>Khalid</h1>
         <h2>Neuropsychopharmacology Researcher</h2>
@@ -141,6 +149,7 @@
         </nav>
     </header>
 
+    <!-- Content -->
     <section class="intro">
         <h3>About Me</h3>
         <p>
@@ -153,9 +162,9 @@
     <section class="highlights">
         <h3>Current Focus Areas</h3>
         <ul>
-            <li>Neurotransmitter systems &amp; receptor signaling</li>
-            <li>Pharmacokinetics &amp; pharmacodynamics of CNS agents</li>
-            <li>Behavioral pharmacology &amp; cognitive modulation</li>
+            <li>Neurotransmitter systems & receptor signaling</li>
+            <li>Pharmacokinetics & pharmacodynamics of CNS agents</li>
+            <li>Behavioral pharmacology & cognitive modulation</li>
             <li>Mechanistic mapping of therapeutic compounds</li>
         </ul>
     </section>
@@ -171,9 +180,10 @@
     </section>
 
     <footer>
-        <p>© 2026 Khalid — Neuropsychopharmacology Research &amp; Analysis</p>
+        <p>© 2026 Khalid — Neuropsychopharmacology Research & Analysis</p>
     </footer>
 
+    <!-- Loading Animation Script -->
     <script>
         let isLoading = false;
 
@@ -208,6 +218,9 @@
         });
     </script>
 
-    <script src="global.js"></script>
+    <!-- Global Scripts -->
+    <script src="global.js" defer></script>
+    <script src="fade.js" defer></script>
+
 </body>
 </html>
