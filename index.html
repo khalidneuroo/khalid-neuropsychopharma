@@ -221,6 +221,313 @@
     <!-- Global Scripts -->
     <script src="global.js" defer></script>
     <script src="fade.js" defer></script>
+<!-- BEGIN: Under Construction Overlay -->
+<style>
+  :root {
+    /* Adjust to match khalidalmansoori.com theme */
+    --ka-primary: #00D1B2;   /* primary accent */
+    --ka-accent:  #7DF9FF;   /* secondary accent */
+    --ka-bg:      #0A0F1C;   /* dark background */
+    --ka-text:    #E6F1FF;   /* light text */
+    --ka-muted:   #7A8AA0;
+  }
 
+  .ka-uc--overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+    display: grid;
+    place-items: center;
+    background: radial-gradient(1200px 800px at 70% 20%, #0f1730 0%, var(--ka-bg) 55%);
+    color: var(--ka-text);
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Inter, Arial, sans-serif;
+  }
+
+  .ka-uc--canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 12px rgba(125, 249, 255, 0.25));
+    opacity: 0.25;
+  }
+
+  .ka-uc--content {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    gap: 20px;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    padding: 32px;
+    max-width: 820px;
+  }
+
+  .ka-uc--badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, rgba(0,209,178,0.12), rgba(125,249,255,0.12));
+    color: var(--ka-accent);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    border: 1px solid rgba(125,249,255,0.25);
+  }
+
+  .ka-uc--lock {
+    width: 140px;
+    height: 140px;
+  }
+
+  .ka-uc--title {
+    font-size: clamp(22px, 4vw, 36px);
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0;
+    background: linear-gradient(180deg, #fff, #cfe9ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .ka-uc--subtitle {
+    font-size: clamp(14px, 2.3vw, 18px);
+    color: var(--ka-muted);
+    margin: 0;
+    max-width: 60ch;
+  }
+
+  .ka-uc--meta {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    color: var(--ka-muted);
+    font-size: 14px;
+  }
+
+  .ka-uc--dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--ka-accent);
+    box-shadow: 0 0 12px var(--ka-accent);
+    animation: kaPulse 1.6s ease-in-out infinite;
+  }
+
+  @keyframes kaPulse {
+    0%, 100% { transform: scale(1); opacity: 0.7; }
+    50%      { transform: scale(1.25); opacity: 1; }
+  }
+
+  .ka-uc--social {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+  }
+  .ka-uc--link {
+    color: var(--ka-text);
+    text-decoration: none;
+    border: 1px solid rgba(125,249,255,0.25);
+    padding: 8px 12px;
+    border-radius: 10px;
+    transition: transform .2s ease, border-color .2s ease, background .2s ease;
+    background: rgba(10, 15, 28, 0.4);
+  }
+  .ka-uc--link:hover {
+    transform: translateY(-2px);
+    border-color: var(--ka-accent);
+    background: rgba(10, 15, 28, 0.55);
+  }
+
+  /* Loading ring animation around the lock */
+  .ka-uc--ring {
+    transform-origin: 50% 50%;
+    animation: kaSpin 2.4s linear infinite;
+    stroke: url(#kaGrad);
+    stroke-linecap: round;
+  }
+
+  @keyframes kaSpin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+</style>
+
+<div class="ka-uc--overlay" id="kaUnderConstruction" role="dialog" aria-label="Site is under construction">
+  <canvas class="ka-uc--canvas" id="kaNeuronCanvas"></canvas>
+
+  <div class="ka-uc--content">
+    <div class="ka-uc--badge">
+      <!-- small lock glyph -->
+      🔒
+      <span>Under construction</span>
+    </div>
+
+    <!-- SVG Lock + Loading Ring -->
+    <svg class="ka-uc--lock" viewBox="0 0 160 160" fill="none" aria-hidden="true">
+      <defs>
+        <linearGradient id="kaGrad" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%"  stop-color="var(--ka-accent)"/>
+          <stop offset="100%" stop-color="var(--ka-primary)"/>
+        </linearGradient>
+      </defs>
+      <!-- outer ring -->
+      <circle cx="80" cy="80" r="68" stroke="rgba(125,249,255,0.25)" stroke-width="4"/>
+      <!-- animated arc -->
+      <path class="ka-uc--ring" d="
+        M 80 12
+        A 68 68 0 0 1 148 80" stroke-width="6" stroke="url(#kaGrad)"/>
+      <!-- lock body -->
+      <rect x="48" y="72" width="64" height="58" rx="12" stroke="url(#kaGrad)" stroke-width="4"/>
+      <!-- shackle -->
+      <path d="M56,72 C56,48 72,36 80,36 C88,36 104,48 104,72" stroke="url(#kaGrad)" stroke-width="4" fill="none"/>
+      <!-- keyhole -->
+      <circle cx="80" cy="98" r="6" fill="var(--ka-accent)"/>
+      <rect x="78" y="104" width="4" height="12" rx="2" fill="var(--ka-accent)"/>
+    </svg>
+
+    <h1 class="ka-uc--title">We’re building something new.</h1>
+    <p class="ka-uc--subtitle">
+      The site is temporarily locked while we finalize a science‑inspired experience.
+      Please check back soon.
+    </p>
+
+    <div class="ka-uc--meta">
+      <span>Loading</span>
+      <span class="ka-uc--dot"></span>
+      <span id="kaProgressText">neural modules</span>
+    </div>
+
+    <!-- Optional links you can customize -->
+    <div class="ka-uc--social" aria-label="Contact links">
+      <a class="ka-uc--link" href="mailto:hello@khalidalmansoori.com">Contact</a>
+      <a class="ka-uc--link" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="ka-uc--link" href="https://x.com/" target="_blank" rel="noopener">X</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  /* ===== Neural network background animation ===== */
+  (function() {
+    const canvas = document.getElementById('kaNeuronCanvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let dpr = Math.max(1, window.devicePixelRatio || 1);
+
+    function resize() {
+      const { innerWidth:w, innerHeight:h } = window;
+      canvas.style.width = w + 'px';
+      canvas.style.height = h + 'px';
+      canvas.width = Math.floor(w * dpr);
+      canvas.height = Math.floor(h * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    const ACCENT = getComputedStyle(document.documentElement)
+      .getPropertyValue('--ka-accent').trim() || '#7DF9FF';
+    const PRIMARY = getComputedStyle(document.documentElement)
+      .getPropertyValue('--ka-primary').trim() || '#00D1B2';
+
+    const NODE_COUNT = Math.min(120, Math.floor(window.innerWidth * 0.12));
+    const nodes = [];
+
+    function rand(a, b) { return a + Math.random() * (b - a); }
+    function init() {
+      nodes.length = 0;
+      const w = canvas.width / dpr, h = canvas.height / dpr;
+      for (let i = 0; i < NODE_COUNT; i++) {
+        nodes.push({
+          x: rand(0, w),
+          y: rand(0, h),
+          vx: rand(-0.2, 0.2),
+          vy: rand(-0.2, 0.2),
+          r: rand(1.2, 2.4)
+        });
+      }
+    }
+    init();
+    window.addEventListener('resize', init);
+
+    function step() {
+      const w = canvas.width / dpr, h = canvas.height / dpr;
+      ctx.clearRect(0, 0, w, h);
+
+      // connections
+      for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+          const a = nodes[i], b = nodes[j];
+          const dx = a.x - b.x, dy = a.y - b.y;
+          const dist = Math.hypot(dx, dy);
+          if (dist < 120) {
+            const alpha = (1 - dist / 120) * 0.35;
+            const grad = ctx.createLinearGradient(a.x, a.y, b.x, b.y);
+            grad.addColorStop(0, PRIMARY);
+            grad.addColorStop(1, ACCENT);
+            ctx.strokeStyle = grad;
+            ctx.globalAlpha = alpha;
+            ctx.beginPath();
+            ctx.moveTo(a.x, a.y);
+            ctx.lineTo(b.x, b.y);
+            ctx.stroke();
+            ctx.globalAlpha = 1;
+          }
+        }
+      }
+
+      // nodes
+      for (const n of nodes) {
+        n.x += n.vx; n.y += n.vy;
+        if (n.x < 0 || n.x > w) n.vx *= -1;
+        if (n.y < 0 || n.y > h) n.vy *= -1;
+        ctx.beginPath();
+        ctx.fillStyle = ACCENT;
+        ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+        ctx.shadowColor = ACCENT;
+        ctx.shadowBlur = 8;
+        ctx.fill();
+        ctx.shadowBlur = 0;
+      }
+      requestAnimationFrame(step);
+    }
+    step();
+  })();
+
+  /* ===== Progress copy cycling ===== */
+  (function() {
+    const el = document.getElementById('kaProgressText');
+    if (!el) return;
+    const phrases = [
+      'neural modules',
+      'synaptic links',
+      'feature extractors',
+      'graph pathways',
+      'signal routing'
+    ];
+    let i = 0;
+    setInterval(() => {
+      i = (i + 1) % phrases.length;
+      el.textContent = phrases[i];
+    }, 1400);
+  })();
+
+  /* ===== Optional: allow owner preview via query (?preview=1) ===== */
+  (function() {
+    const params = new URLSearchParams(location.search);
+    const preview = params.get('preview');
+    if (preview === '1') {
+      const overlay = document.getElementById('kaUnderConstruction');
+      if (overlay) overlay.style.display = 'none';
+    }
+  })();
+</script>
+<!-- END: Under Construction Overlay -->
 </body>
 </html>
