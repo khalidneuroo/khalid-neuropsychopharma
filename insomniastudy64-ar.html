@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+  <!-- Canonical URL -->
   <link rel="canonical" href="https://khalidalmansoori.com/insomniastudy64-ar.html" />
   <meta charset="UTF-8" />
 
   <!-- Mobile -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>دراسة إماراتية: بحث سريري — علم دواء الأرق ومشهد العلاج في دولة الإمارات (2026)</title>
-  <meta name="description" content="مراجعة تعليمية في علم الأدوية السريرية للأرق في الإمارات، تغطي الآليات العصبية، الفئات الدوائية، قوة التأثير المهدئ، وتوافر الأدوية محليًا." />
+  <title>دراسة إماراتية: بحث سريري — علم دواء الأرق ومشهد العلاج في الإمارات (2026)</title>
+  <meta name="description" content="مراجعة تعليمية في علم الأدوية السريرية للأرق في الإمارات؛ الآليات العصبية، الفئات الدوائية، قوة التأثير المهدئ، والتوافر المحلي.">
 
   <!-- Site styles -->
   <link rel="stylesheet" href="style.css" />
@@ -16,16 +17,21 @@
   <link rel="stylesheet" href="fade.css" />
 
   <style>
-    /* Page-specific styles (kept local) */
+    /* Smooth in-page anchor scroll for sidebar */
+    html { scroll-behavior: smooth; }
+
+    /* RTL + base */
     body {
       margin: 0;
       padding: 0;
       background-color: #000;
       color: #fff;
       font-family: sans-serif;
+      direction: rtl;
+      text-align: right;
     }
 
-    /* Accessible focus for keyboard users */
+    /* Focus outline for accessibility */
     a:focus-visible, button:focus-visible {
       outline: 2px solid #00ff88;
       outline-offset: 4px;
@@ -33,7 +39,7 @@
 
     /* Loading Overlay */
     #loading-overlay {
-      display: none; /* hidden until click */
+      display: none;
       position: fixed;
       inset: 0;
       background: rgba(0, 0, 0, 0.95);
@@ -56,18 +62,19 @@
       font-weight: bold;
     }
 
-    /* Sidebar */
+    /* Sidebar (RTL on the right) */
     .sidebar {
       position: fixed;
       top: 0;
-      right: 0; /* RTL: sidebar on the right */
+      right: 0;
       width: 260px;
       height: 100%;
       background-color: #0a0a0a;
-      border-left: 2px solid #00ff88; /* RTL: left border instead of right */
+      border-left: 2px solid #00ff88;
       padding: 20px;
       box-shadow: 0 0 20px #00ff88;
       overflow-y: auto;
+      text-align: right;
     }
     .sidebar h2 {
       color: #00ff88;
@@ -83,13 +90,15 @@
       font-size: 15px;
       transition: 0.2s;
     }
-    .sidebar a:hover { color: #00ff88; margin-right: 6px; } /* RTL */
+    .sidebar a:hover { color: #00ff88; margin-right: 6px; } /* RTL hover nudge */
 
-    /* Main Content */
+    /* Main Content (push from right to clear sidebar) */
     .content {
-      margin-right: 280px; /* RTL: push from the right to clear the sidebar */
+      margin-right: 280px;
       padding: 30px;
+      text-align: right;
     }
+
     h1 {
       font-size: clamp(24px, 6vw, 36px);
       color: #00ff88;
@@ -112,7 +121,7 @@
       line-height: 1.8;
       color: #e0ffe0;
     }
-    ul { padding-right: 20px; } /* RTL */
+    ul { padding-right: 20px; } /* RTL list indent */
 
     /* Neon Boxes */
     .box {
@@ -130,14 +139,14 @@
       margin-bottom: 10px;
     }
 
-    /* Tables */
+    /* Tables (keep LTR for drug names & units) */
     table {
       width: 100%;
       border-collapse: collapse;
       margin: 20px 0;
       background-color: #111;
       box-shadow: 0 0 15px #00ff88;
-      direction: ltr; /* keep drug names/table aligned LTR for clarity */
+      direction: ltr;
     }
     th, td {
       border: 1px solid #00ff88;
@@ -215,22 +224,22 @@
   <!-- Sidebar Navigation -->
   <div class="sidebar" aria-label="أقسام الدراسة">
     <h2>دراسة الأرق</h2>
-    <a href="#abstract">الملخص</a>
-    <a href="#background">الخلفية</a>
-    <a href="#mechanisms">آليات تنظيم النوم</a>
-    <a href="#classes">الفئات الدوائية</a>
-    <a href="#potency">إطار الفاعلية</a>
-    <a href="#uae-table">توافر الأدوية في الإمارات</a>
-    <a href="#novel">العلاجات الحديثة والناشئة</a>
-    <a href="#conclusion">الخلاصة</a>
-    <a href="#references">المراجع</a>
+    <a class="toc-link" href="#abstract">الملخص</a>
+    <a class="toc-link" href="#background">الخلفية</a>
+    <a class="toc-link" href="#mechanisms">آليات تنظيم النوم</a>
+    <a class="toc-link" href="#classes">الفئات الدوائية</a>
+    <a class="toc-link" href="#potency">إطار الفاعلية</a>
+    <a class="toc-link" href="#uae-table">توافر الأدوية في الإمارات</a>
+    <a class="toc-link" href="#novel">العلاجات الحديثة والناشئة</a>
+    <a class="toc-link" href="#conclusion">الخلاصة</a>
+    <a class="toc-link" href="#references">المراجع</a>
     <hr style="border-color:#00ff88; margin:15px 0;" />
     <a href="research-ar.html" class="sidebar-home">← العودة إلى الأبحاث</a>
   </div>
 
   <!-- Main Content -->
   <div class="content">
-    <h1>دراسة إماراتية: بحث سريري — علم دواء الأرق ومشهد العلاج في دولة الإمارات (2026)</h1>
+    <h1>دراسة إماراتية: بحث سريري — علم دواء الأرق ومشهد العلاج في الإمارات (2026)</h1>
 
     <div class="meta">
       <strong>الباحث الرئيسي:</strong> خالد المنصوري<br />
@@ -242,13 +251,10 @@
     <div class="box" id="abstract">
       <h2>الملخص</h2>
       <p>
-        تُلخّص هذه المراجعة التعليمية في علم الأدوية السريرية آليات تنظيم النوم والعوامل الدوائية
-        المستخدمة حاليًا لعلاج الأرق داخل دولة الإمارات. تركز على آليات المستقبلات، والقوة
-        المهدِّئة النسبية، والتوافر العملي عبر القطاعين الحكومي والخاص بما في ذلك الصيدليات
-        المجتمعية. تشمل الفئات: نواهض مستقبلات البنزodiazepine (أدوية Z والبنزodiazepines)، مضادات
-        الاكتئاب المُسكنة، مضادات الهيستامين، الجابابنتينويدات، مضادات مستقبلات الأوركسين، وغيرها من
-        العوامل المُساعِدة. الهدف هو تقديم نظرة منهجية قائمة على الآليات للعلاجات وتوافرها محليًا، دون
-        أن تُعدّ توصية علاجية أو بديلًا للحكم السريري.
+        تُلخّص هذه المراجعة التعليمية آليات تنظيم النوم والعوامل الدوائية المستخدمة حاليًا لعلاج الأرق داخل دولة الإمارات.
+        تركز على آليات المستقبلات، والقوة المهدِّئة النسبية، والتوافر العملي عبر القطاعين الحكومي والخاص بما في ذلك الصيدليات المجتمعية.
+        تشمل الفئات: أدوية Z والبنزوديازيبينات، مضادات الاكتئاب المُسكنة، مضادات الهيستامين، الجابابنتينويدات، مضادات مستقبلات الأوركسين، وعوامل مُساعِدة أخرى.
+        الهدف هو تقديم نظرة منهجية قائمة على الآليات للعلاجات وتوافرها محليًا، دون أن تُعدّ توصية علاجية أو بديلًا للحكم السريري.
       </p>
     </div>
 
@@ -256,12 +262,9 @@
     <div class="box" id="background">
       <h2>الخلفية</h2>
       <p>
-        الأرق واسع الانتشار وغالبًا ما يتزامن مع اضطرابات نفسية وعصبية وجسدية. على الرغم من الدور
-        المحوري للعلاجات غير الدوائية كالعلاج المعرفي السلوكي للأرق (CBT‑I)، لا يزال التدخل الدوائي
-        شائعًا في الممارسة السريرية. في الإمارات، يتعامل الأطباء مع مزيج من الأدوية المقصورة على
-        المستشفيات الحكومية، وتوافر القطاع الخاص، وخيارات تُصرف بدون وصفة. فهم آليات العمل والقوة
-        المهدِّئة النسبية للعوامل المتاحة أمر أساسي للوصف الرشيد المراعي للأنظمة التنظيمية والقوائم
-        الدوائية المحلية.
+        الأرق واسع الانتشار وغالبًا ما يتزامن مع اضطرابات نفسية وعصبية وجسدية. على الرغم من الدور المحوري للعلاجات غير الدوائية
+        كالعلاج المعرفي السلوكي للأرق (CBT‑I)، لا يزال التدخل الدوائي شائعًا. في الإمارات، يتعامل الأطباء مع مزيج من الأدوية المقصورة على المستشفيات الحكومية،
+        وتوافر القطاع الخاص، وخيارات تُصرف بدون وصفة. فهم آليات العمل والقوة المهدِّئة النسبية للعوامل المتاحة أمر أساسي للوصف الرشيد ضمن القيود التنظيمية والقوائم المحلية.
       </p>
     </div>
 
@@ -270,13 +273,13 @@
       <h2>آليات تنظيم النوم</h2>
       <p>تحكم تنظيم النوم واليقظة أنظمة ناقلة عصبية متداخلة وعوامل الساعة البيولوجية:</p>
       <ul>
-        <li><strong>التثبيط الغابّاوي (GABAergic):</strong> تعوق عصبونات GABA في VLPO نوى تعزيز اليقظة وتخفض الاستثارة القشرية.</li>
-        <li><strong>الأوركسين (Hypocretin):</strong> يثبّت اليقظة عبر تنشيط الأنظمة الأدرينرجية والكولينية أحادية الأمين.</li>
-        <li><strong>الميلاتون والساعة اليومية:</strong> يعمل على مستقبلات MT<sub>1</sub>/MT<sub>2</sub> بالنواة فوق التصالبة لتنظيم الطور والإغفاء.</li>
+        <li><strong>التثبيط الغابّاوي (GABA):</strong> تعوق عصبونات VLPO نوى تعزيز اليقظة وتخفض الاستثارة القشرية.</li>
+        <li><strong>الأوركسين:</strong> يثبّت اليقظة عبر تنشيط الأنظمة أحادية الأمين والكولينية.</li>
+        <li><strong>الميلاتون:</strong> يعمل على مستقبلات MT<sub>1</sub>/MT<sub>2</sub> لتنظيم الطور وإمكانية النوم.</li>
         <li><strong>الأدينوزين:</strong> يتراكم أثناء اليقظة ويعزز النوم عبر تثبيط نوى اليقظة.</li>
-        <li><strong>الهيستامين:</strong> يعزز اليقظة عبر مستقبلات H<sub>1</sub>؛ ويؤدي حصر H<sub>1</sub> إلى تأثير مُسكن.</li>
+        <li><strong>الهيستامين:</strong> يعزز اليقظة عبر H<sub>1</sub>؛ وحصر H<sub>1</sub> مُسكن.</li>
       </ul>
-      <p>تعمل معظم المنومات إمّا بتعزيز التثبيط الغابّاوي، أو بحجب أنظمة تعزيز اليقظة (الهيستامين، الأوركسين)، أو بتعديل الإشارات اليوماوية.</p>
+      <p>تعمل معظم المنومات إما بتعزيز التثبيط الغابّاوي، أو حجب أنظمة تعزيز اليقظة (الهيستامين، الأوركسين)، أو تعديل الإشارات اليوماوية.</p>
     </div>
 
     <!-- Drug Classes -->
@@ -284,273 +287,86 @@
       <h2>الفئات الدوائية المستخدمة لعلاج الأرق</h2>
 
       <h3>أدوية Z (ناهضات GABA<sub>A</sub> غير بنزوديازبينية)</h3>
-      <p>
-        Zopiclone وEszopiclone وZolpidem وZaleplon مُعدِّلات ألوستيرية إيجابية في موقع البنزوديازبين على
-        مستقبلات GABA<sub>A</sub> مع تفضيل نسبي للوحدات الفرعية α<sub>1</sub>. تُعزّز تدفّق الكلور مُحدثة فرط استقطاب
-        وخفضًا للاستثارة. تستهدف أساسًا بدء النوم (قصيرة المفعول) و/أو صيانة النوم (الأطول/الممتدة التحرر).
-      </p>
+      <p>Zopiclone وEszopiclone وZolpidem وZaleplon مُعدِّلات ألوستيرية إيجابية في موقع البنزوديازبين على مستقبلات GABA<sub>A</sub> مع تفضيل نسبي لـ α<sub>1</sub>؛ تعزز تدفّق الكلور وتخفض الاستثارة.</p>
 
       <h3>البنزوديازيبينات</h3>
-      <p>
-        مثل Lorazepam وClonazepam وDiazepam وBromazepam؛ مُعدِّلات ألوستيرية إيجابية غير انتقائية لمستقبلات
-        GABA<sub>A</sub> على وحدات α متعددة؛ ذات خواص مُسكنة ومُزالة للقلق ومرخية للعضلات ومضادة للاختلاجات. في
-        الإمارات، كثير منها مخصص للقطاع الحكومي وليس خيارًا أوّليًا للأرق.
-      </p>
+      <p>مثل Lorazepam وClonazepam وDiazepam وBromazepam؛ مُسكنة ومُزالة للقلق ومرخية للعضلات ومضادة للاختلاجات؛ كثير منها مخصص للقطاع الحكومي.</p>
 
       <h3>مضادات مستقبلات الأوركسين</h3>
-      <p>
-        مثبِّطات ثنائية لمستقبلات الأوركسين (DORAs) مثل Lemborexant تحجب OX<sub>1</sub>R وOX<sub>2</sub>R فتقلل دافع
-        اليقظة بدلًا من تعزيز GABA، ما يعطي نمط نوم أقرب للفيزيولوجي خاصة لصيانة النوم وبضع آثار حركية مباشرة.
-      </p>
+      <p>DORAs مثل Lemborexant تحجب OX<sub>1</sub>/OX<sub>2</sub>، فتقلل دافع اليقظة وتفيد صيانة النوم مع أثر حركي أقل.</p>
 
       <h3>مضادات الاكتئاب المُسكنة</h3>
-      <p>
-        مثل Amitriptyline وTrazodone وMirtazapine؛ تأثيرها المهدّئ غالبًا عبر حصر H<sub>1</sub> وحجب 5‑HT<sub>2</sub>
-        مع تأثيرات نورأدرينرجية وسيروتونرجية؛ كثيرًا ما تُستخدم خارج النشرة في سياق أرق مع اضطرابات مزاج/قلق.
-      </p>
+      <p>Amitriptyline وTrazodone وMirtazapine تُسكن عبر حصر H<sub>1</sub> وحجب 5‑HT<sub>2</sub> إضافة لتأثيرات مونوأمينية أخرى.</p>
 
-      <h3>الجابابنتينويدات وعوامل مُساعِدة أخرى</h3>
-      <p>
-        Gabapentin وPregabalin يرتبطان بالوحدة α<sub>2</sub>δ لقنوات الكالسيوم المُبوّبة بالجهد، فيقللان إطلاق الناقلات
-        الاستثارية؛ قد يُحسّنان النوم لدى مرضى الألم العصبي أو القلق. Phenobarbital نادر الاستخدام لمخاوف
-        السلامة والاعتماد.
-      </p>
+      <h3>جابابنتينويدات وعوامل أخرى</h3>
+      <p>Gabapentin وPregabalin يرتبطان بالوحدة α<sub>2</sub>δ لقنوات الكالسيوم، وقد يُحسّنان النوم لدى الألم العصبي أو القلق؛ Phenobarbital نادر الاستخدام.</p>
 
       <h3>مضادات الهيستامين</h3>
-      <p>
-        الجيل الأول مثل Doxylamine وDiphenhydramine وPromethazine يحجب مستقبلات H<sub>1</sub> المركزية فيقلل يقظة
-        الهيستامين؛ متاح لكنه مقترن بأعراض مضادّة كولينية وتحمّل وتهدئة نهارية خاصة لدى المسنّين.
-      </p>
+      <p>الجيل الأول (Doxylamine وDiphenhydramine وPromethazine) يسكن عبر حصر H<sub>1</sub>؛ يرتبط بتأثيرات مضادّة كولينية ونعاس نهاري.</p>
     </div>
 
     <!-- Potency Framework -->
     <div class="box" id="potency">
       <h2>إطار الفاعلية (تصنيف تعليمي)</h2>
-      <p>
-        يُمثّل التصنيف التالي <strong>إطارًا تعليميًا</strong> يعكس القوة المهدِّئة النسبية والمظهر المثبِّط للجهاز العصبي
-        المركزي، وليس توصيات وصفية:
-      </p>
       <ul>
-        <li>
-          <span class="badge badge-light">خفيفة</span>
-          <span class="potency-text">تأثير مُسكن لطيف؛ غالبًا مضادات هيستامين أو بنزوديازيبينات ضعيفة.</span>
-        </li>
-        <li>
-          <span class="badge badge-moderate">متوسطة</span>
-          <span class="potency-text">تأثير مُسكن واضح؛ كثيرًا مضادات اكتئاب، جابابنتينويدات، أو جرعات منخفضة من أدوية Z.</span>
-        </li>
-        <li>
-          <span class="badge badge-potent">قوية</span>
-          <span class="potency-text">تأثير منوِّم قوي؛ نمطي في جرعات أدوية Z القياسية وكثير من البنزوديازيبينات.</span>
-        </li>
-        <li>
-          <span class="badge badge-extreme">شديدة للغاية</span>
-          <span class="potency-text">كبت شديد للجهاز العصبي؛ يشمل الباربيتورات وبنزوديازيبينات التخدير وبعض DORAs.</span>
-        </li>
+        <li><span class="badge badge-light">خفيفة</span> <span class="potency-text">تسكن لطيف.</span></li>
+        <li><span class="badge badge-moderate">متوسطة</span> <span class="potency-text">تسكن واضح.</span></li>
+        <li><span class="badge badge-potent">قوية</span> <span class="potency-text">منوم قوي.</span></li>
+        <li><span class="badge badge-extreme">شديدة للغاية</span> <span class="potency-text">كبت شديد للجهاز العصبي.</span></li>
       </ul>
-      <p>
-        يهدف هذا الإطار إلى تموضع العوامل نسبيًا من حيث المفهوم؛ ولا يُغني عن تقدير الجرعة والسياق الفردي لكل مريض.
-      </p>
+      <p>إطار مفاهيمي للمقارنة ولا يُغني عن تقدير الجرعة والسياق الفردي.</p>
     </div>
 
     <!-- UAE Drug Availability Table -->
     <div class="box" id="uae-table">
-      <h2>توافر الأدوية المتعلقة بالأرق في الإمارات (2026)</h2>
-      <p>
-        يُلخّص الجدول التالي أدوية مختارة ذات صلة بالأرق في دولة الإمارات مع فئتها وقوة تأثيرها وتوافرها الاعتيادي.
-        المعلومات تقديرية وقد تتغير؛ ينبغي التحقق من القوائم التنظيمية والدوائية المُحدَّثة.
-      </p>
+      <h2>توافر الأدوية المرتبطة بالأرق في الإمارات (2026)</h2>
 
-      <h3>أدوية Z (منومات غير بنزوديازبينية)</h3>
+      <h3>أدوية Z</h3>
       <table>
-        <tr>
-          <th>الدواء</th>
-          <th>الفئة</th>
-          <th>الفاعلية</th>
-          <th>التوافر (الإمارات)</th>
-          <th>ملاحظات</th>
-        </tr>
-        <tr>
-          <td>Zopiclone 7.5 mg</td>
-          <td>Z‑drug (GABA<sub>A</sub> modulator)</td>
-          <td><span class="badge badge-potent">قوية</span> <span class="potency-text">Hypnotic</span></td>
-          <td>Life Pharmacies (خاص)</td>
-          <td>لبدء وصيانة النوم.</td>
-        </tr>
-        <tr>
-          <td>Eszopiclone 1 mg</td>
-          <td>Z‑drug</td>
-          <td><span class="badge badge-moderate">متوسطة</span> <span class="potency-text">Onset‑focused</span></td>
-          <td>Life Pharmacies (خاص)</td>
-          <td>جرعة أقل؛ تركز على بدء النوم.</td>
-        </tr>
-        <tr>
-          <td>Eszopiclone 3 mg</td>
-          <td>Z‑drug</td>
-          <td><span class="badge badge-potent">قوية</span> <span class="potency-text">Onset + maintenance</span></td>
-          <td>Life Pharmacies (خاص)</td>
-          <td>تأثير أقوى ومدة أطول.</td>
-        </tr>
-        <tr>
-          <td>Zolpidem 10 mg</td>
-          <td>Z‑drug</td>
-          <td><span class="badge badge-potent">قوية</span> <span class="potency-text">Onset</span></td>
-          <td>Life Pharmacies (تقارير نقص)</td>
-          <td>يركز على بدء النوم؛ التوافر متغير.</td>
-        </tr>
-        <tr>
-          <td>Zolpidem 12.5 mg XR</td>
-          <td>Z‑drug (extended‑release)</td>
-          <td><span class="badge badge-potent">قوية</span> <span class="potency-text">Maintenance</span></td>
-          <td>Life Pharmacies (تقارير نقص)</td>
-          <td>مصمم لصيانة النوم بإطلاق ممتد.</td>
-        </tr>
-        <tr>
-          <td>Zaleplon 5–10 mg</td>
-          <td>Z‑drug (ultra‑short acting)</td>
-          <td><span class="badge badge-moderate">متوسطة</span> <span class="potency-text">Onset</span></td>
-          <td>القطاع الخاص (عند التوفر)</td>
-          <td>نصف عمر قصير جدًا؛ أثر محدود على الصيانة.</td>
-        </tr>
+        <tr><th>الدواء</th><th>الفئة</th><th>الفاعلية</th><th>التوافر (الإمارات)</th><th>ملاحظات</th></tr>
+        <tr><td>Zopiclone 7.5 mg</td><td>Z‑drug (GABA<sub>A</sub> modulator)</td><td><span class="badge badge-potent">قوية</span></td><td>Life Pharmacies (خاص)</td><td>بدء وصيانة النوم.</td></tr>
+        <tr><td>Eszopiclone 1 mg</td><td>Z‑drug</td><td><span class="badge badge-moderate">متوسطة</span></td><td>Life Pharmacies (خاص)</td><td>يركز على بدء النوم.</td></tr>
+        <tr><td>Eszopiclone 3 mg</td><td>Z‑drug</td><td><span class="badge badge-potent">قوية</span></td><td>Life Pharmacies (خاص)</td><td>أطول مدة.</td></tr>
+        <tr><td>Zolpidem 10 mg</td><td>Z‑drug</td><td><span class="badge badge-potent">قوية</span></td><td>Life Pharmacies (تقارير نقص)</td><td>بدء النوم.</td></tr>
+        <tr><td>Zolpidem 12.5 mg XR</td><td>Z‑drug (XR)</td><td><span class="badge badge-potent">قوية</span></td><td>Life Pharmacies (تقارير نقص)</td><td>صيانة النوم.</td></tr>
+        <tr><td>Zaleplon 5–10 mg</td><td>Z‑drug (قصير جدًا)</td><td><span class="badge badge-moderate">متوسطة</span></td><td>القطاع الخاص</td><td>أثر محدود على الصيانة.</td></tr>
       </table>
 
-      <h3>البنزوديازيبينات (أساسًا القطاع الحكومي)</h3>
+      <h3>البنزوديازيبينات (أساسًا حكومي)</h3>
       <table>
-        <tr>
-          <th>الدواء</th>
-          <th>الفئة</th>
-          <th>الفاعلية</th>
-          <th>التوافر (الإمارات)</th>
-          <th>ملاحظات</th>
-        </tr>
-        <tr>
-          <td>Lorazepam</td>
-          <td>Benzodiazepine</td>
-          <td><span class="badge badge-potent">قوية</span> <span class="potency-text">Sedative‑anxiolytic</span></td>
-          <td>المستشفيات الحكومية</td>
-          <td>للقلق والتهدئة الحادة.</td>
-        </tr>
-        <tr>
-          <td>Clonazepam</td>
-          <td>Benzodiazepine</td>
-          <td><span class="badge badge-potent">قوية</span> <span class="potency-text">Long‑acting</span></td>
-          <td>المستشفيات الحكومية</td>
-          <td>طويل الأمد؛ ليس منومًا أساسيًا.</td>
-        </tr>
-        <tr>
-          <td>Diazepam</td>
-          <td>Benzodiazepine</td>
-          <td><span class="badge badge-potent">قوية</span> <span class="potency-text">Long‑acting</span></td>
-          <td>المستشفيات الحكومية</td>
-          <td>طويل الأمد؛ مرخٍ للعضلات ومزيل للقلق.</td>
-        </tr>
-        <tr>
-          <td>Bromazepam</td>
-          <td>Benzodiazepine</td>
-          <td><span class="badge badge-light">خفيفة</span> <span class="potency-text">Mild sedative</span></td>
-          <td>القطاع الحكومي</td>
-          <td>مهدّئ أقل؛ طابع مُزيل للقلق أكثر.</td>
-        </tr>
-        <tr>
-          <td>Midazolam (injection)</td>
-          <td>Benzodiazepine (anesthetic)</td>
-          <td><span class="badge badge-extreme">شديدة للغاية</span> <span class="potency-text">Anesthetic‑level</span></td>
-          <td>المستشفيات الحكومية (حقن)</td>
-          <td>للتخدير والإجراءات؛ ليس علاجًا روتينيًا للأرق.</td>
-        </tr>
+        <tr><th>الدواء</th><th>الفئة</th><th>الفاعلية</th><th>التوافر</th><th>ملاحظات</th></tr>
+        <tr><td>Lorazepam</td><td>Benzodiazepine</td><td><span class="badge badge-potent">قوية</span></td><td>حكومي</td><td>للقلق والتهدئة الحادة.</td></tr>
+        <tr><td>Clonazepam</td><td>Benzodiazepine</td><td><span class="badge badge-potent">قوية</span></td><td>حكومي</td><td>طويل الأمد؛ ليس منومًا رئيسيًا.</td></tr>
+        <tr><td>Diazepam</td><td>Benzodiazepine</td><td><span class="badge badge-potent">قوية</span></td><td>حكومي</td><td>مرخٍ للعضلات ومزيل للقلق.</td></tr>
+        <tr><td>Bromazepam</td><td>Benzodiazepine</td><td><span class="badge badge-light">خفيفة</span></td><td>حكومي</td><td>طابع مُزيل للقلق أكثر.</td></tr>
+        <tr><td>Midazolam (حقن)</td><td>Benzodiazepine (تخدير)</td><td><span class="badge badge-extreme">شديدة للغاية</span></td><td>حكومي (حقن)</td><td>للتخدير والإجراءات.</td></tr>
       </table>
 
       <h3>مضاد مستقبلات الأوركسين</h3>
       <table>
-        <tr>
-          <th>الدواء</th>
-          <th>الفئة</th>
-          <th>الفاعلية</th>
-          <th>التوافر (الإمارات)</th>
-          <th>ملاحظات</th>
-        </tr>
-        <tr>
-          <td>Lemborexant 5–10 mg</td>
-          <td>Dual orexin receptor antagonist (DORA)</td>
-          <td><span class="badge badge-extreme">شديدة للغاية</span> <span class="potency-text">Strong maintenance effect</span></td>
-          <td>صيدليات خاصة</td>
-          <td>آلية حديثة؛ تقلل دافع اليقظة بدل تعزيز GABA.</td>
-        </tr>
+        <tr><th>الدواء</th><th>الفئة</th><th>الفاعلية</th><th>التوافر</th><th>ملاحظات</th></tr>
+        <tr><td>Lemborexant 5–10 mg</td><td>DORA</td><td><span class="badge badge-extreme">شديدة للغاية</span></td><td>خاص</td><td>يقلل دافع اليقظة.</td></tr>
       </table>
 
       <h3>مضادات الاكتئاب المُسكنة</h3>
       <table>
-        <tr>
-          <th>الدواء</th>
-          <th>الفئة</th>
-          <th>الفاعلية</th>
-          <th>التوافر (الإمارات)</th>
-          <th>ملاحظات</th>
-        </tr>
-        <tr>
-          <td>Amitriptyline</td>
-          <td>Tricyclic antidepressant</td>
-          <td><span class="badge badge-moderate">متوسطة</span> <span class="potency-text">Sedating</span></td>
-          <td>حكومي (SCD)</td>
-          <td>خارج النشرة للأرق؛ حصر H<sub>1</sub> وتأثيرات مضادّة كولينية قوية.</td>
-        </tr>
-        <tr>
-          <td>Amitriptyline + Chlordiazepoxide</td>
-          <td>TCA + benzodiazepine combination</td>
-          <td><span class="badge badge-moderate">متوسطة</span> <span class="potency-text">Mixed sedative</span></td>
-          <td>حكومي (SCD)</td>
-          <td>في حال اجتماع أعراض المزاج والقلق.</td>
-        </tr>
-        <tr>
-          <td>Trazodone</td>
-          <td>Serotonin antagonist and reuptake inhibitor</td>
-          <td><span class="badge badge-moderate">متوسطة</span> <span class="potency-text">Low‑dose hypnotic</span></td>
-          <td>حكومي + خاص (SCD)</td>
-          <td>منوم شائع بجرعات منخفضة خارج النشرة.</td>
-        </tr>
-        <tr>
-          <td>Mirtazapine</td>
-          <td>NaSSA antidepressant</td>
-          <td><span class="badge badge-moderate">متوسطة</span> <span class="potency-text">Sedating at low dose</span></td>
-          <td>حكومي (SCD)</td>
-          <td>حصر قوي لـ H<sub>1</sub>؛ يُستخدم عند تلازم الاكتئاب والأرق.</td>
-        </tr>
+        <tr><th>الدواء</th><th>الفئة</th><th>الفاعلية</th><th>التوافر</th><th>ملاحظات</th></tr>
+        <tr><td>Amitriptyline</td><td>TCA</td><td><span class="badge badge-moderate">متوسطة</span></td><td>حكومي (SCD)</td><td>حصر H<sub>1</sub> وآثار مضادّة كولينية.</td></tr>
+        <tr><td>Amitriptyline + Chlordiazepoxide</td><td>TCA + BZD</td><td><span class="badge badge-moderate">متوسطة</span></td><td>حكومي (SCD)</td><td>للمزاج مع القلق.</td></tr>
+        <tr><td>Trazodone</td><td>SARI</td><td><span class="badge badge-moderate">متوسطة</span></td><td>حكومي + خاص (SCD)</td><td>جرعات منخفضة منوِّمة.</td></tr>
+        <tr><td>Mirtazapine</td><td>NaSSA</td><td><span class="badge badge-moderate">متوسطة</span></td><td>حكومي (SCD)</td><td>حصر قوي لـ H<sub>1</sub>.</td></tr>
       </table>
 
       <h3>عوامل مُساعِدة خارج النشرة</h3>
       <table>
-        <tr>
-          <th>الدواء</th>
-          <th>الفئة</th>
-          <th>الفاعلية</th>
-          <th>التوافر (الإمارات)</th>
-          <th>ملاحظات</th>
-        </tr>
-        <tr>
-          <td>Gabapentin</td>
-          <td>Gabapentinoid</td>
-          <td><span class="badge badge-moderate">متوسطة</span> <span class="potency-text">Adjunctive</span></td>
-          <td>حكومي + خاص</td>
-          <td>خارج النشرة؛ قد يُحسّن النوم لدى مرضى الألم أو القلق.</td>
-        </tr>
-        <tr>
-          <td>Pregabalin</td>
-          <td>Gabapentinoid</td>
-          <td><span class="badge badge-moderate">متوسطة</span> <span class="potency-text">Adjunctive</span></td>
-          <td>حكومي + خاص</td>
-          <td>مشابه للجابابنتين في المبررات.</td>
-        </tr>
-        <tr>
-          <td>Phenobarbital</td>
-          <td>Barbiturate</td>
-          <td><span class="badge badge-extreme">شديدة للغاية</span> <span class="potency-text">Strong CNS depressant</span></td>
-          <td>حكومي (نادر)</td>
-          <td>نادر الاستخدام لمخاوف السلامة والاعتماد.</td>
-        </tr>
+        <tr><th>الدواء</th><th>الفئة</th><th>الفاعلية</th><th>التوافر</th><th>ملاحظات</th></tr>
+        <tr><td>Gabapentin</td><td>Gabapentinoid</td><td><span class="badge badge-moderate">متوسطة</span></td><td>حكومي + خاص</td><td>قد يفيد مع الألم أو القلق.</td></tr>
+        <tr><td>Pregabalin</td><td>Gabapentinoid</td><td><span class="badge badge-moderate">متوسطة</span></td><td>حكومي + خاص</td><td>مشابه للجابابنتين.</td></tr>
+        <tr><td>Phenobarbital</td><td>Barbiturate</td><td><span class="badge badge-extreme">شديدة للغاية</span></td><td>حكومي (نادر)</td><td>مخاوف السلامة والاعتماد.</td></tr>
       </table>
 
       <p style="font-size:13px; color:#9cffc9; margin-top:10px;">
-        <strong>ملاحظة:</strong> يُبلّغ عن عدم توفر Ramelteon وعدة منومات بنزوديازبينية كلاسيكية (Temazepam, Estazolam, Flurazepam) في الإمارات وقت كتابة هذه المراجعة.
+        <strong>ملاحظة:</strong> يُبلّغ عن عدم توفر Ramelteon وعدة منومات بنزوديازبينية كلاسيكية (Temazepam وEstazolam وFlurazepam) في الإمارات وقت كتابة المراجعة.
       </p>
     </div>
 
@@ -558,10 +374,8 @@
     <div class="box" id="novel">
       <h2>العلاجات الحديثة والناشئة</h2>
       <p>
-        تمثل مضادات مستقبلات الأوركسين الثنائية مثل Lemborexant نهجًا آليًا مميزًا للأرق، إذ تستهدف دافع
-        اليقظة بدلًا من تعزيز التثبيط الغابّاوي. ومع توفر DORAs إضافية ومناهضات مستقبلات الميلاتون عالميًا،
-        ستعتمد مواءمتها محليًا على الموافقات التنظيمية والكلفة وألفة الأطباء. كما تتوسع العلاجات الرقمية
-        وبرامج CBT‑I المنظمة دوليًا وقد تُكمل الاستراتيجيات الدوائية في المنطقة.
+        تمثل مضادات مستقبلات الأوركسين الثنائية مثل Lemborexant نهجًا مميزًا؛ تستهدف دافع اليقظة بدل تعزيز GABA.
+        تتحدد مواءمتها محليًا بالموافقات التنظيمية والكلفة وألفة الأطباء. كما قد تكمل العلاجات الرقمية وبرامج CBT‑I الاستراتيجيات الدوائية.
       </p>
     </div>
 
@@ -569,11 +383,9 @@
     <div class="box" id="conclusion">
       <h2>الخلاصة</h2>
       <p>
-        يشمل علاج الأرق دوائيًا في دولة الإمارات أدوية Z، والبنزوديازيبينات، ومضادات الاكتئاب المُسكنة،
-        ومضادات الهيستامين، والجابابنتينويدات، مع حضور متزايد لمضادات مستقبلات الأوركسين. إن فهم آليات
-        المستقبلات والقوة المهدِّئة النسبية والتوافر المحلي يساعد على تموضع العوامل علاجياً بصورة أكثر
-        رشادة ضمن خطط فردية. هذه المراجعة تعليمية ولا تُغني عن الإرشادات السريرية والوثائق التنظيمية
-        أو تقدير الحالة الفردي.
+        يشمل علاج الأرق دوائيًا في الإمارات أدوية Z، البنزوديازيبينات، مضادات الاكتئاب المُسكنة، مضادات الهيستامين، الجابابنتينويدات،
+        مع حضور متزايد لمضادات الأوركسين. إن فهم آليات المستقبلات، القوة المهدِّئة النسبية، والتوافر المحلي يساعد على التموضع العلاجي الرشيد ضمن خطط فردية.
+        هذه مراجعة تعليمية لا تُغني عن الإرشادات السريرية أو الوثائق التنظيمية أو الحكم الطبي الفردي.
       </p>
     </div>
 
@@ -581,9 +393,8 @@
     <div class="box" id="references">
       <h2>المراجع</h2>
       <p style="font-size:14px;">
-        تستند هذه المراجعة إلى مبادئ راسخة في علم دواء المنومات ومعلومات متاحة علنًا حول الآليات وتوافر
-        الأدوية المحلي وقت الكتابة. ينبغي الرجوع إلى القوائم الدوائية المحدثة والتعاميم التنظيمية والإرشادات
-        المبنية على الدليل عند اتخاذ قرارات وصفية.
+        تستند هذه المراجعة إلى مبادئ راسخة في علم دواء المنومات ومعلومات متاحة علنًا حول الآليات والتوافر المحلي وقت الكتابة.
+        يُنصح بالرجوع إلى القوائم الدوائية والتعاميم التنظيمية والإرشادات المبنية على الدليل عند اتخاذ قرارات وصفية.
       </p>
     </div>
 
@@ -592,7 +403,7 @@
     </footer>
   </div>
 
-  <!-- Loading Script (applies to site header nav + sidebar "Back to Research", not in‑page #anchors) -->
+  <!-- Loading Script -->
   <script>
     let isLoading = false;
 
@@ -613,19 +424,23 @@
       }, 30);
     }
 
-    // Only external page navigations (header nav + sidebar-home), not in-page #anchors
+    // Loader for external page links only (header nav + .sidebar-home)
     document.querySelectorAll('header nav a, .sidebar-home').forEach(link => {
       link.addEventListener('click', function (e) {
-        if (this.getAttribute('href')?.startsWith('#')) return; // ignore hash links
+        const href = this.getAttribute('href') || '';
+        if (href.startsWith('#')) return; // ignore in-page anchors
         if (isLoading) return;
         e.preventDefault();
         isLoading = true;
         startLoadingTo(this.href);
       });
     });
+
+    // Sidebar in-page anchors: no overlay (smooth scroll via CSS)
+    // No JS needed; markup & CSS handle it.
   </script>
 
-  <!-- Global scripts (deferred so they don't block rendering) -->
+  <!-- Global scripts (defer so they don’t block rendering) -->
   <script src="global.js" defer></script>
   <script src="fade.js" defer></script>
 </body>
