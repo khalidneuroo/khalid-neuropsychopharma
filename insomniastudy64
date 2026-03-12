@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="canonical" href="https://khalidalmansoori.com/insomniastudy64.html" />
+  <title>Emirati Study — Insomnia Pharmacology & Treatment Landscape in the UAE (2026)</title>
+  <meta name="description" content="Educational clinical‑pharmacology review of insomnia treatments in the UAE, covering mechanisms, drug classes, relative sedative potency, and local availability." />
+  <meta name="theme-color" content="#0A0F1C" />
+  <!-- BUILD-ID: KA-RESEARCH-THEME-20260312-213424 -->
+
+  <style>
+    :root{
+      --ka-primary:#00D1B2;  /* turquoise */
+      --ka-accent:#7DF9FF;   /* neon cyan */
+      --ka-bg:#0A0F1C;       /* deep space */
+      --ka-surface:#0F1730;  /* elevated panel */
+      --ka-text:#E6F1FF;     /* bright text */
+      --ka-muted:#7A8AA0;    /* muted text */
+      --ka-border:rgba(125,249,255,0.18);
+    }
+
+    /* Base */
+    html,body{height:100%}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0; background:var(--ka-bg); color:var(--ka-text);
+      font-family:system-ui,-apple-system,"Segoe UI",Roboto,Inter,Arial,sans-serif;
+      line-height:1.6; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+    }
+    a{color:inherit; text-decoration:none}
+    a:focus-visible{outline:2px solid var(--ka-accent); outline-offset:3px; border-radius:6px}
+
+    /* Background neuron canvas (always enabled) */
+    #neuronCanvas{
+      position:fixed; inset:0; width:100vw; height:100vh; z-index:0;
+      opacity:.42; filter:drop-shadow(0 0 10px rgba(125,249,255,.28));
+      background: radial-gradient(1400px 900px at 68% 22%, #0f1730 0%, var(--ka-bg) 58%);
+    }
+
+    /* Page layout */
+    .page{position:relative; z-index:2; display:grid; grid-template-rows:auto 1fr auto; min-height:100dvh}
+    .wrap{width:min(1100px,92vw); margin:0 auto; padding:14px 0}
+
+    /* Header (from main theme) */
+    header{
+      position:sticky; top:0; z-index:3;
+      background:linear-gradient(180deg, rgba(10,15,28,.68), rgba(10,15,28,.35));
+      backdrop-filter:saturate(120%) blur(8px);
+      border-bottom:1px solid var(--ka-border);
+    }
+    .brand{display:flex; align-items:baseline; gap:10px}
+    .brand h1{
+      margin:0; font-size:clamp(18px,4vw,22px); font-weight:700; letter-spacing:.02em;
+      background:linear-gradient(180deg,#fff,#cfe9ff); -webkit-background-clip:text; background-clip:text; color:transparent;
+    }
+    .brand .role{margin:0; font-size:13px; color:var(--ka-muted)}
+    nav{display:flex; gap:18px; margin-top:8px; flex-wrap:wrap}
+    nav a{font-size:14px; padding:6px 10px; border-radius:8px; border:1px solid transparent; transition:border-color .2s ease, background .2s ease, transform .2s ease}
+    nav a:hover{border-color:var(--ka-border); background:rgba(10,15,28,.4); transform:translateY(-1px)}
+
+    /* Sidebar (from research file, restyled to new theme) */
+    .layout{display:block}
+    .sidebar{
+      position:fixed; top:0; left:0; width:260px; height:100vh; overflow:auto;
+      background:rgba(15,23,48,.70); border-right:1px solid var(--ka-border);
+      box-shadow:0 0 18px rgba(125,249,255,.20);
+      padding:18px 16px; backdrop-filter:blur(4px) saturate(120%);
+    }
+    .sidebar h2{color:var(--ka-accent); font-size:18px; margin:8px 0 12px; text-align:center}
+    .sidebar a{display:block; color:var(--ka-text); font-size:14px; margin:8px 0; opacity:.9;}
+    .sidebar a:hover{color:var(--ka-accent); transform:translateX(4px)}
+    .sidebar hr{border:0; border-top:1px solid var(--ka-border); margin:14px 0}
+
+    /* Content column */
+    .content{margin-left:280px; padding:22px}
+    .meta{color:var(--ka-muted); text-align:center; margin:4px 0 12px}
+
+    /* Headings & text (journal style) */
+    h1{font-size:clamp(24px,6vw,34px); margin:10px 0 6px; text-align:center}
+    h2{font-size:clamp(20px,5vw,26px); margin:16px 0 10px}
+    h3{font-size:clamp(18px,4.5vw,22px); margin:14px 0 8px}
+    p,li{font-size:clamp(14px,2.8vw,17px); color:var(--ka-text)}
+    ul{padding-left:20px}
+
+    /* Neon panels (was .box) */
+    .panel{
+      background:rgba(15,23,48,.55);
+      border:1px solid var(--ka-border); border-radius:12px;
+      padding:18px; margin:18px 0;
+      box-shadow:0 0 14px rgba(125,249,255,.20);
+    }
+
+    /* Tables (restyled) */
+    table{width:100%; border-collapse:collapse; margin:16px 0; background:rgba(15,23,48,.55); border:1px solid var(--ka-border)}
+    th,td{border:1px solid var(--ka-border); padding:10px; text-align:left; vertical-align:top; font-size:14px}
+    th{background:linear-gradient(180deg, rgba(125,249,255,.18), rgba(0,209,178,.12)); color:var(--ka-text)}
+
+    /* Potency chips */
+    .chip{display:inline-block; padding:4px 10px; border-radius:999px; font-size:11px; font-weight:700; letter-spacing:.5px; color:#001318; margin-right:6px}
+    .chip-light{background:#3aa0ff}
+    .chip-moderate{background:#ffd93a}
+    .chip-potent{background:#ff9b3a}
+    .chip-extreme{background:#ff3a3a}
+    .potency-text{font-size:12px; text-transform:uppercase; letter-spacing:.6px; color:var(--ka-muted)}
+
+    /* Footer */
+    footer{border-top:1px solid var(--ka-border); background:linear-gradient(180deg, rgba(10,15,28,.35), rgba(10,15,28,.68)); padding:20px 0; margin-top:24px}
+    .social{display:flex; gap:12px; align-items:center}
+    .icon{width:18px; height:18px; stroke:var(--ka-text); stroke-width:1.6; fill:none}
+    .icon-link{display:inline-flex; align-items:center; gap:8px; color:var(--ka-text); font-size:14px; padding:8px 10px; border-radius:10px; border:1px solid transparent}
+    .icon-link:hover{border-color:var(--ka-accent); background:rgba(10,15,28,.48)}
+
+    /* Mobile: sidebar becomes block at top */
+    @media (max-width: 900px){
+      .sidebar{position:relative; width:auto; height:auto; border-right:none; border-bottom:1px solid var(--ka-border)}
+      .content{margin-left:0; padding:18px}
+    }
+  </style>
+</head>
+<body>
+  <!-- Animated neuron background -->
+  <canvas id="neuronCanvas" aria-hidden="true"></canvas>
+
+  <div class="page">
+    <!-- Header from main theme -->
+    
+
+    <main class="layout">
+      <!-- Sidebar (kept, restyled) -->
+      <aside class="sidebar" aria-label="Study sections">
+        <h2>Insomnia Study</h2>
+        <a class="toc-link" href="#abstract">Abstract</a>
+        <a class="toc-link" href="#background">Background</a>
+        <a class="toc-link" href="#mechanisms">Mechanisms of Sleep</a>
+        <a class="toc-link" href="#classes">Drug Classes</a>
+        <a class="toc-link" href="#potency">Potency Framework</a>
+        <a class="toc-link" href="#uae-table">UAE Drug Availability</a>
+        <a class="toc-link" href="#novel">Novel &amp; Emerging Treatments</a>
+        <a class="toc-link" href="#conclusion">Conclusion</a>
+        <a class="toc-link" href="#references">References</a>
+        <hr />
+        <a href="research.html" class="sidebar-home">← Back to Research</a>
+      </aside>
+
+      <!-- Main Content -->
+      <div class="content">
+        <h1>Emirati Study — Insomnia Pharmacology &amp; Treatment Landscape in the UAE (2026)</h1>
+        <div class="meta">
+          <strong>Principal Investigator:</strong> Khalid Almansoori<br />
+          <strong>Location:</strong> United Arab Emirates<br />
+          <strong>Type:</strong> Educational Clinical‑Pharmacology Review (Non‑Interventional)
+        </div>
+
+        <!-- Abstract -->
+        <section id="abstract" class="panel">
+          <h2>Abstract</h2>
+          <p>
+            This educational clinical‑pharmacology review summarizes the mechanisms of sleep regulation and the
+            pharmacological agents currently used for insomnia within the United Arab Emirates. It focuses on
+            receptor‑level mechanisms, relative sedative potency, and practical availability across government and
+            private sectors, including community pharmacies. Drug classes covered include benzodiazepine receptor
+            agonists (Z‑drugs and benzodiazepines), sedating antidepressants, antihistamines, gabapentinoids,
+            orexin receptor antagonists, and other adjunctive agents. The goal is to provide clinicians in the UAE
+            with a structured, mechanism‑based overview of insomnia treatments and their local availability, without
+            making therapeutic recommendations or replacing clinical judgment.
+          </p>
+        </section>
+
+        <!-- Background -->
+        <section id="background" class="panel">
+          <h2>Background</h2>
+          <p>
+            Insomnia is highly prevalent and frequently comorbid with psychiatric, neurological, and medical
+            conditions. Pharmacological treatment remains common in clinical practice, despite the central role of
+            non‑pharmacological approaches such as cognitive‑behavioural therapy for insomnia (CBT‑I). In the UAE,
+            clinicians navigate a mixed landscape of government‑restricted medications, private‑sector availability,
+            and over‑the‑counter options. Understanding the mechanisms of action and relative sedative potency of
+            available agents is essential for rational, individualized prescribing within local regulatory and
+            formulary constraints.
+          </p>
+        </section>
+
+        <!-- Mechanisms -->
+        <section id="mechanisms" class="panel">
+          <h2>Mechanisms of Sleep Regulation</h2>
+          <p>Sleep–wake regulation is governed by interacting neurotransmitter systems and circadian processes:</p>
+          <ul>
+            <li><strong>GABAergic inhibition:</strong> GABA neurons in the ventrolateral preoptic nucleus (VLPO) inhibit wake‑promoting nuclei, reducing cortical arousal.</li>
+            <li><strong>Orexin (hypocretin):</strong> Orexin neurons in the lateral hypothalamus stabilize wakefulness by exciting monoaminergic and cholinergic arousal systems.</li>
+            <li><strong>Melatonin and circadian timing:</strong> Melatonin acting at MT<sub>1</sub>/MT<sub>2</sub> receptors in the suprachiasmatic nucleus modulates circadian phase and sleep propensity.</li>
+            <li><strong>Adenosine:</strong> Accumulates during wakefulness and promotes sleep by inhibiting wake‑promoting neurons.</li>
+            <li><strong>Histamine:</strong> Histaminergic neurons in the tuberomammillary nucleus promote wakefulness via H<sub>1</sub> receptors; H<sub>1</sub> antagonism is sedating.</li>
+          </ul>
+          <p>Most hypnotic drugs act by either enhancing GABAergic inhibition, blocking wake‑promoting systems (histamine, orexin), or modulating circadian signalling.</p>
+        </section>
+
+        <!-- Classes -->
+        <section id="classes" class="panel">
+          <h2>Pharmacological Classes Used for Insomnia</h2>
+
+          <h3>Z‑Drugs (Non‑benzodiazepine GABA<sub>A</sub> Agonists)</h3>
+          <p>
+            Zopiclone, eszopiclone, zolpidem, and zaleplon are positive allosteric modulators at the benzodiazepine
+            site of GABA<sub>A</sub> receptors, with relative selectivity for α<sub>1</sub>‑containing subtypes. They enhance
+            GABA‑mediated chloride influx, hyperpolarizing neurons and reducing arousal. They primarily target sleep
+            onset (short‑acting agents) and/or sleep maintenance (longer‑acting or extended‑release formulations).
+          </p>
+
+          <h3>Benzodiazepines</h3>
+          <p>
+            Benzodiazepines (e.g., lorazepam, clonazepam, diazepam, bromazepam) are non‑selective positive allosteric
+            modulators at GABA<sub>A</sub> receptors, enhancing GABA’s inhibitory effect across multiple α subunits. They
+            provide anxiolytic, sedative, muscle‑relaxant, and anticonvulsant effects, with varying half‑lives and
+            accumulation profiles. In the UAE, many are restricted to government hospitals and are not primarily
+            positioned as first‑line hypnotics.
+          </p>
+
+          <h3>Orexin Receptor Antagonists</h3>
+          <p>
+            Dual orexin receptor antagonists (DORAs) such as lemborexant block OX<sub>1</sub>R and OX<sub>2</sub>R, reducing
+            wake drive rather than amplifying GABAergic inhibition. This produces a more physiologic sleep profile,
+            particularly for sleep maintenance, with less direct motor impairment compared to classic GABAergic
+            sedatives.
+          </p>
+
+          <h3>Sedating Antidepressants</h3>
+          <p>
+            Agents such as amitriptyline, trazodone, and mirtazapine exert sedative effects primarily through
+            H<sub>1</sub> histamine receptor antagonism and 5‑HT<sub>2</sub> receptor blockade, with additional noradrenergic and
+            serotonergic actions. They are often used off‑label for insomnia in patients with comorbid mood or anxiety
+            disorders.
+          </p>
+
+          <h3>Gabapentinoids and Other Off‑Label Agents</h3>
+          <p>
+            Gabapentin and pregabalin bind to the α<sub>2</sub>δ subunit of voltage‑gated calcium channels, reducing
+            excitatory neurotransmitter release. They may improve sleep in patients with neuropathic pain or anxiety.
+            Phenobarbital, a barbiturate, is rarely used due to safety and dependence concerns.
+          </p>
+
+          <h3>Antihistamines</h3>
+          <p>
+            First‑generation antihistamines (doxylamine, diphenhydramine, promethazine) block central H<sub>1</sub>
+            receptors, reducing histamine‑mediated wakefulness. They are accessible but associated with anticholinergic
+            effects, tolerance, and next‑day sedation, particularly in older adults.
+          </p>
+        </section>
+
+        <!-- Potency Framework -->
+        <section id="potency" class="panel">
+          <h2>Potency Framework (Educational Classification)</h2>
+          <p>
+            The following potency categories are <strong>educational</strong> and reflect relative sedative strength and
+            CNS depressant profile, not prescribing recommendations:
+          </p>
+          <ul>
+            <li><span class="chip chip-light">LIGHT</span> <span class="potency-text">Mild sedative effect; typically antihistamines or weak benzodiazepines.</span></li>
+            <li><span class="chip chip-moderate">MODERATE</span> <span class="potency-text">Clear sedative effect; often antidepressants, gabapentinoids, or low‑dose Z‑drugs.</span></li>
+            <li><span class="chip chip-potent">POTENT</span> <span class="potency-text">Strong hypnotic effect; typical of standard Z‑drug doses and many benzodiazepines.</span></li>
+            <li><span class="chip chip-extreme">EXTREMELY POTENT</span> <span class="potency-text">Very strong CNS depression; includes barbiturates, anesthetic benzodiazepines, and some DORAs.</span></li>
+          </ul>
+          <p>This framework is intended to help clinicians conceptually position agents relative to one another; it does
+            not replace dose‑specific, patient‑specific clinical judgment.</p>
+        </section>
+
+        <!-- UAE Table -->
+        <section id="uae-table" class="panel">
+          <h2>UAE Insomnia‑Related Drug Availability (2026)</h2>
+          <p>
+            The table below summarizes selected agents relevant to insomnia in the UAE, with their class, potency
+            category, and typical availability. Information is approximate and may change; clinicians should verify
+            current formulary and regulatory status.
+          </p>
+
+          <h3>Z‑Drugs (Non‑benzodiazepine Hypnotics)</h3>
+          <table>
+            <tr>
+              <th>Drug</th><th>Class</th><th>Potency</th><th>Availability (UAE)</th><th>Notes</th>
+            </tr>
+            <tr>
+              <td>Zopiclone 7.5 mg</td>
+              <td>Z‑drug (GABA<sub>A</sub> modulator)</td>
+              <td><span class="chip chip-potent">POTENT</span> <span class="potency-text">Hypnotic</span></td>
+              <td>Life Pharmacies (private)</td>
+              <td>Commonly used for sleep onset and maintenance.</td>
+            </tr>
+            <tr>
+              <td>Eszopiclone 1 mg</td>
+              <td>Z‑drug</td>
+              <td><span class="chip chip-moderate">MODERATE</span> <span class="potency-text">Onset‑focused</span></td>
+              <td>Life Pharmacies (private)</td>
+              <td>Lower dose; primarily sleep onset.</td>
+            </tr>
+            <tr>
+              <td>Eszopiclone 3 mg</td>
+              <td>Z‑drug</td>
+              <td><span class="chip chip-potent">POTENT</span> <span class="potency-text">Onset + maintenance</span></td>
+              <td>Life Pharmacies (private)</td>
+              <td>Stronger hypnotic effect; longer duration.</td>
+            </tr>
+            <tr>
+              <td>Zolpidem 10 mg</td>
+              <td>Z‑drug</td>
+              <td><span class="chip chip-potent">POTENT</span> <span class="potency-text">Onset</span></td>
+              <td>Life Pharmacies (shortage reported)</td>
+              <td>Primarily sleep onset; availability may fluctuate.</td>
+            </tr>
+            <tr>
+              <td>Zolpidem 12.5 mg XR</td>
+              <td>Z‑drug (extended‑release)</td>
+              <td><span class="chip chip-potent">POTENT</span> <span class="potency-text">Maintenance</span></td>
+              <td>Life Pharmacies (shortage reported)</td>
+              <td>Designed for sleep maintenance; extended release.</td>
+            </tr>
+            <tr>
+              <td>Zaleplon 5–10 mg</td>
+              <td>Z‑drug (ultra‑short acting)</td>
+              <td><span class="chip chip-moderate">MODERATE</span> <span class="potency-text">Onset</span></td>
+              <td>Private sector (where stocked)</td>
+              <td>Very short half‑life; minimal effect on maintenance.</td>
+            </tr>
+          </table>
+
+          <h3>Benzodiazepines (Primarily Government Sector)</h3>
+          <table>
+            <tr>
+              <th>Drug</th><th>Class</th><th>Potency</th><th>Availability (UAE)</th><th>Notes</th>
+            </tr>
+            <tr>
+              <td>Lorazepam</td>
+              <td>Benzodiazepine</td>
+              <td><span class="chip chip-potent">POTENT</span> <span class="potency-text">Sedative‑anxiolytic</span></td>
+              <td>Government hospitals</td>
+              <td>Used mainly for anxiety and acute sedation.</td>
+            </tr>
+            <tr>
+              <td>Clonazepam</td>
+              <td>Benzodiazepine</td>
+              <td><span class="chip chip-potent">POTENT</span> <span class="potency-text">Long‑acting</span></td>
+              <td>Government hospitals</td>
+              <td>Long half‑life; not primarily a hypnotic.</td>
+            </tr>
+            <tr>
+              <td>Diazepam</td>
+              <td>Benzodiazepine</td>
+              <td><span class="chip chip-potent">POTENT</span> <span class="potency-text">Long‑acting</span></td>
+              <td>Government hospitals</td>
+              <td>Long‑acting; muscle‑relaxant and anxiolytic.</td>
+            </tr>
+            <tr>
+              <td>Bromazepam</td>
+              <td>Benzodiazepine</td>
+              <td><span class="chip chip-light">LIGHT</span> <span class="potency-text">Mild sedative</span></td>
+              <td>Government sector</td>
+              <td>Less potent hypnotic; more anxiolytic profile.</td>
+            </tr>
+            <tr>
+              <td>Midazolam (injection)</td>
+              <td>Benzodiazepine (anesthetic)</td>
+              <td><span class="chip chip-extreme">EXTREMELY POTENT</span> <span class="potency-text">Anesthetic‑level</span></td>
+              <td>Government hospitals (injection only)</td>
+              <td>Used for anesthesia and procedures; not a routine insomnia treatment.</td>
+            </tr>
+          </table>
+
+          <h3>Orexin Receptor Antagonist</h3>
+          <table>
+            <tr>
+              <th>Drug</th><th>Class</th><th>Potency</th><th>Availability (UAE)</th><th>Notes</th>
+            </tr>
+            <tr>
+              <td>Lemborexant 5–10 mg</td>
+              <td>Dual orexin receptor antagonist (DORA)</td>
+              <td><span class="chip chip-extreme">EXTREMELY POTENT</span> <span class="potency-text">Strong maintenance effect</span></td>
+              <td>Private pharmacies</td>
+              <td>Novel mechanism; reduces wake drive rather than amplifying GABA.</td>
+            </tr>
+          </table>
+
+          <h3>Sedating Antidepressants</h3>
+          <table>
+            <tr>
+              <th>Drug</th><th>Class</th><th>Potency</th><th>Availability (UAE)</th><th>Notes</th>
+            </tr>
+            <tr>
+              <td>Amitriptyline</td>
+              <td>Tricyclic antidepressant</td>
+              <td><span class="chip chip-moderate">MODERATE</span> <span class="potency-text">Sedating</span></td>
+              <td>Government (SCD)</td>
+              <td>Off‑label for insomnia; strong H<sub>1</sub> and anticholinergic effects.</td>
+            </tr>
+            <tr>
+              <td>Amitriptyline + Chlordiazepoxide</td>
+              <td>TCA + benzodiazepine combination</td>
+              <td><span class="chip chip-moderate">MODERATE</span> <span class="potency-text">Mixed sedative</span></td>
+              <td>Government (SCD)</td>
+              <td>Used where both mood and anxiety symptoms are present.</td>
+            </tr>
+            <tr>
+              <td>Trazodone</td>
+              <td>Serotonin antagonist and reuptake inhibitor</td>
+              <td><span class="chip chip-moderate">MODERATE</span> <span class="potency-text">Low‑dose hypnotic</span></td>
+              <td>Government + private (SCD)</td>
+              <td>Common off‑label hypnotic at low doses.</td>
+            </tr>
+            <tr>
+              <td>Mirtazapine</td>
+              <td>NaSSA antidepressant</td>
+              <td><span class="chip chip-moderate">MODERATE</span> <span class="potency-text">Sedating at low dose</span></td>
+              <td>Government (SCD)</td>
+              <td>Strong H<sub>1</sub> blockade; often used when depression and insomnia coexist.</td>
+            </tr>
+          </table>
+
+          <h3>Off‑Label Adjunctive Agents</h3>
+          <table>
+            <tr>
+              <th>Drug</th><th>Class</th><th>Potency</th><th>Availability (UAE)</th><th>Notes</th>
+            </tr>
+            <tr>
+              <td>Gabapentin</td>
+              <td>Gabapentinoid</td>
+              <td><span class="chip chip-moderate">MODERATE</span> <span class="potency-text">Adjunctive</span></td>
+              <td>Government + private</td>
+              <td>Off‑label; may improve sleep in patients with pain or anxiety.</td>
+            </tr>
+            <tr>
+              <td>Pregabalin</td>
+              <td>Gabapentinoid</td>
+              <td><span class="chip chip-moderate">MODERATE</span> <span class="potency-text">Adjunctive</span></td>
+              <td>Government + private</td>
+              <td>Off‑label; similar rationale to gabapentin.</td>
+            </tr>
+            <tr>
+              <td>Phenobarbital</td>
+              <td>Barbiturate</td>
+              <td><span class="chip chip-extreme">EXTREMELY POTENT</span> <span class="potency-text">Strong CNS depressant</span></td>
+              <td>Government (rare use)</td>
+              <td>Rarely used due to safety and dependence concerns.</td>
+            </tr>
+          </table>
+          <p style="font-size:13px; color:var(--ka-muted); margin-top:10px">
+            <strong>Note:</strong> Ramelteon and several classic hypnotic benzodiazepines (temazepam, estazolam,
+            flurazepam) are reported as not available in the UAE at the time of this review.
+          </p>
+        </section>
+
+        <!-- Novel -->
+        <section id="novel" class="panel">
+          <h2>Novel &amp; Emerging Treatments</h2>
+          <p>
+            Dual orexin receptor antagonists such as lemborexant represent a mechanistically distinct approach to
+            insomnia treatment, targeting wake drive rather than amplifying GABAergic inhibition. As more DORAs and
+            melatonin‑receptor agonists become available globally, their potential integration into UAE practice will
+            depend on regulatory approval, cost, and clinician familiarity. Digital therapeutics and structured CBT‑I
+            programs are also expanding internationally and may complement pharmacological strategies in the region.
+          </p>
+        </section>
+
+        <!-- Conclusion -->
+        <section id="conclusion" class="panel">
+          <h2>Conclusion</h2>
+          <p>
+            Insomnia pharmacotherapy in the United Arab Emirates spans Z‑drugs, benzodiazepines, sedating
+            antidepressants, antihistamines, gabapentinoids, and a growing presence of orexin receptor antagonists.
+            Understanding receptor‑level mechanisms, relative sedative potency, and local availability can help
+            clinicians position these agents more rationally within individualized treatment plans. This review is
+            intended as an educational resource and does not replace clinical guidelines, regulatory documents, or
+            patient‑specific medical judgment.
+          </p>
+        </section>
+
+        <!-- References -->
+        <section id="references" class="panel">
+          <h2>References</h2>
+          <p style="font-size:14px">
+            This educational review is based on established pharmacology of hypnotic agents, publicly available
+            information on drug mechanisms, and local availability data as reported at the time of writing. Clinicians
+            should consult up‑to‑date formularies, regulatory circulars, and evidence‑based guidelines when making
+            prescribing decisions.
+          </p>
+        </section>
+
+        
+      </div>
+    </main>
+
+    <!-- FOOTER (global) -->
+    <footer id="contact">
+      <div class="wrap" style="display:flex; flex-wrap:wrap; gap:12px; align-items:center; justify-content:space-between;">
+        <div class="social" aria-label="Social links">
+          <a class="icon-link" href="https://www.linkedin.com/in/khalid-yousef-325b61263/" target="_blank" rel="noopener">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9v9M6 6.5c0 .3-.1.6-.3.8-.2.2-.5.3-.8.3s-.6-.1-.8-.3S3.8 6.8 3.8 6.5s.1-.6.3-.8.5-.3.8-.3.6.1.8.3.3.5.3.8zM10 9v9m0-5.5c0-1.9 1.1-3.5 3.4-3.5 2.2 0 3.6 1.4 3.6 3.8V18"/></svg>
+            <span>LinkedIn</span>
+          </a>
+          <a class="icon-link" href="https://x.com/vvokhalid" target="_blank" rel="noopener">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4l16 16M20 4L9.5 14.5M4 20l6.5-6.5"/></svg>
+            <span>X</span>
+          </a>
+        </div>
+        <div style="color:var(--ka-muted); font-size:13px;">© 2026 Khalid Al Mansoori — Neuropsychopharmacology Research &amp; Scientific Insight</div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ===== Neuron background animation (from main theme, corrected) ===== -->
+  <script>
+    (function(){
+      const canvas = document.getElementById('neuronCanvas');
+      if(!canvas) return;
+      const ctx = canvas.getContext('2d');
+      if(!ctx) return;
+      let dpr = Math.max(1, (window.devicePixelRatio || 1));
+
+      function resize(){
+        const w = window.innerWidth, h = window.innerHeight;
+        canvas.style.width = w + 'px';
+        canvas.style.height = h + 'px';
+        canvas.width  = Math.floor(w * dpr);
+        canvas.height = Math.floor(h * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
+      resize();
+      window.addEventListener('resize', resize);
+
+      const cssVar = (n,f)=> (getComputedStyle(document.documentElement).getPropertyValue(n).trim() || f);
+      const ACCENT  = cssVar('--ka-accent',  '#7DF9FF');
+      const PRIMARY = cssVar('--ka-primary', '#00D1B2');
+
+      const nodes = [];
+      const clamp = (n,min,max)=>Math.max(min,Math.min(max,n));
+      function rand(a,b){ return a + Math.random()*(b-a); }
+
+      function init(){
+        nodes.length = 0;
+        const count = clamp(Math.floor(window.innerWidth*0.18), 90, 180);
+        const w = canvas.width / dpr, h = canvas.height / dpr;
+        for(let i=0;i<count;i++){
+          nodes.push({ x: rand(0,w), y: rand(0,h), vx: rand(-0.28,0.28), vy: rand(-0.28,0.28), r: rand(1.2,2.6) });
+        }
+      }
+      init();
+      window.addEventListener('resize', init);
+
+      let last = 0;
+      function step(ts){
+        if(ts - last < 16){ requestAnimationFrame(step); return; }
+        last = ts;
+        const w = canvas.width / dpr, h = canvas.height / dpr;
+        ctx.clearRect(0,0,w,h);
+
+        // connections
+        for(let i=0;i<nodes.length;i++){
+          for(let j=i+1;j<nodes.length;j++){
+            const a = nodes[i], b = nodes[j];
+            const dx = a.x - b.x, dy = a.y - b.y;
+            const dist = Math.hypot(dx, dy);
+            if(dist < 120){
+              const alpha = (1 - dist/120) * 0.45;
+              const grad = ctx.createLinearGradient(a.x, a.y, b.x, b.y);
+              grad.addColorStop(0, PRIMARY);
+              grad.addColorStop(1, ACCENT);
+              ctx.strokeStyle = grad;
+              ctx.globalAlpha = alpha;
+              ctx.shadowColor = ACCENT;
+              ctx.shadowBlur = 6;
+              ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
+              ctx.shadowBlur = 0; ctx.globalAlpha = 1;
+            }
+          }
+        }
+        // nodes
+        for(const n of nodes){
+          n.x += n.vx; n.y += n.vy;
+          if(n.x < 0 || n.x > w) n.vx *= -1;
+          if(n.y < 0 || n.y > h) n.vy *= -1;
+          ctx.beginPath();
+          ctx.fillStyle = ACCENT;
+          ctx.arc(n.x, n.y, n.r, 0, Math.PI*2);
+          ctx.shadowColor = ACCENT;
+          ctx.shadowBlur = 10;
+          ctx.fill();
+          ctx.shadowBlur = 0;
+        }
+        requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+
+      console.log('[KA-Neuron] research page — nodes:', nodes.length);
+    })();
+  </script>
+</body>
+</html>
