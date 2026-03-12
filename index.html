@@ -1,533 +1,302 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="canonical" href="https://khalidalmansoori.com/">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="canonical" href="https://khalidalmansoori.com/" />
+  <title>Khalid Al Mansoori — Neuropsychopharmacology Research</title>
+  <meta name="description" content="Neuropsychopharmacology researcher offering scientific consulting, data interpretation, research design, and evidence-based education." />
+  <meta name="theme-color" content="#0A0F1C" />
+  <style>
+    :root {
+      --ka-primary: #00D1B2;
+      --ka-accent:  #7DF9FF;
+      --ka-bg:      #0A0F1C;
+      --ka-surface: #0F1730;
+      --ka-text:    #E6F1FF;
+      --ka-muted:   #7A8AA0;
+      --ka-border:  rgba(125, 249, 255, 0.18);
+    }
+    html, body { height: 100%; }
+    body {
+      margin: 0; color: var(--ka-text); background: var(--ka-bg);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+      line-height: 1.55; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+    }
+    /* Background neuron canvas (stronger visibility) */
+    #neuronCanvas { position: fixed; inset: 0; width: 100vw; height: 100vh; z-index: 0; opacity: .42; }
+    .veil { position: fixed; inset: 0; z-index: 1; pointer-events: none;
+      background: radial-gradient(1400px 900px at 68% 22%, #0f1730 0%, var(--ka-bg) 58%);
+    }
+    .page { position: relative; z-index: 2; display: grid; grid-template-rows: auto 1fr auto; min-height: 100dvh; }
+    header { backdrop-filter: saturate(120%) blur(8px);
+      background: linear-gradient(180deg, rgba(10,15,28,.68), rgba(10,15,28,.35));
+      border-bottom: 1px solid var(--ka-border); position: sticky; top: 0; z-index: 3; }
+    .wrap { width: min(1100px, 92vw); margin: 0 auto; padding: 14px 0; }
+    .brand { display: flex; align-items: baseline; gap: 10px; }
+    .brand h1 { margin: 0; font-size: clamp(18px, 4vw, 22px); font-weight: 700; letter-spacing: .02em;
+      background: linear-gradient(180deg, #fff, #cfe9ff); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .brand .role { margin: 0; font-size: 13px; color: var(--ka-muted); }
+    nav { display: flex; gap: 18px; margin-top: 8px; flex-wrap: wrap; }
+    nav a { color: var(--ka-text); text-decoration: none; font-size: 14px; padding: 6px 10px; border-radius: 8px;
+      border: 1px solid transparent; transition: border-color .2s ease, background .2s ease, transform .2s ease; }
+    nav a:hover { border-color: var(--ka-border); background: rgba(10,15,28,.4); transform: translateY(-1px); }
+    a:focus-visible { outline: 2px solid var(--ka-accent); outline-offset: 3px; border-radius: 6px; }
 
-    <title>Khalid | Neuropsychopharmacology Research</title>
+    .hero { padding: 78px 0 56px; }
+    .hero h2 { margin: 0 0 6px; font-size: clamp(28px, 6vw, 46px); font-weight: 800; letter-spacing: .02em; }
+    .hero h3 { margin: 0 0 18px; font-size: clamp(16px, 3.6vw, 20px); color: var(--ka-muted); font-weight: 500; }
+    .hero p  { margin: 0 0 24px; font-size: clamp(14px, 2.8vw, 18px); max-width: 80ch; }
+    .cta { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+    .btn { appearance: none; border: 1px solid var(--ka-border); background: rgba(10,15,28,.45); color: var(--ka-text);
+      padding: 10px 14px; border-radius: 12px; text-decoration: none; font-size: 14px;
+      transition: transform .2s ease, border-color .2s ease, background .2s ease; }
+    .btn:hover { transform: translateY(-1px); border-color: var(--ka-accent); background: rgba(10,15,28,.62); }
 
-    <!-- Main Styles -->
-    <link rel="stylesheet" href="style.css">
+    section { padding: 44px 0; }
+    .section-title { font-size: clamp(18px, 4.2vw, 24px); margin: 0 0 18px; font-weight: 700; letter-spacing: .02em; position: relative; display: inline-block; }
+    .section-title:after { content: ""; position: absolute; left: 0; bottom: -6px; width: 40px; height: 2px;
+      background: linear-gradient(90deg, var(--ka-accent), var(--ka-primary)); border-radius: 2px; box-shadow: 0 0 14px rgba(125,249,255,.38); }
 
-    <!-- Global Fade-in Animation -->
-    <link rel="stylesheet" href="fade.css">
+    .grid { display: grid; gap: 14px; }
+    @media (min-width: 760px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1080px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+    .card { border: 1px solid var(--ka-border); border-radius: 14px; padding: 18px; background: rgba(15,23,48,.5);
+      transition: transform .2s ease, border-color .2s ease, background .2s ease; }
+    .card:hover { transform: translateY(-2px); border-color: var(--ka-accent); background: rgba(15,23,48,.66); }
+    .card h4 { margin: 0 0 8px; font-size: 16px; }
+    .card p  { margin: 0; font-size: 14px; color: var(--ka-muted); }
+    .sub { color: var(--ka-muted); font-size: 13px; margin: 4px 0 10px; }
 
-    <style>
-        body {
-            background-color: #000;
-            color: #fff;
-            font-family: sans-serif;
-            margin: 0;
-            padding: 0;
-        }
+    .hi-list { display: grid; gap: 12px; }
+    .hi-item { border-left: 2px solid transparent; padding: 10px 12px; border-radius: 10px; background: rgba(15,23,48,.38); border: 1px solid var(--ka-border); }
+    .hi-item:hover { border-color: var(--ka-accent); }
+    .hi-item h5 { margin: 0 0 6px; font-size: 15px; }
+    .hi-item p  { margin: 0; font-size: 14px; color: var(--ka-muted); }
 
-        h1, h2, h3, p, a {
-            color: #fff;
-        }
+    .about p { max-width: 85ch; }
 
-        a:hover {
-            text-decoration: underline;
-        }
+    footer { border-top: 1px solid var(--ka-border); background: linear-gradient(180deg, rgba(10,15,28,.35), rgba(10,15,28,.68)); padding: 20px 0; margin-top: 26px; }
+    .social { display: flex; gap: 12px; align-items: center; }
+    .icon-link { display: inline-flex; align-items: center; gap: 8px; color: var(--ka-text); text-decoration: none; font-size: 14px; padding: 8px 10px; border-radius: 10px; border: 1px solid transparent; }
+    .icon-link:hover { border-color: var(--ka-accent); background: rgba(10,15,28,.48); }
+    .icon { width: 18px; height: 18px; stroke: var(--ka-text); stroke-width: 1.6; fill: none; }
 
-        a:focus-visible {
-            outline: 2px solid #00ff88;
-            outline-offset: 4px;
-        }
-
-        h1 { font-size: clamp(28px, 6vw, 42px); }
-        h2 { font-size: clamp(18px, 4vw, 28px); }
-        h3 { font-size: clamp(16px, 3.5vw, 22px); }
-
-        /* Loading Overlay */
-        #loading-overlay {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background-color: black;
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-        }
-
-        #loading-box {
-            padding: 28px 40px;
-            border: 2px solid #00ff88;
-            border-radius: 12px;
-            box-shadow: 0 0 28px rgba(0, 255, 136, 0.25);
-            background: rgba(0, 0, 0, 0.6);
-        }
-
-        #loading-text {
-            color: #00ff88;
-            font-size: 32px;
-            font-weight: bold;
-            text-shadow: 0 0 10px #00ff88;
-            text-align: center;
-            min-width: 90px;
-        }
-
-        nav {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-            padding: 10px;
-            text-align: center;
-        }
-
-        nav a {
-            font-size: clamp(14px, 3.5vw, 18px);
-        }
-
-        .search-engine-button,
-        .support-button {
-            display: inline-block;
-            margin: 15px auto;
-            padding: 12px 24px;
-            background: #fff;
-            color: #000;
-            border-radius: 6px;
-            font-size: clamp(14px, 4vw, 18px);
-            text-decoration: none;
-            border: none;
-            box-shadow: 0 0 10px #444;
-            width: auto;
-            max-width: 90%;
-        }
-
-        .search-engine-button:hover,
-        .support-button:hover {
-            background: #ccc;
-        }
-
-        section {
-            padding: 15px;
-        }
-
-        ul {
-            padding-left: 20px;
-            font-size: clamp(14px, 4vw, 18px);
-        }
-
-        p {
-            font-size: clamp(14px, 4vw, 18px);
-            line-height: 1.6;
-        }
-
-        footer {
-            text-align: center;
-            padding: 20px;
-            font-size: clamp(12px, 3vw, 16px);
-        }
-    </style>
+    @media (prefers-reduced-motion: reduce) { #neuronCanvas { display: none; } }
+  </style>
 </head>
-
 <body>
-
-    <!-- Loading Screen -->
-    <div id="loading-overlay">
-        <div id="loading-box">
-            <div id="loading-text">0%</div>
-        </div>
-    </div>
-
-    <!-- Header -->
+  <canvas id="neuronCanvas" aria-hidden="true"></canvas>
+  <div class="veil" aria-hidden="true"></div>
+  <div class="page">
     <header>
-        <h1>Khalid</h1>
-        <h2>Neuropsychopharmacology Researcher</h2>
-
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="research.html">Research</a>
-            <a href="projects.html">Projects</a>
-            <a href="updates.html">NeuroNews</a>
-            <a href="contact.html">Contact</a>
-            <a href="about.html">About Me</a>
-            <a href="index-ar.html">العربية</a>
+      <div class="wrap">
+        <div class="brand">
+          <h1>Khalid Al Mansoori</h1>
+          <p class="role">Neuropsychopharmacology Research</p>
+        </div>
+        <nav aria-label="Primary">
+          <a href="#services">Services</a>
+          <a href="#highlights">Research Highlights</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
         </nav>
+      </div>
     </header>
 
-    <!-- Content -->
-    <section class="intro">
-        <h3>About Me</h3>
-        <p>
-            I study neuropsychopharmacology with a focus on CNS mechanisms, receptor pharmacodynamics,
-            behavioral modulation, and therapeutic pathways. My work blends scientific rigor with
-            real‑world application, aiming to translate complex mechanisms into accessible, actionable insights.
-        </p>
-    </section>
+    <main>
+      <section class="hero">
+        <div class="wrap">
+          <h2>Neuropsychopharmacology Researcher &amp; Cognitive Systems Analyst</h2>
+          <h3>Advancing understanding of neural mechanisms, receptor pharmacodynamics, and cognitive‑behavioral modulation through research‑driven, evidence‑based insight.</h3>
+          <p>In a rapidly evolving scientific landscape, my work focuses on the intersection of neurochemistry, pharmacological interactions, and the dynamic systems that govern cognition and behavior. I translate complex CNS mechanisms into structured, high‑clarity insight for research teams, innovators, and science‑driven organizations — combining academic rigor with a modern, high‑tech analytical approach.</p>
+          <div class="cta">
+            <a class="btn" href="#services">View Services</a>
+            <a class="btn" href="#highlights">Research Highlights</a>
+            <a class="btn" href="#contact">Contact</a>
+          </div>
+        </div>
+      </section>
 
-    <section class="highlights">
-        <h3>Current Focus Areas</h3>
-        <ul>
-            <li>Neurotransmitter systems & receptor signaling</li>
-            <li>Pharmacokinetics & pharmacodynamics of CNS agents</li>
-            <li>Behavioral pharmacology & cognitive modulation</li>
-            <li>Mechanistic mapping of therapeutic compounds</li>
-        </ul>
-    </section>
+      <section id="services">
+        <div class="wrap">
+          <h3 class="section-title">Services</h3>
+          <div class="grid">
+            <article class="card">
+              <h4>Neuropsychopharmacology Research Consulting</h4>
+              <p class="sub">Precision analysis powered by neural systems expertise.</p>
+              <p>I provide evidence‑based consulting for research groups, R&amp;D teams, academic labs, and science‑driven organizations. My work focuses on mechanistic reasoning, neurochemical interactions, and interpretation of CNS‑related findings — all strictly non‑clinical.</p>
+            </article>
+            <article class="card">
+              <h4>Mechanistic Insight &amp; Pharmacological Interpretation</h4>
+              <p class="sub">Deep receptor‑level understanding delivered in structured scientific clarity.</p>
+              <p>I help teams interpret how compounds interact with neural circuits and neurotransmitter pathways, providing mechanistic breakdowns that inform research, development, and scientific decision‑making. <em>No diagnosis, treatment, or medical advice is offered.</em></p>
+            </article>
+            <article class="card">
+              <h4>Experimental Data Analysis &amp; Interpretation</h4>
+              <p class="sub">High‑resolution insight from complex datasets.</p>
+              <p>I analyze research data to extract trends, behavioral patterns, and mechanistic implications. Outputs include clarity‑focused insight reports, statistical interpretation, and structured scientific conclusions.</p>
+            </article>
+            <article class="card">
+              <h4>Research Design &amp; Methodology Advisory</h4>
+              <p class="sub">Academic‑grade scientific structure for non‑clinical studies.</p>
+              <p>I support teams in designing robust studies, experimental frameworks, mechanistic hypothesis planning, and validity considerations.</p>
+            </article>
+            <article class="card">
+              <h4>Scientific Writing &amp; Knowledge Translation</h4>
+              <p class="sub">Transforming complex neuroscience into clear, structured publications.</p>
+              <p>I prepare research summaries, literature reviews, technical reports, educational material, scientific articles, and whitepapers — all aligned with research‑grade scientific integrity.</p>
+            </article>
+            <article class="card">
+              <h4>Innovation &amp; Scientific Accuracy Consulting</h4>
+              <p class="sub">Ensuring neuroscience products and ideas stay scientifically sound.</p>
+              <p>I collaborate with startups and science‑focused companies to evaluate the accuracy of concepts, content, and research foundations — including nootropic concept review, neural‑inspired product advisory, and scientific fact‑checking.</p>
+            </article>
+            <article class="card">
+              <h4>Cognitive &amp; Behavioral Insight (Non‑clinical)</h4>
+              <p class="sub">Neurobiological reasoning applied to behavior.</p>
+              <p>I provide research‑based interpretations of cognitive patterns, decision‑making models, learning systems, and motivation — strictly educational and scientific, not therapeutic or clinical.</p>
+            </article>
+          </div>
+        </div>
+      </section>
 
-    <section style="text-align:center;">
-        <a href="searchpubmed.html" class="search-engine-button">
-            🔍 Open NeuroMolecules Search Engine
-        </a>
+      <section id="highlights">
+        <div class="wrap">
+          <h3 class="section-title">Research Highlights</h3>
+          <div class="hi-list">
+            <div class="hi-item">
+              <h5>CNS Mechanisms &amp; Receptor‑Level Dynamics</h5>
+              <p>Mechanistic interactions between neurotransmitter systems, receptor binding behavior, and downstream neural responses — including synaptic modulation, ligand affinity dynamics, and circuit‑level influence.</p>
+            </div>
+            <div class="hi-item">
+              <h5>Neuropsychopharmacology of Cognitive Modulation</h5>
+              <p>Exploring how pharmacological agents influence cognition, motivation, attention, and behavioral output, with emphasis on pathway interplay and neurochemical adaptation.</p>
+            </div>
+            <div class="hi-item">
+              <h5>Profiling Novel CNS‑Active Compounds</h5>
+              <p>Evidence‑based analysis of emerging compounds: receptor targets, predicted mechanistic pathways, and comparative profiles against established neuroactive agents. <em>All research is non‑clinical and does not involve human subjects.</em></p>
+            </div>
+            <div class="hi-item">
+              <h5>Neural Network Dynamics &amp; Systems‑Level Interpretation</h5>
+              <p>How distributed neural systems communicate and reorganize under pharmacological influence, with focus on synaptic connectivity and signal propagation.</p>
+            </div>
+            <div class="hi-item">
+              <h5>Behavioral Pharmacology &amp; Experimental Insight</h5>
+              <p>Scientific examination of behavior‑linked parameters in controlled frameworks, including learning modulation, reward responses, and cognitive flexibility.</p>
+            </div>
+            <div class="hi-item">
+              <h5>Psychopharmacological Modeling &amp; Predictive Reasoning</h5>
+              <p>Conceptual and computational models describing CNS agent behavior, receptor response curves, and pathway influence to generate predictive insight.</p>
+            </div>
+            <div class="hi-item">
+              <h5>Neurochemical Interaction Mapping</h5>
+              <p>Interplay across dopaminergic, serotonergic, glutamatergic, and GABAergic systems, including co‑modulation and emergent effects in complex neural environments.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <a href="support.html" class="support-button">
-            💠 Support My Work
-        </a>
-    </section>
+      <section id="about" class="about">
+        <div class="wrap">
+          <h3 class="section-title">About</h3>
+          <p>I am a neuropsychopharmacology researcher specializing in central nervous system mechanisms, receptor pharmacodynamics, and neural‑circuit modulation. My work focuses on the scientific principles that govern cognition, behavior, and neurochemical regulation — with an emphasis on evidence‑based reasoning and mechanistic clarity.</p>
+          <p>My research approach integrates synaptic pharmacology, behavioral science, and systems‑level neural analysis. I am deeply interested in how chemical signaling shapes cognitive states, how receptor‑level interactions propagate across networks, and how these processes influence complex behavioral patterns.</p>
+          <p>With ongoing scientific exploration and continuous study, I aim to contribute to the growing understanding of neurochemical dynamics, cognitive modulation, and the mechanistic logic underlying CNS‑active compounds. My work is grounded in academic rigor, scientific precision, and a commitment to advancing high‑quality, research‑driven insight.</p>
+        </div>
+      </section>
+    </main>
 
-    <footer>
-        <p>© 2026 Khalid — Neuropsychopharmacology Research & Analysis</p>
+    <footer id="contact">
+      <div class="wrap" style="display:flex; flex-wrap:wrap; gap:12px; align-items:center; justify-content:space-between;">
+        <div class="social" aria-label="Social links">
+          <a class="icon-link" href="https://www.linkedin.com/in/khalid-yousef-325b61263/" target="_blank" rel="noopener">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9v9M6 6.5c0 .3-.1.6-.3.8-.2.2-.5.3-.8.3s-.6-.1-.8-.3S3.8 6.8 3.8 6.5s.1-.6.3-.8.5-.3.8-.3.6.1.8.3.3.5.3.8zM10 9v9m0-5.5c0-1.9 1.1-3.5 3.4-3.5 2.2 0 3.6 1.4 3.6 3.8V18"/></svg>
+            <span>LinkedIn</span>
+          </a>
+          <a class="icon-link" href="https://x.com/vvokhalid" target="_blank" rel="noopener">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4l16 16M20 4L9.5 14.5M4 20l6.5-6.5"/></svg>
+            <span>X</span>
+          </a>
+        </div>
+        <div style="color:var(--ka-muted); font-size:13px;">© 2026 Khalid Al Mansoori — Neuropsychopharmacology Research &amp; Scientific Insight</div>
+      </div>
     </footer>
-
-    <!-- Loading Animation Script -->
-    <script>
-        let isLoading = false;
-
-        function startLoadingTo(url) {
-            const overlay = document.getElementById("loading-overlay");
-            const text = document.getElementById("loading-text");
-
-            overlay.style.display = "flex";
-            text.textContent = "0%";
-
-            let percent = 0;
-
-            const interval = setInterval(() => {
-                percent = Math.min(percent + 2, 100);
-                text.textContent = percent + "%";
-
-                if (percent >= 100) {
-                    clearInterval(interval);
-                    window.location.href = url;
-                }
-            }, 30);
-        }
-
-        document.querySelectorAll("nav a, .search-engine-button, .support-button").forEach(link => {
-            link.addEventListener("click", function (e) {
-                if (isLoading) return;
-                isLoading = true;
-
-                e.preventDefault();
-                startLoadingTo(this.href);
-            });
-        });
-    </script>
-
-    <!-- Global Scripts -->
-    <script src="global.js" defer></script>
-    <script src="fade.js" defer></script>
-<!-- BEGIN: Under Construction Overlay -->
-<style>
-  :root {
-    /* Adjust to match khalidalmansoori.com theme */
-    --ka-primary: #00D1B2;   /* primary accent */
-    --ka-accent:  #7DF9FF;   /* secondary accent */
-    --ka-bg:      #0A0F1C;   /* dark background */
-    --ka-text:    #E6F1FF;   /* light text */
-    --ka-muted:   #7A8AA0;
-  }
-
-  .ka-uc--overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 999999;
-    display: grid;
-    place-items: center;
-    background: radial-gradient(1200px 800px at 70% 20%, #0f1730 0%, var(--ka-bg) 55%);
-    color: var(--ka-text);
-    overflow: hidden;
-    -webkit-font-smoothing: antialiased;
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Inter, Arial, sans-serif;
-  }
-
-  .ka-uc--canvas {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    filter: drop-shadow(0 0 12px rgba(125, 249, 255, 0.25));
-    opacity: 0.25;
-  }
-
-  .ka-uc--content {
-    position: relative;
-    z-index: 2;
-    display: grid;
-    gap: 20px;
-    align-items: center;
-    justify-items: center;
-    text-align: center;
-    padding: 32px;
-    max-width: 820px;
-  }
-
-  .ka-uc--badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 12px;
-    border-radius: 999px;
-    background: linear-gradient(135deg, rgba(0,209,178,0.12), rgba(125,249,255,0.12));
-    color: var(--ka-accent);
-    font-weight: 600;
-    letter-spacing: 0.02em;
-    border: 1px solid rgba(125,249,255,0.25);
-  }
-
-  .ka-uc--lock {
-    width: 140px;
-    height: 140px;
-  }
-
-  .ka-uc--title {
-    font-size: clamp(22px, 4vw, 36px);
-    font-weight: 700;
-    line-height: 1.2;
-    margin: 0;
-    background: linear-gradient(180deg, #fff, #cfe9ff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-  }
-
-  .ka-uc--subtitle {
-    font-size: clamp(14px, 2.3vw, 18px);
-    color: var(--ka-muted);
-    margin: 0;
-    max-width: 60ch;
-  }
-
-  .ka-uc--meta {
-    display: flex;
-    gap: 14px;
-    align-items: center;
-    color: var(--ka-muted);
-    font-size: 14px;
-  }
-
-  .ka-uc--dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--ka-accent);
-    box-shadow: 0 0 12px var(--ka-accent);
-    animation: kaPulse 1.6s ease-in-out infinite;
-  }
-
-  @keyframes kaPulse {
-    0%, 100% { transform: scale(1); opacity: 0.7; }
-    50%      { transform: scale(1.25); opacity: 1; }
-  }
-
-  .ka-uc--social {
-    display: flex;
-    gap: 14px;
-    align-items: center;
-  }
-  .ka-uc--link {
-    color: var(--ka-text);
-    text-decoration: none;
-    border: 1px solid rgba(125,249,255,0.25);
-    padding: 8px 12px;
-    border-radius: 10px;
-    transition: transform .2s ease, border-color .2s ease, background .2s ease;
-    background: rgba(10, 15, 28, 0.4);
-  }
-  .ka-uc--link:hover {
-    transform: translateY(-2px);
-    border-color: var(--ka-accent);
-    background: rgba(10, 15, 28, 0.55);
-  }
-
-  /* Loading ring animation around the lock */
-  .ka-uc--ring {
-    transform-origin: 50% 50%;
-    animation: kaSpin 2.4s linear infinite;
-    stroke: url(#kaGrad);
-    stroke-linecap: round;
-  }
-
-  @keyframes kaSpin {
-    from { transform: rotate(0deg); }
-    to   { transform: rotate(360deg); }
-  }
-</style>
-
-<div class="ka-uc--overlay" id="kaUnderConstruction" role="dialog" aria-label="Site is under construction">
-  <canvas class="ka-uc--canvas" id="kaNeuronCanvas"></canvas>
-
-  <div class="ka-uc--content">
-    <div class="ka-uc--badge">
-      <!-- small lock glyph -->
-      🔒
-      <span>Under construction</span>
-    </div>
-
-    <!-- SVG Lock + Loading Ring -->
-    <svg class="ka-uc--lock" viewBox="0 0 160 160" fill="none" aria-hidden="true">
-      <defs>
-        <linearGradient id="kaGrad" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%"  stop-color="var(--ka-accent)"/>
-          <stop offset="100%" stop-color="var(--ka-primary)"/>
-        </linearGradient>
-      </defs>
-      <!-- outer ring -->
-      <circle cx="80" cy="80" r="68" stroke="rgba(125,249,255,0.25)" stroke-width="4"/>
-      <!-- animated arc -->
-      <path class="ka-uc--ring" d="
-        M 80 12
-        A 68 68 0 0 1 148 80" stroke-width="6" stroke="url(#kaGrad)"/>
-      <!-- lock body -->
-      <rect x="48" y="72" width="64" height="58" rx="12" stroke="url(#kaGrad)" stroke-width="4"/>
-      <!-- shackle -->
-      <path d="M56,72 C56,48 72,36 80,36 C88,36 104,48 104,72" stroke="url(#kaGrad)" stroke-width="4" fill="none"/>
-      <!-- keyhole -->
-      <circle cx="80" cy="98" r="6" fill="var(--ka-accent)"/>
-      <rect x="78" y="104" width="4" height="12" rx="2" fill="var(--ka-accent)"/>
-    </svg>
-
-    <h1 class="ka-uc--title">We’re building something new.</h1>
-    <p class="ka-uc--subtitle">
-      The site is temporarily locked while we finalize a science‑inspired experience.
-      Please check back soon.
-    </p>
-
-    <div class="ka-uc--meta">
-      <span>Loading</span>
-      <span class="ka-uc--dot"></span>
-      <span id="kaProgressText">neural modules</span>
-    </div>
-
-    <!-- Optional links you can customize -->
-    <div class="ka-uc--social" aria-label="Contact links">
-      <a class="ka-uc--link" href="mailto:khalidneuroo@gmail.com">Contact</a>
-      <a class="ka-uc--link" href="https://www.linkedin.com/in/khalid-yousef-325b61263/" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="ka-uc--link" href="https://x.com/vvokhalid" target="_blank" rel="noopener">X</a>
-    </div>
   </div>
-</div>
 
-<script>
-  /* ===== Neural network background animation ===== */
-  (function() {
-    const canvas = document.getElementById('kaNeuronCanvas');
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    let dpr = Math.max(1, window.devicePixelRatio || 1);
+  <script>
+    // ===== Neuron background animation (stronger, like your prior lock style, but overlay removed) =====
+    (function() {
+      const canvas = document.getElementById('neuronCanvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let dpr = Math.max(1, window.devicePixelRatio || 1);
 
-    function resize() {
-      const { innerWidth:w, innerHeight:h } = window;
-      canvas.style.width = w + 'px';
-      canvas.style.height = h + 'px';
-      canvas.width = Math.floor(w * dpr);
-      canvas.height = Math.floor(h * dpr);
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    }
-    resize();
-    window.addEventListener('resize', resize);
-
-    const ACCENT = getComputedStyle(document.documentElement)
-      .getPropertyValue('--ka-accent').trim() || '#7DF9FF';
-    const PRIMARY = getComputedStyle(document.documentElement)
-      .getPropertyValue('--ka-primary').trim() || '#00D1B2';
-
-    const NODE_COUNT = Math.min(120, Math.floor(window.innerWidth * 0.12));
-    const nodes = [];
-
-    function rand(a, b) { return a + Math.random() * (b - a); }
-    function init() {
-      nodes.length = 0;
-      const w = canvas.width / dpr, h = canvas.height / dpr;
-      for (let i = 0; i < NODE_COUNT; i++) {
-        nodes.push({
-          x: rand(0, w),
-          y: rand(0, h),
-          vx: rand(-0.2, 0.2),
-          vy: rand(-0.2, 0.2),
-          r: rand(1.2, 2.4)
-        });
+      function resize() {
+        const w = window.innerWidth, h = window.innerHeight;
+        canvas.style.width = w + 'px';
+        canvas.style.height = h + 'px';
+        canvas.width  = Math.floor(w * dpr);
+        canvas.height = Math.floor(h * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       }
-    }
-    init();
-    window.addEventListener('resize', init);
+      resize();
+      window.addEventListener('resize', resize);
 
-    function step() {
-      const w = canvas.width / dpr, h = canvas.height / dpr;
-      ctx.clearRect(0, 0, w, h);
+      const ACCENT  = getComputedStyle(document.documentElement).getPropertyValue('--ka-accent').trim()  || '#7DF9FF';
+      const PRIMARY = getComputedStyle(document.documentElement).getPropertyValue('--ka-primary').trim() || '#00D1B2';
 
-      // connections
-      for (let i = 0; i < nodes.length; i++) {
-        for (let j = i + 1; j < nodes.length; j++) {
-          const a = nodes[i], b = nodes[j];
-          const dx = a.x - b.x, dy = a.y - b.y;
-          const dist = Math.hypot(dx, dy);
-          if (dist < 120) {
-            const alpha = (1 - dist / 120) * 0.35;
-            const grad = ctx.createLinearGradient(a.x, a.y, b.x, b.y);
-            grad.addColorStop(0, PRIMARY);
-            grad.addColorStop(1, ACCENT);
-            ctx.strokeStyle = grad;
-            ctx.globalAlpha = alpha;
-            ctx.beginPath();
-            ctx.moveTo(a.x, a.y);
-            ctx.lineTo(b.x, b.y);
-            ctx.stroke();
-            ctx.globalAlpha = 1;
+      // More nodes for richer field (mobile auto-scales)
+      function nodeTarget() { return Math.min(160, Math.floor(window.innerWidth * 0.18)); }
+      let NODE_COUNT = nodeTarget();
+      const nodes = [];
+      function rand(a,b){ return a + Math.random()*(b-a); }
+
+      function init() {
+        nodes.length = 0; NODE_COUNT = nodeTarget();
+        const w = canvas.width / dpr, h = canvas.height / dpr;
+        for (let i=0;i<NODE_COUNT;i++) {
+          nodes.push({ x: rand(0,w), y: rand(0,h), vx: rand(-0.25,0.25), vy: rand(-0.25,0.25), r: rand(1.2,2.6) });
+        }
+      }
+      init();
+      window.addEventListener('resize', init);
+
+      let last = 0;
+      function step(ts){
+        if (ts - last < 16) { requestAnimationFrame(step); return; }
+        last = ts;
+        const w = canvas.width / dpr, h = canvas.height / dpr;
+        ctx.clearRect(0,0,w,h);
+
+        // connections with stronger glow
+        for (let i=0;i<nodes.length;i++){
+          for (let j=i+1;j<nodes.length;j++){
+            const a = nodes[i], b = nodes[j];
+            const dx=a.x-b.x, dy=a.y-b.y; const dist = Math.hypot(dx,dy);
+            if (dist < 130){
+              const alpha = (1 - dist/130) * 0.45;
+              const grad = ctx.createLinearGradient(a.x,a.y,b.x,b.y);
+              grad.addColorStop(0, PRIMARY); grad.addColorStop(1, ACCENT);
+              ctx.strokeStyle = grad; ctx.globalAlpha = alpha;
+              ctx.shadowColor = ACCENT; ctx.shadowBlur = 6;
+              ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
+              ctx.shadowBlur = 0; ctx.globalAlpha = 1;
+            }
           }
         }
-      }
-
-      // nodes
-      for (const n of nodes) {
-        n.x += n.vx; n.y += n.vy;
-        if (n.x < 0 || n.x > w) n.vx *= -1;
-        if (n.y < 0 || n.y > h) n.vy *= -1;
-        ctx.beginPath();
-        ctx.fillStyle = ACCENT;
-        ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
-        ctx.shadowColor = ACCENT;
-        ctx.shadowBlur = 8;
-        ctx.fill();
-        ctx.shadowBlur = 0;
+        // nodes with glow
+        for (const n of nodes){
+          n.x += n.vx; n.y += n.vy;
+          if (n.x < 0 || n.x > w) n.vx *= -1;
+          if (n.y < 0 || n.y > h) n.vy *= -1;
+          ctx.beginPath(); ctx.fillStyle = ACCENT; ctx.arc(n.x,n.y,n.r,0,Math.PI*2);
+          ctx.shadowColor = ACCENT; ctx.shadowBlur = 10; ctx.fill(); ctx.shadowBlur = 0;
+        }
+        requestAnimationFrame(step);
       }
       requestAnimationFrame(step);
-    }
-    step();
-  })();
-
-  /* ===== Progress copy cycling ===== */
-  (function() {
-    const el = document.getElementById('kaProgressText');
-    if (!el) return;
-    const phrases = [
-      'neural modules',
-      'synaptic links',
-      'feature extractors',
-      'graph pathways',
-      'signal routing'
-    ];
-    let i = 0;
-    setInterval(() => {
-      i = (i + 1) % phrases.length;
-      el.textContent = phrases[i];
-    }, 1400);
-  })();
-
-  /* ===== Optional: allow owner preview via query (?preview=1) ===== */
-  (function() {
-    const params = new URLSearchParams(location.search);
-    const preview = params.get('preview');
-    if (preview === '1') {
-      const overlay = document.getElementById('kaUnderConstruction');
-      if (overlay) overlay.style.display = 'none';
-    }
-  })();
-</script>
-<!-- END: Unde Construction Overlay -->
+    })();
+  </script>
 </body>
 </html>
