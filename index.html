@@ -4,90 +4,117 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="canonical" href="https://khalidalmansoori.com/" />
-  <title>Khalid Al Mansoori — Neuropsychopharmacology Researcher</title>
+  <title>Khalid Al Mansoori — Neuropsychopharmacology Research</title>
   <meta name="description" content="Neuropsychopharmacology researcher offering scientific consulting, data interpretation, research design, and evidence-based education." />
   <meta name="theme-color" content="#0A0F1C" />
+  <!-- BUILD-ID: KA-NEURON-FIX -->
   <style>
-    :root {
-      --ka-primary: #00D1B2;
-      --ka-accent:  #7DF9FF;
-      --ka-bg:      #0A0F1C;
-      --ka-surface: #0F1730;
-      --ka-text:    #E6F1FF;
-      --ka-muted:   #7A8AA0;
-      --ka-border:  rgba(125, 249, 255, 0.18);
+    :root{
+      --ka-primary:#00D1B2; /* primary accent */
+      --ka-accent:#7DF9FF;  /* secondary accent */
+      --ka-bg:#0A0F1C;      /* page background */
+      --ka-surface:#0F1730; /* elevated surface */
+      --ka-text:#E6F1FF;    /* main text */
+      --ka-muted:#7A8AA0;   /* muted text */
+      --ka-border:rgba(125,249,255,0.18);
     }
-    html, body { height: 100%; }
-    body {
-      margin: 0; color: var(--ka-text); background: var(--ka-bg);
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
-      line-height: 1.55; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+
+    /* Base */
+    html,body{height:100%}
+    body{
+      margin:0; background:var(--ka-bg); color:var(--ka-text);
+      font-family:system-ui,-apple-system,"Segoe UI",Roboto,Inter,Arial,sans-serif;
+      line-height:1.55; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
     }
-    /* Background neuron canvas (stronger visibility) */
-    #neuronCanvas { position: fixed; inset: 0; width: 100vw; height: 100vh; z-index: 0; opacity: .42; }
-    .veil { position: fixed; inset: 0; z-index: 1; pointer-events: none;
-      background: radial-gradient(1400px 900px at 68% 22%, #0f1730 0%, var(--ka-bg) 58%);
+    a{color:inherit; text-decoration:none}
+    a:focus-visible{outline:2px solid var(--ka-accent); outline-offset:3px; border-radius:6px}
+
+    /* Neuron canvas behind content */
+    #neuronCanvas{
+      position:fixed; inset:0; width:100vw; height:100vh; z-index:0;
+      opacity:.42; filter:drop-shadow(0 0 10px rgba(125,249,255,.28));
     }
-    .page { position: relative; z-index: 2; display: grid; grid-template-rows: auto 1fr auto; min-height: 100dvh; }
-    header { backdrop-filter: saturate(120%) blur(8px);
-      background: linear-gradient(180deg, rgba(10,15,28,.68), rgba(10,15,28,.35));
-      border-bottom: 1px solid var(--ka-border); position: sticky; top: 0; z-index: 3; }
-    .wrap { width: min(1100px, 92vw); margin: 0 auto; padding: 14px 0; }
-    .brand { display: flex; align-items: baseline; gap: 10px; }
-    .brand h1 { margin: 0; font-size: clamp(18px, 4vw, 22px); font-weight: 700; letter-spacing: .02em;
-      background: linear-gradient(180deg, #fff, #cfe9ff); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .brand .role { margin: 0; font-size: 13px; color: var(--ka-muted); }
-    nav { display: flex; gap: 18px; margin-top: 8px; flex-wrap: wrap; }
-    nav a { color: var(--ka-text); text-decoration: none; font-size: 14px; padding: 6px 10px; border-radius: 8px;
-      border: 1px solid transparent; transition: border-color .2s ease, background .2s ease, transform .2s ease; }
-    nav a:hover { border-color: var(--ka-border); background: rgba(10,15,28,.4); transform: translateY(-1px); }
-    a:focus-visible { outline: 2px solid var(--ka-accent); outline-offset: 3px; border-radius: 6px; }
+    /* Soft veil to keep text readable over animation */
+    .veil{
+      position:fixed; inset:0; z-index:1; pointer-events:none;
+      background:radial-gradient(1400px 900px at 68% 22%, #0f1730 0%, var(--ka-bg) 58%);
+    }
 
-    .hero { padding: 78px 0 56px; }
-    .hero h2 { margin: 0 0 6px; font-size: clamp(28px, 6vw, 46px); font-weight: 800; letter-spacing: .02em; }
-    .hero h3 { margin: 0 0 18px; font-size: clamp(16px, 3.6vw, 20px); color: var(--ka-muted); font-weight: 500; }
-    .hero p  { margin: 0 0 24px; font-size: clamp(14px, 2.8vw, 18px); max-width: 80ch; }
-    .cta { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
-    .btn { appearance: none; border: 1px solid var(--ka-border); background: rgba(10,15,28,.45); color: var(--ka-text);
-      padding: 10px 14px; border-radius: 12px; text-decoration: none; font-size: 14px;
-      transition: transform .2s ease, border-color .2s ease, background .2s ease; }
-    .btn:hover { transform: translateY(-1px); border-color: var(--ka-accent); background: rgba(10,15,28,.62); }
+    /* Page layout */
+    .page{position:relative; z-index:2; display:grid; grid-template-rows:auto 1fr auto; min-height:100dvh}
+    .wrap{width:min(1100px,92vw); margin:0 auto; padding:14px 0}
 
-    section { padding: 44px 0; }
-    .section-title { font-size: clamp(18px, 4.2vw, 24px); margin: 0 0 18px; font-weight: 700; letter-spacing: .02em; position: relative; display: inline-block; }
-    .section-title:after { content: ""; position: absolute; left: 0; bottom: -6px; width: 40px; height: 2px;
-      background: linear-gradient(90deg, var(--ka-accent), var(--ka-primary)); border-radius: 2px; box-shadow: 0 0 14px rgba(125,249,255,.38); }
+    /* Header (journal style) */
+    header{
+      position:sticky; top:0; z-index:3;
+      background:linear-gradient(180deg, rgba(10,15,28,.68), rgba(10,15,28,.35));
+      backdrop-filter:saturate(120%) blur(8px);
+      border-bottom:1px solid var(--ka-border);
+    }
+    .brand{display:flex; align-items:baseline; gap:10px}
+    .brand h1{
+      margin:0; font-size:clamp(18px,4vw,22px); font-weight:700; letter-spacing:.02em;
+      background:linear-gradient(180deg,#fff,#cfe9ff); -webkit-background-clip:text; background-clip:text; color:transparent;
+    }
+    .brand .role{margin:0; font-size:13px; color:var(--ka-muted)}
+    nav{display:flex; gap:18px; margin-top:8px; flex-wrap:wrap}
+    nav a{font-size:14px; padding:6px 10px; border-radius:8px; border:1px solid transparent; transition:border-color .2s ease, background .2s ease, transform .2s ease}
+    nav a:hover{border-color:var(--ka-border); background:rgba(10,15,28,.4); transform:translateY(-1px)}
 
-    .grid { display: grid; gap: 14px; }
-    @media (min-width: 760px) { .grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (min-width: 1080px) { .grid { grid-template-columns: repeat(3, 1fr); } }
-    .card { border: 1px solid var(--ka-border); border-radius: 14px; padding: 18px; background: rgba(15,23,48,.5);
-      transition: transform .2s ease, border-color .2s ease, background .2s ease; }
-    .card:hover { transform: translateY(-2px); border-color: var(--ka-accent); background: rgba(15,23,48,.66); }
-    .card h4 { margin: 0 0 8px; font-size: 16px; }
-    .card p  { margin: 0; font-size: 14px; color: var(--ka-muted); }
-    .sub { color: var(--ka-muted); font-size: 13px; margin: 4px 0 10px; }
+    /* Hero */
+    .hero{padding:78px 0 56px}
+    .hero h2{margin:0 0 6px; font-size:clamp(28px,6vw,46px); font-weight:800; letter-spacing:.02em}
+    .hero h3{margin:0 0 18px; font-size:clamp(16px,3.6vw,20px); color:var(--ka-muted); font-weight:500}
+    .hero p{margin:0 0 24px; font-size:clamp(14px,2.8vw,18px); max-width:80ch}
+    .cta{display:flex; gap:12px; align-items:center; flex-wrap:wrap}
+    .btn{
+      appearance:none; border:1px solid var(--ka-border); background:rgba(10,15,28,.45); color:var(--ka-text);
+      padding:10px 14px; border-radius:12px; font-size:14px; transition:transform .2s ease, border-color .2s ease, background .2s ease
+    }
+    .btn:hover{transform:translateY(-1px); border-color:var(--ka-accent); background:rgba(10,15,28,.62)}
 
-    .hi-list { display: grid; gap: 12px; }
-    .hi-item { border-left: 2px solid transparent; padding: 10px 12px; border-radius: 10px; background: rgba(15,23,48,.38); border: 1px solid var(--ka-border); }
-    .hi-item:hover { border-color: var(--ka-accent); }
-    .hi-item h5 { margin: 0 0 6px; font-size: 15px; }
-    .hi-item p  { margin: 0; font-size: 14px; color: var(--ka-muted); }
+    /* Sections */
+    section{padding:44px 0}
+    .section-title{font-size:clamp(18px,4.2vw,24px); margin:0 0 18px; font-weight:700; letter-spacing:.02em; position:relative; display:inline-block}
+    .section-title:after{
+      content:""; position:absolute; left:0; bottom:-6px; width:40px; height:2px;
+      background:linear-gradient(90deg,var(--ka-accent),var(--ka-primary)); border-radius:2px; box-shadow:0 0 14px rgba(125,249,255,.38)
+    }
 
-    .about p { max-width: 85ch; }
+    /* Cards/grid */
+    .grid{display:grid; gap:14px}
+    @media (min-width:760px){.grid{grid-template-columns:repeat(2,1fr)}}
+    @media (min-width:1080px){.grid{grid-template-columns:repeat(3,1fr)}}
+    .card{
+      border:1px solid var(--ka-border); border-radius:14px; padding:18px; background:rgba(15,23,48,.5);
+      transition:transform .2s ease, border-color .2s ease, background .2s ease
+    }
+    .card:hover{transform:translateY(-2px); border-color:var(--ka-accent); background:rgba(15,23,48,.66)}
+    .card h4{margin:0 0 8px; font-size:16px}
+    .card p{margin:0; font-size:14px; color:var(--ka-muted)}
 
-    footer { border-top: 1px solid var(--ka-border); background: linear-gradient(180deg, rgba(10,15,28,.35), rgba(10,15,28,.68)); padding: 20px 0; margin-top: 26px; }
-    .social { display: flex; gap: 12px; align-items: center; }
-    .icon-link { display: inline-flex; align-items: center; gap: 8px; color: var(--ka-text); text-decoration: none; font-size: 14px; padding: 8px 10px; border-radius: 10px; border: 1px solid transparent; }
-    .icon-link:hover { border-color: var(--ka-accent); background: rgba(10,15,28,.48); }
-    .icon { width: 18px; height: 18px; stroke: var(--ka-text); stroke-width: 1.6; fill: none; }
+    /* About */
+    .about p{max-width:85ch}
 
-    @media (prefers-reduced-motion: reduce) { #neuronCanvas { display: none; } }
+    /* Footer */
+    footer{
+      border-top:1px solid var(--ka-border);
+      background:linear-gradient(180deg, rgba(10,15,28,.35), rgba(10,15,28,.68));
+      padding:20px 0; margin-top:26px
+    }
+    .social{display:flex; gap:12px; align-items:center}
+    .icon-link{display:inline-flex; align-items:center; gap:8px; color:var(--ka-text); font-size:14px; padding:8px 10px; border-radius:10px; border:1px solid transparent}
+    .icon-link:hover{border-color:var(--ka-accent); background:rgba(10,15,28,.48)}
+    .icon{width:18px; height:18px; stroke:var(--ka-text); stroke-width:1.6; fill:none}
+
+    /* (Important) Do NOT hide canvas for reduced-motion; animation always available */
   </style>
 </head>
 <body>
+  <!-- Animated neuron background -->
   <canvas id="neuronCanvas" aria-hidden="true"></canvas>
   <div class="veil" aria-hidden="true"></div>
+
   <div class="page">
     <header>
       <div class="wrap">
@@ -105,6 +132,7 @@
     </header>
 
     <main>
+      <!-- HERO -->
       <section class="hero">
         <div class="wrap">
           <h2>Neuropsychopharmacology Researcher &amp; Cognitive Systems Analyst</h2>
@@ -118,95 +146,64 @@
         </div>
       </section>
 
+      <!-- SERVICES -->
       <section id="services">
         <div class="wrap">
           <h3 class="section-title">Services</h3>
           <div class="grid">
             <article class="card">
               <h4>Neuropsychopharmacology Research Consulting</h4>
-              <p class="sub">Precision analysis powered by neural systems expertise.</p>
-              <p>I provide evidence‑based consulting for research groups, R&amp;D teams, academic labs, and science‑driven organizations. My work focuses on mechanistic reasoning, neurochemical interactions, and interpretation of CNS‑related findings — all strictly non‑clinical.</p>
+              <p>Evidence‑based consulting for research groups, R&amp;D teams, academic labs, and science‑driven organizations. Mechanistic reasoning, neurochemical interactions, and interpretation of CNS‑related findings — all strictly non‑clinical.</p>
             </article>
             <article class="card">
               <h4>Mechanistic Insight &amp; Pharmacological Interpretation</h4>
-              <p class="sub">Deep receptor‑level understanding delivered in structured scientific clarity.</p>
-              <p>I help teams interpret how compounds interact with neural circuits and neurotransmitter pathways, providing mechanistic breakdowns that inform research, development, and scientific decision‑making. <em>No diagnosis, treatment, or medical advice is offered.</em></p>
+              <p>Receptor‑ and circuit‑level interpretation of compound interactions to inform research and scientific decision‑making. <em>No diagnosis, treatment, or medical advice is offered.</em></p>
             </article>
             <article class="card">
               <h4>Experimental Data Analysis &amp; Interpretation</h4>
-              <p class="sub">High‑resolution insight from complex datasets.</p>
-              <p>I analyze research data to extract trends, behavioral patterns, and mechanistic implications. Outputs include clarity‑focused insight reports, statistical interpretation, and structured scientific conclusions.</p>
+              <p>Trend extraction, behavioral patterns, mechanistic implications. Insight reports, statistical interpretation, and structured conclusions.</p>
             </article>
             <article class="card">
               <h4>Research Design &amp; Methodology Advisory</h4>
-              <p class="sub">Academic‑grade scientific structure for non‑clinical studies.</p>
-              <p>I support teams in designing robust studies, experimental frameworks, mechanistic hypothesis planning, and validity considerations.</p>
+              <p>Robust experimental frameworks, mechanistic hypothesis planning, and validity considerations for non‑clinical studies.</p>
             </article>
             <article class="card">
               <h4>Scientific Writing &amp; Knowledge Translation</h4>
-              <p class="sub">Transforming complex neuroscience into clear, structured publications.</p>
-              <p>I prepare research summaries, literature reviews, technical reports, educational material, scientific articles, and whitepapers — all aligned with research‑grade scientific integrity.</p>
+              <p>Research summaries, literature reviews, technical reports, educational material, scientific articles, and whitepapers.</p>
             </article>
             <article class="card">
               <h4>Innovation &amp; Scientific Accuracy Consulting</h4>
-              <p class="sub">Ensuring neuroscience products and ideas stay scientifically sound.</p>
-              <p>I collaborate with startups and science‑focused companies to evaluate the accuracy of concepts, content, and research foundations — including nootropic concept review, neural‑inspired product advisory, and scientific fact‑checking.</p>
-            </article>
-            <article class="card">
-              <h4>Cognitive &amp; Behavioral Insight (Non‑clinical)</h4>
-              <p class="sub">Neurobiological reasoning applied to behavior.</p>
-              <p>I provide research‑based interpretations of cognitive patterns, decision‑making models, learning systems, and motivation — strictly educational and scientific, not therapeutic or clinical.</p>
+              <p>Accuracy review for science‑related tools and content; neural‑inspired product advisory and scientific fact‑checking.</p>
             </article>
           </div>
         </div>
       </section>
 
+      <!-- RESEARCH HIGHLIGHTS -->
       <section id="highlights">
         <div class="wrap">
           <h3 class="section-title">Research Highlights</h3>
-          <div class="hi-list">
-            <div class="hi-item">
-              <h5>CNS Mechanisms &amp; Receptor‑Level Dynamics</h5>
-              <p>Mechanistic interactions between neurotransmitter systems, receptor binding behavior, and downstream neural responses — including synaptic modulation, ligand affinity dynamics, and circuit‑level influence.</p>
-            </div>
-            <div class="hi-item">
-              <h5>Neuropsychopharmacology of Cognitive Modulation</h5>
-              <p>Exploring how pharmacological agents influence cognition, motivation, attention, and behavioral output, with emphasis on pathway interplay and neurochemical adaptation.</p>
-            </div>
-            <div class="hi-item">
-              <h5>Profiling Novel CNS‑Active Compounds</h5>
-              <p>Evidence‑based analysis of emerging compounds: receptor targets, predicted mechanistic pathways, and comparative profiles against established neuroactive agents. <em>All research is non‑clinical and does not involve human subjects.</em></p>
-            </div>
-            <div class="hi-item">
-              <h5>Neural Network Dynamics &amp; Systems‑Level Interpretation</h5>
-              <p>How distributed neural systems communicate and reorganize under pharmacological influence, with focus on synaptic connectivity and signal propagation.</p>
-            </div>
-            <div class="hi-item">
-              <h5>Behavioral Pharmacology &amp; Experimental Insight</h5>
-              <p>Scientific examination of behavior‑linked parameters in controlled frameworks, including learning modulation, reward responses, and cognitive flexibility.</p>
-            </div>
-            <div class="hi-item">
-              <h5>Psychopharmacological Modeling &amp; Predictive Reasoning</h5>
-              <p>Conceptual and computational models describing CNS agent behavior, receptor response curves, and pathway influence to generate predictive insight.</p>
-            </div>
-            <div class="hi-item">
-              <h5>Neurochemical Interaction Mapping</h5>
-              <p>Interplay across dopaminergic, serotonergic, glutamatergic, and GABAergic systems, including co‑modulation and emergent effects in complex neural environments.</p>
-            </div>
+          <div class="grid">
+            <article class="card"><h4>CNS Mechanisms &amp; Receptor‑Level Dynamics</h4><p>Synaptic modulation, ligand affinity dynamics, downstream responses.</p></article>
+            <article class="card"><h4>Cognitive Modulation</h4><p>How pharmacological agents influence cognition, motivation, attention.</p></article>
+            <article class="card"><h4>Novel CNS‑Active Compounds</h4><p>Targets, predicted mechanistic pathways, comparative profiles (non‑clinical).</p></article>
+            <article class="card"><h4>Network Dynamics</h4><p>Systems‑level communication and reorganization under pharmacological influence.</p></article>
+            <article class="card"><h4>Behavioral Pharmacology</h4><p>Learning, reward, cognitive flexibility in controlled frameworks.</p></article>
+            <article class="card"><h4>Predictive Modeling</h4><p>Receptor response curves and pathway influence models for insight.</p></article>
           </div>
         </div>
       </section>
 
+      <!-- ABOUT -->
       <section id="about" class="about">
         <div class="wrap">
           <h3 class="section-title">About</h3>
           <p>I am a neuropsychopharmacology researcher specializing in central nervous system mechanisms, receptor pharmacodynamics, and neural‑circuit modulation. My work focuses on the scientific principles that govern cognition, behavior, and neurochemical regulation — with an emphasis on evidence‑based reasoning and mechanistic clarity.</p>
-          <p>My research approach integrates synaptic pharmacology, behavioral science, and systems‑level neural analysis. I am deeply interested in how chemical signaling shapes cognitive states, how receptor‑level interactions propagate across networks, and how these processes influence complex behavioral patterns.</p>
-          <p>With ongoing scientific exploration and continuous study, I aim to contribute to the growing understanding of neurochemical dynamics, cognitive modulation, and the mechanistic logic underlying CNS‑active compounds. My work is grounded in academic rigor, scientific precision, and a commitment to advancing high‑quality, research‑driven insight.</p>
         </div>
       </section>
     </main>
 
+    <!-- FOOTER -->
     <footer id="contact">
       <div class="wrap" style="display:flex; flex-wrap:wrap; gap:12px; align-items:center; justify-content:space-between;">
         <div class="social" aria-label="Social links">
@@ -224,79 +221,102 @@
     </footer>
   </div>
 
+  <!-- ===== Neuron background animation (robust, no overlay) ===== -->
   <script>
-    // ===== Neuron background animation (stronger, like your prior lock style, but overlay removed) =====
-    (function() {
-      const canvas = document.getElementById('neuronCanvas');
-      if (!canvas) return;
-      const ctx = canvas.getContext('2d');
-      let dpr = Math.max(1, window.devicePixelRatio || 1);
+  (function(){
+    const canvas = document.getElementById('neuronCanvas');
+    if(!canvas) return;
+    const ctx = canvas.getContext('2d');
+    if(!ctx) return;
 
-      function resize() {
-        const w = window.innerWidth, h = window.innerHeight;
-        canvas.style.width = w + 'px';
-        canvas.style.height = h + 'px';
-        canvas.width  = Math.floor(w * dpr);
-        canvas.height = Math.floor(h * dpr);
-        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    let dpr = Math.max(1, (window.devicePixelRatio || 1));
+
+    function resize(){
+      const w = window.innerWidth, h = window.innerHeight;
+      canvas.style.width = w + 'px';
+      canvas.style.height = h + 'px';
+      canvas.width  = Math.floor(w * dpr);
+      canvas.height = Math.floor(h * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    // Colors from CSS variables with fallbacks
+    const getVar = (name, fallback) => (getComputedStyle(document.documentElement).getPropertyValue(name).trim() || fallback);
+    const ACCENT  = getVar('--ka-accent',  '#7DF9FF');
+    const PRIMARY = getVar('--ka-primary', '#00D1B2');
+
+    // Nodes
+    const nodes = [];
+    const clamp = (n,min,max)=>Math.max(min,Math.min(max,n));
+    function rand(a,b){ return a + Math.random() * (b - a); }
+
+    function init(){
+      nodes.length = 0;
+      const count = clamp(Math.floor(window.innerWidth * 0.18), 90, 180);
+      const w = canvas.width / dpr, h = canvas.height / dpr;
+      for(let i=0;i<count;i++){
+        nodes.push({
+          x: rand(0,w), y: rand(0,h),
+          vx: rand(-0.28, 0.28), vy: rand(-0.28, 0.28),
+          r: rand(1.2, 2.6)
+        });
       }
-      resize();
-      window.addEventListener('resize', resize);
+    }
+    init();
+    window.addEventListener('resize', init);
 
-      const ACCENT  = getComputedStyle(document.documentElement).getPropertyValue('--ka-accent').trim()  || '#7DF9FF';
-      const PRIMARY = getComputedStyle(document.documentElement).getPropertyValue('--ka-primary').trim() || '#00D1B2';
+    let last = 0;
+    function step(ts){
+      if(ts - last < 16){ requestAnimationFrame(step); return; }
+      last = ts;
 
-      // More nodes for richer field (mobile auto-scales)
-      function nodeTarget() { return Math.min(160, Math.floor(window.innerWidth * 0.18)); }
-      let NODE_COUNT = nodeTarget();
-      const nodes = [];
-      function rand(a,b){ return a + Math.random()*(b-a); }
+      const w = canvas.width / dpr, h = canvas.height / dpr;
+      ctx.clearRect(0,0,w,h);
 
-      function init() {
-        nodes.length = 0; NODE_COUNT = nodeTarget();
-        const w = canvas.width / dpr, h = canvas.height / dpr;
-        for (let i=0;i<NODE_COUNT;i++) {
-          nodes.push({ x: rand(0,w), y: rand(0,h), vx: rand(-0.25,0.25), vy: rand(-0.25,0.25), r: rand(1.2,2.6) });
-        }
-      }
-      init();
-      window.addEventListener('resize', init);
-
-      let last = 0;
-      function step(ts){
-        if (ts - last < 16) { requestAnimationFrame(step); return; }
-        last = ts;
-        const w = canvas.width / dpr, h = canvas.height / dpr;
-        ctx.clearRect(0,0,w,h);
-
-        // connections with stronger glow
-        for (let i=0;i<nodes.length;i++){
-          for (let j=i+1;j<nodes.length;j++){
-            const a = nodes[i], b = nodes[j];
-            const dx=a.x-b.x, dy=a.y-b.y; const dist = Math.hypot(dx,dy);
-            if (dist < 130){
-              const alpha = (1 - dist/130) * 0.45;
-              const grad = ctx.createLinearGradient(a.x,a.y,b.x,b.y);
-              grad.addColorStop(0, PRIMARY); grad.addColorStop(1, ACCENT);
-              ctx.strokeStyle = grad; ctx.globalAlpha = alpha;
-              ctx.shadowColor = ACCENT; ctx.shadowBlur = 6;
-              ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
-              ctx.shadowBlur = 0; ctx.globalAlpha = 1;
-            }
+      // connections
+      for(let i=0;i<nodes.length;i++){
+        for(let j=i+1;j<nodes.length;j++){
+          const a = nodes[i], b = nodes[j];
+          const dx = a.x - b.x, dy = a.y - b.y;
+          const dist = Math.hypot(dx, dy);
+          if(dist < 135){
+            const alpha = (1 - dist/135) * 0.45;
+            const grad = ctx.createLinearGradient(a.x, a.y, b.x, b.y);
+            grad.addColorStop(0, PRIMARY);
+            grad.addColorStop(1, ACCENT);
+            ctx.strokeStyle = grad;
+            ctx.globalAlpha = alpha;
+            ctx.shadowColor = ACCENT;
+            ctx.shadowBlur = 6;
+            ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
+            ctx.shadowBlur = 0; ctx.globalAlpha = 1;
           }
         }
-        // nodes with glow
-        for (const n of nodes){
-          n.x += n.vx; n.y += n.vy;
-          if (n.x < 0 || n.x > w) n.vx *= -1;
-          if (n.y < 0 || n.y > h) n.vy *= -1;
-          ctx.beginPath(); ctx.fillStyle = ACCENT; ctx.arc(n.x,n.y,n.r,0,Math.PI*2);
-          ctx.shadowColor = ACCENT; ctx.shadowBlur = 10; ctx.fill(); ctx.shadowBlur = 0;
-        }
-        requestAnimationFrame(step);
       }
+
+      // nodes
+      for(const n of nodes){
+        n.x += n.vx; n.y += n.vy;
+        if(n.x < 0 || n.x > w) n.vx *= -1;
+        if(n.y < 0 || n.y > h) n.vy *= -1;
+        ctx.beginPath();
+        ctx.fillStyle = ACCENT;
+        ctx.arc(n.x, n.y, n.r, 0, Math.PI*2);
+        ctx.shadowColor = ACCENT;
+        ctx.shadowBlur = 10;
+        ctx.fill();
+        ctx.shadowBlur = 0;
+      }
+
       requestAnimationFrame(step);
-    })();
+    }
+    requestAnimationFrame(step);
+
+    // Diagnostic log so you can confirm the loop runs (open DevTools Console)
+    console.log('[KA-Neuron] running — nodes:', nodes.length);
+  })();
   </script>
 </body>
 </html>
